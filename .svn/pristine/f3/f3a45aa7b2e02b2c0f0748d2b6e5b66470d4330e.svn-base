@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<repositories>
+  <repository path="..\psi_bll\packages.config" />
+  <repository path="..\psi_dal\packages.config" />
+  <repository path="..\psi_el\packages.config" />
+  <repository path="..\psi_gui\packages.config" />
+</repositories>

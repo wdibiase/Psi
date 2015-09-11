@@ -1,0 +1,32 @@
+﻿Public Class Usuario
+    Public Function Nuevo(User As psi_el.Usuario) As Int32
+        Dim a As New Acceso
+        Dim P(9) As SqlClient.SqlParameter
+        P(0) = a.BuildParam("@usuario", User.nombreUsuario)
+        P(1) = a.BuildParam("@tipoDoc", User.tipoDoc)
+        P(2) = a.BuildParam("@numDoc", User.numDoc)
+        P(3) = a.BuildParam("@apellido", User.apellido)
+        P(4) = a.BuildParam("@nombre", User.nombre)
+        P(5) = a.BuildParam("@estado", User.estado)
+        P(6) = a.BuildParam("@idioma", User.idioma)
+        P(7) = a.BuildParam("@idCliente", User.cliente)
+        P(8) = a.BuildParam("@password", User.pwd)
+        P(9) = a.BuildParam("@email", User.email)
+        Return a.Grabar("dbo.usp_usuariosInsert", P)
+    End Function
+
+    Public Function Listar() As List(Of psi_el.Usuario)
+        Dim usuarios As New List(Of psi_el.Usuario)
+        Dim a As New Acceso
+        Dim dt As DataTable = a.Leer("dbo.usp_usuariosSelect")
+        Dim u As psi_el.Usuario
+        For Each fila As DataRow In dt.Rows
+            u = New psi_el.usrMantenimiento
+            u.nombreUsuario = fila("usuario")
+            u.pwd = fila("password")
+            usuarios.Add(u)
+        Next
+        Return usuarios
+    End Function
+End Class
+

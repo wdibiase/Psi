@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PendingCommit>
+  <CommitComment />
+  <TrackedFiles>
+    <RelativePath>psi_bll\My Project\Application.Designer.vb</RelativePath>
+    <RelativePath>psi_bll\My Project\Application.myapp</RelativePath>
+    <RelativePath>psi_bll\My Project\AssemblyInfo.vb</RelativePath>
+    <RelativePath>psi_bll\My Project\MyExtensions\MyWebExtension.vb</RelativePath>
+    <RelativePath>psi_bll\My Project\Resources.Designer.vb</RelativePath>
+    <RelativePath>psi_bll\My Project\Resources.resx</RelativePath>
+    <RelativePath>psi_bll\My Project\Settings.Designer.vb</RelativePath>
+    <RelativePath>psi_bll\My Project\Settings.settings</RelativePath>
+    <RelativePath>psi_bll\Web.config</RelativePath>
+    <RelativePath>psi_bll\Web.Debug.config</RelativePath>
+    <RelativePath>psi_bll\Web.Release.config</RelativePath>
+  </TrackedFiles>
+  <ExcludedItems />
+  <WorkItems />
+</PendingCommit>

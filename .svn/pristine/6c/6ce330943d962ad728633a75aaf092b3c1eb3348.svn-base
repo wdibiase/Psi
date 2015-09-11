@@ -1,0 +1,39 @@
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="clientes.aspx.vb" Inherits="psi.clientes" 
+    MasterPageFile="~/Admin.Master" %>
+
+<asp:Content runat="server" ContentPlaceHolderID="contenedor">
+    <div>
+        <form runat="server">
+            <div class="table-responsive" runat="server">
+            <h1>Lista de clientes</h1><br />
+            <asp:Button ID="btnNuevo" runat="server" CssClass="btn-toolbar" Text="Nuevo" />
+            <asp:Button ID="btnEditar" runat="server" CssClass="btn-toolbar" Text="Editar" Enabled="false" />
+            <asp:Button ID="btnEstado" runat="server" CssClass="btn-toolbar" Text="Cambiar Estado" Enabled="false" />
+            <asp:Button ID="btnGuardar" runat="server" CssClass="btn-toolbar" Text="Guardar" Visible="false" />
+            <asp:Button ID="btnCancelar" runat="server" CssClass="btn-toolbar" Text="Cancelar" Visible="false" />
+            <br />
+            <asp:GridView ID="gridClientes" runat="server" CssClass="table table-bordred table-striped"
+                    AllowCustomPaging="True" AllowPaging="True" AllowSorting="True" 
+                    OnSelectedIndexChanged="gridClientes_SelectedIndexChanged">
+                <AlternatingRowStyle CssClass="table" />
+                <Columns>
+                    <asp:ButtonField ButtonType="Image" ImageUrl="~/Images/bullet.png" InsertVisible="False" Text="Botón" CommandName="Select"/>
+                </Columns>
+            </asp:GridView>
+            <asp:Label runat="server" ID="lblIdCliente" Text="Id Cliente "></asp:Label><asp:TextBox runat="server" ID="txtIdCliente" ReadOnly="true" Enabled="false"></asp:TextBox><br />
+            <asp:Label runat="server" ID="lblSuscripcion" Text="Suscripción "></asp:Label><asp:DropDownList runat="server" ID="cboSuscripcion"></asp:DropDownList><br />
+            <asp:Label runat="server" ID="lblPcia" Text="Provincia "></asp:Label>&nbsp; &nbsp;<asp:DropDownList runat="server" ID="cboProvincias" OnSelectedIndexChanged="cboProvincias_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList><br />
+            <asp:Label runat="server" ID="lblPartido" Text="Partido "></asp:Label>&nbsp &nbsp &nbsp&nbsp;<asp:DropDownList runat="server" ID="cboPartido" OnSelectedIndexChanged="cboPartido_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList><br />
+            <asp:Label runat="server" ID="lblLocalidad" Text="Localidad "></asp:Label>&nbsp &nbsp<asp:DropDownList runat="server" ID="cboLocalidad"></asp:DropDownList><br />
+            <asp:Label runat="server" ID="lblCalle" Text="Calle "></asp:Label><asp:TextBox runat="server" ID="txtCalle"></asp:TextBox>
+            <asp:Label runat="server" ID="lblNumero" Text="Nro "></asp:Label><asp:TextBox runat="server" ID="txtNumero"></asp:TextBox>
+            <asp:Label runat="server" ID="lblPiso" Text="Piso "></asp:Label><asp:TextBox runat="server" ID="txtPiso"></asp:TextBox>
+            <asp:Label runat="server" ID="lnlDpto" Text="Depto "></asp:Label><asp:TextBox runat="server" ID="txtDpto"></asp:TextBox>
+            <asp:Label runat="server" ID="lblEstado" Text="Estado "></asp:Label><asp:DropDownList runat="server" ID="cboEstado" OnSelectedIndexChanged="cboEstado_SelectedIndexChanged"></asp:DropDownList><br />
+            <asp:Label runat="server" ID="lblCUIT" Text ="CUIT "></asp:Label><asp:TextBox runat="server" ID="txtCUIT"></asp:TextBox><br />
+            <asp:Label runat="server" ID="lblRazonSocial" Text="Razón Social "></asp:Label><asp:TextBox runat="server" ID="txtRazonSocial"></asp:TextBox><br />
+            </div>
+        </form>
+    </div>
+
+</asp:Content>

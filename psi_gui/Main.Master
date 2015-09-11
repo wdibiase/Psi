@@ -1,0 +1,61 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Main.master.vb" Inherits="psi.Main" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Proyecto Psi</title>
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+        <asp:ContentPlaceHolder ID="cabecera" runat="server">
+        </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form runat="server" id="masterForm">
+        <asp:ContentPlaceHolder ID="botonera" runat="server">
+            <div class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Conmutar la navegación</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="Default.aspx">Proyecto Psi</a>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="nosotros.aspx" >Nosotros</a></li>
+                            <li><a href="contactese.aspx" >Contáctese</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Servicios<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Presencia en la Web</a></li>
+                                    <li><a href="tests.aspx">Psicodiagnóstico</a></li>
+                                    <li><a href="#">Asistente virtual</a></li>
+                                    <!--<li role="separator" class="divider"></li>
+                                    <li class="dropdown-header">Nav header</li>
+                                    <li><a href="#">Enlace separado</a></li>
+                                    <li><a href="#">Un enlace más separado</a></li>-->
+                                </ul>
+                            </li>
+                            <li><a href="#">Noticias</a></li>
+                            <li class="btn-default label-default" style="background-color:#F1F2D8;">
+                                <asp:LinkButton runat="server" ID="lnkLogged" Text="loggedUser"
+                                    role="button" aria-haspopup="true" aria-expanded="false" CssClass="dropdown-toggle"
+                                    OnClick="lnkLogged_Click" />
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </asp:ContentPlaceHolder>
+        <div class="container">
+            <asp:ContentPlaceHolder ID="cuerpo" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <script src="js/jquery-2.1.4.js"></script>
+        <script src="js/bootstrap.js"></script>
+    </form>
+</body>
+</html>

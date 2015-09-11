@@ -1,0 +1,276 @@
+﻿'------------------------------------------------------------------------------
+' <generado automáticamente>
+'     Este código fue generado por una herramienta.
+'
+'     Los cambios en este archivo podrían causar un comportamiento incorrecto y se perderán si
+'     se vuelve a generar el código. 
+' </generado automáticamente>
+'------------------------------------------------------------------------------
+
+Option Strict On
+Option Explicit On
+
+
+Partial Public Class usuarios
+
+    '''<summary>
+    '''Control btnNuevo.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btnNuevo As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''Control btnEditar.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btnEditar As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''Control btnEstado.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btnEstado As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''Control btnGuardar.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btnGuardar As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''Control btnGuardarNuevo.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btnGuardarNuevo As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''Control btnCancelar.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btnCancelar As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''Control lstUsuarios.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lstUsuarios As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''Control lblUsuario.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lblUsuario As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control txtUsuario.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents txtUsuario As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control lblEmail.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lblEmail As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control txtEmail.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents txtEmail As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control lblTipoDoc.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lblTipoDoc As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control cboDoc.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents cboDoc As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''Control lblNroDoc.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lblNroDoc As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control txtDoc.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents txtDoc As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control lblNombre.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lblNombre As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control txtNombre.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents txtNombre As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control lblApellido.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lblApellido As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control txtApellido.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents txtApellido As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control lblEstado.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lblEstado As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control cboEstado.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents cboEstado As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''Control lblIdioma.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lblIdioma As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control cboIdioma.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents cboIdioma As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''Control lblCliente.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lblCliente As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control cboCliente.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents cboCliente As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''Control lblPass1.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lblPass1 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control txtPass1.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents txtPass1 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control lblPass2.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lblPass2 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control txtPass2.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents txtPass2 As Global.System.Web.UI.WebControls.TextBox
+End Class

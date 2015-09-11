@@ -1,0 +1,21 @@
+0000000000000000000000000000000000000000 a429c4078fa1d8b7b1aef18f4e1507bb66742e5b wdibiase <walter@dibiase.com.ar> 1437882355 -0300	commit (initial): v0.1
+a429c4078fa1d8b7b1aef18f4e1507bb66742e5b a429c4078fa1d8b7b1aef18f4e1507bb66742e5b wdibiase <walter@dibiase.com.ar> 1437882949 -0300	checkout: moving from master to stable
+a429c4078fa1d8b7b1aef18f4e1507bb66742e5b a429c4078fa1d8b7b1aef18f4e1507bb66742e5b wdibiase <walter@dibiase.com.ar> 1437884449 -0300	checkout: moving from stable to master
+a429c4078fa1d8b7b1aef18f4e1507bb66742e5b 8115b75ed9b5911403b06a52ea2ccc50c03c0f67 wdibiase <walter@dibiase.com.ar> 1437884473 -0300	commit: v0.1
+8115b75ed9b5911403b06a52ea2ccc50c03c0f67 395fdc5a239d6ef9dbd3cb589025e1d759941e89 wdibiase <walter@dibiase.com.ar> 1437884584 -0300	commit: v 0.1
+395fdc5a239d6ef9dbd3cb589025e1d759941e89 395fdc5a239d6ef9dbd3cb589025e1d759941e89 wdibiase <walter@dibiase.com.ar> 1437926455 -0300	checkout: moving from master to test
+395fdc5a239d6ef9dbd3cb589025e1d759941e89 a429c4078fa1d8b7b1aef18f4e1507bb66742e5b wdibiase <walter@dibiase.com.ar> 1437926665 -0300	checkout: moving from test to stable
+a429c4078fa1d8b7b1aef18f4e1507bb66742e5b 5015a55c828799c63a7a83da7d941a38157f948a wdibiase <walter@dibiase.com.ar> 1437926751 -0300	commit: versión inicial
+5015a55c828799c63a7a83da7d941a38157f948a 5015a55c828799c63a7a83da7d941a38157f948a wdibiase <walter@dibiase.com.ar> 1437927562 -0300	checkout: moving from stable to test
+5015a55c828799c63a7a83da7d941a38157f948a 5015a55c828799c63a7a83da7d941a38157f948a wdibiase <walter@dibiase.com.ar> 1437927585 -0300	checkout: moving from test to stable
+5015a55c828799c63a7a83da7d941a38157f948a 5015a55c828799c63a7a83da7d941a38157f948a wdibiase <walter@dibiase.com.ar> 1437927589 -0300	checkout: moving from stable to test
+5015a55c828799c63a7a83da7d941a38157f948a 81f653252a9428b01f15ce1813353a8ee1124e34 wdibiase <walter@dibiase.com.ar> 1437927596 -0300	commit: v 0.1
+81f653252a9428b01f15ce1813353a8ee1124e34 5015a55c828799c63a7a83da7d941a38157f948a wdibiase <walter@dibiase.com.ar> 1437960365 -0300	checkout: moving from test to stable
+5015a55c828799c63a7a83da7d941a38157f948a 8a2c92630a3998c98249de0d3c1846a84477f2ca wdibiase <walter@dibiase.com.ar> 1440717043 -0300	commit: 1er abm
+8a2c92630a3998c98249de0d3c1846a84477f2ca 0aa851ea3f9b814163fc718f21f0bb8b57072447 wdibiase <walter@dibiase.com.ar> 1440717094 -0300	commit: Revert "1er abm"
+0aa851ea3f9b814163fc718f21f0bb8b57072447 81f653252a9428b01f15ce1813353a8ee1124e34 wdibiase <walter@dibiase.com.ar> 1440717169 -0300	checkout: moving from stable to test
+81f653252a9428b01f15ce1813353a8ee1124e34 395fdc5a239d6ef9dbd3cb589025e1d759941e89 wdibiase <walter@dibiase.com.ar> 1440717712 -0300	checkout: moving from test to master
+395fdc5a239d6ef9dbd3cb589025e1d759941e89 81f653252a9428b01f15ce1813353a8ee1124e34 wdibiase <walter@dibiase.com.ar> 1440717729 -0300	checkout: moving from master to test
+81f653252a9428b01f15ce1813353a8ee1124e34 a5f101397f3cd7d9daaa5ede9c9fb14695677dc4 wdibiase <walter@dibiase.com.ar> 1440717782 -0300	commit: v1
+a5f101397f3cd7d9daaa5ede9c9fb14695677dc4 5015a55c828799c63a7a83da7d941a38157f948a wdibiase <walter@dibiase.com.ar> 1440719368 -0300	checkout: moving from test to stable
+5015a55c828799c63a7a83da7d941a38157f948a a5f101397f3cd7d9daaa5ede9c9fb14695677dc4 wdibiase <walter@dibiase.com.ar> 1440719378 -0300	merge a5f101397f3cd7d9daaa5ede9c9fb14695677dc4: Fast-forward

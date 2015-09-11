@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+Este archivo es utilizado por el proceso de paquete/publicación de nuestro proyecto Web. Puede personalizar el comportamiento de este proceso
+editando este archivo MSBuild. Para conocer más acerca de esto, visite http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>ftp://server/</_PublishTargetUrl>
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAG6i0aYsN906G6nHTdnp7/QAAAAACAAAAAAAQZgAAAAEAACAAAACcb2pwI2m06m0pTuTuEk2SkexRQT6Gj6io6UvaftGiagAAAAAOgAAAAAIAACAAAABroYG/prztjojXNSEQrdd+W3A/EdBSLrQKlK6MPL6VoxAAAAAFIaZm3t3Q5RfaRRipUN5KQAAAALP7hcjWOXa+QHcr17zobQ+8ABNF6WigvzFMmnm4naiGFMNZaEmsXrGCznp6+Jtklu+4tXg+b6PweHZxTlCBAWI=</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="About.aspx">
+      <publishTime>07/26/2015 22:26:03</publishTime>
+    </File>
+    <File Include="Account/Login.aspx">
+      <publishTime>07/26/2015 22:26:03</publishTime>
+    </File>
+    <File Include="Account/Manage.aspx">
+      <publishTime>07/26/2015 22:26:03</publishTime>
+    </File>
+    <File Include="Account/OpenAuthProviders.ascx">
+      <publishTime>07/26/2015 22:26:03</publishTime>
+    </File>
+    <File Include="Account/Register.aspx">
+      <publishTime>07/26/2015 22:26:03</publishTime>
+    </File>
+    <File Include="Account/RegisterExternalLogin.aspx">
+      <publishTime>07/26/2015 22:26:03</publishTime>
+    </File>
+    <File Include="Account/Web.config">
+      <publishTime>07/26/2015 22:26:03</publishTime>
+    </File>
+    <File Include="bin/AspNet.ScriptManager.jQuery.dll">
+      <publishTime>07/26/2015 22:26:04</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.AspNet.dll">
+      <publishTime>07/26/2015 22:26:04</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.Core.dll">
+      <publishTime>07/26/2015 22:26:05</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.OAuth.Consumer.dll">
+      <publishTime>07/20/2015 23:16:49</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.OAuth.dll">
+      <publishTime>07/20/2015 23:16:47</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.OpenId.dll">
+      <publishTime>07/20/2015 23:16:51</publishTime>
+    </File>
+    <File Include="bin/DotNetOpenAuth.OpenId.RelyingParty.dll">
+      <publishTime>07/20/2015 23:16:53</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>07/20/2015 23:16:56</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>07/20/2015 23:16:57</publishTime>
+    </File>
+    <File Include="bin/es/Microsoft.AspNet.FriendlyUrls.resources.dll">
+      <publishTime>07/20/2015 23:17:21</publishTime>
+    </File>
+    <File Include="bin/es/Microsoft.AspNet.Membership.OpenAuth.resources.dll">
+      <publishTime>07/20/2015 23:17:22</publishTime>
+    </File>
+    <File Include="bin/GitHubPushLib.dll">
+      <publishTime>07/26/2015 01:19:18</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.FriendlyUrls.dll">
+      <publishTime>07/20/2015 23:17:20</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Membership.OpenAuth.dll">
+      <publishTime>07/20/2015 23:17:18</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>07/20/2015 23:16:44</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>07/20/2015 23:23:25</publishTime>
+    </File>
+    <File Include="bin/psi.dll">
+      <publishTime>07/27/2015 20:43:56</publishTime>
+    </File>
+    <File Include="bin/psi.pdb">
+      <publishTime>07/27/2015 20:43:56</publishTime>
+    </File>
+    <File Include="bin/psi.xml">
+      <publishTime>07/27/2015 20:43:56</publishTime>
+    </File>
+    <File Include="bin/System.Web.Providers.dll">
+      <publishTime>07/20/2015 23:16:29</publishTime>
+    </File>
+    <File Include="Contact.aspx">
+      <publishTime>07/26/2015 22:26:03</publishTime>
+    </File>
+    <File Include="contactese.aspx">
+      <publishTime>07/26/2015 22:26:04</publishTime>
+    </File>
+    <File Include="Content/bootstrap-theme.css">
+      <publishTime>07/26/2015 22:26:03</publishTime>
+    </File>
+    <File Include="Content/bootstrap-theme.css.map">
+      <publishTime>07/26/2015 22:26:03</publishTime>
+    </File>
+    <File Include="Content/bootstrap-theme.min.css">
+      <publishTime>07/26/2015 22:26:03</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css">
+      <publishTime>07/26/2015 22:26:03</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css.map">
+      <publishTime>07/26/2015 22:26:03</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css">
+      <publishTime>07/26/2015 22:26:03</publishTime>
+    </File>
+    <File Include="Content/carousel.css">
+      <publishTime>07/26/2015 22:26:03</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>07/26/2015 22:26:03</publishTime>
+    </File>
+    <File Include="Default.aspx">
+      <publishTime>07/26/2015 22:26:03</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>07/26/2015 22:26:04</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>07/26/2015 22:26:03</publishTime>
+    </File>
+    <File Include="home.aspx">
+      <publishTime>07/26/2015 22:26:04</publishTime>
+    </File>
+    <File Include="Images/1.jpg">
+      <publishTime>07/26/2015 22:26:03</publishTime>
+    </File>
+    <File Include="Images/2.jpg">
+      <publishTime>07/26/2015 22:26:03</publishTime>
+    </File>
+    <File Include="Images/3.jpg">
+      <publishTime>07/26/2015 22:26:03</publishTime>
+    </File>
+    <File Include="Images/accent.png">
+      <publishTime>07/26/2015 22:26:03</publishTime>
+    </File>
+    <File Include="Images/bullet.png">
+      <publishTime>07/26/2015 22:26:03</publishTime>
+    </File>
+    <File Include="Images/heroAccent.png">
+      <publishTime>07/26/2015 22:26:03</publishTime>
+    </File>
+    <File Include="Images/orderedList0.png">
+      <publishTime>07/26/2015 22:26:03</publishTime>
+    </File>
+    <File Include="Images/orderedList1.png">
+      <publishTime>07/26/2015 22:26:03</publishTime>
+    </File>
+    <File Include="Images/orderedList2.png">
+      <publishTime>07/26/2015 22:26:03</publishTime>
+    </File>
+    <File Include="Images/orderedList3.png">
+      <publishTime>07/26/2015 22:26:03</publishTime>
+    </File>
+    <File Include="Images/orderedList4.png">
+      <publishTime>07/26/2015 22:26:03</publishTime>
+    </File>
+    <File Include="Images/orderedList5.png">
+      <publishTime>07/26/2015 22:26:03</publishTime>
+    </File>
+    <File Include="Images/orderedList6.png">
+      <publishTime>07/26/2015 22:26:03</publishTime>
+    </File>
+    <File Include="Images/orderedList7.png">
+      <publishTime>07/26/2015 22:26:03</publishTime>
+    </File>
+    <File Include="Images/orderedList8.png">
+      <publishTime>07/26/2015 22:26:03</publishTime>
+    </File>
+    <File Include="Images/orderedList9.png">
+      <publishTime>07/26/2015 22:26:04</publishTime>
+    </File>
+    <File Include="login.aspx">
+      <publishTime>07/26/2015 22:28:10</publishTime>
+    </File>
+    <File Include="Main.Master">
+      <publishTime>07/26/2015 22:26:04</publishTime>
+    </File>
+    <File Include="nosotros.aspx">
+      <publishTime>07/26/2015 22:26:04</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>07/26/2015 22:26:04</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js">
+      <publishTime>07/26/2015 22:26:04</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>07/26/2015 22:26:04</publishTime>
+    </File>
+    <File Include="Scripts/jquery-2.1.4.js">
+      <publishTime>07/26/2015 22:26:04</publishTime>
+    </File>
+    <File Include="Scripts/jquery-2.1.4.min.js">
+      <publishTime>07/26/2015 22:26:04</publishTime>
+    </File>
+    <File Include="Scripts/jquery-2.1.4.min.map">
+      <publishTime>07/26/2015 22:26:04</publishTime>
+    </File>
+    <File Include="Site.Master">
+      <publishTime>07/26/2015 22:26:04</publishTime>
+    </File>
+    <File Include="Site.Mobile.Master">
+      <publishTime>07/26/2015 22:26:04</publishTime>
+    </File>
+    <File Include="tests.aspx">
+      <publishTime>07/21/2015 00:00:52</publishTime>
+    </File>
+    <File Include="ViewSwitcher.ascx">
+      <publishTime>07/26/2015 22:26:04</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>07/27/2015 20:43:57</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,67 @@
+﻿Public Class usuarios
+    Inherits System.Web.UI.Page
+
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        If Not Page.IsPostBack Then
+            CargarUsuarios()
+            CargarDocs()
+            CargarClientes()
+        End If
+    End Sub
+
+    Private Sub CargarDocs()
+        Dim docs As List(Of psi_el.documento)
+        Dim unDoc As New psi_bll.Usuario
+        docs = unDoc.ListarDocs
+        cboDoc.DataSource = docs
+        cboDoc.DataTextField = "desc"
+        cboDoc.DataValueField = "tipo"
+        cboDoc.DataBind()
+    End Sub
+
+    Private Sub CargarClientes()
+        Dim clientes As List(Of psi_el.Cliente)
+        Dim unCliente As New psi_bll.Usuario
+        clientes = unCliente.ListarClientes
+        cboCliente.DataSource = clientes
+        cboCliente.DataTextField = "razonSocial"
+        cboCliente.DataValueField = "id"
+        cboCliente.DataBind()
+    End Sub
+
+    Private Sub CargarUsuarios()
+        Dim usuarios As List(Of psi_el.Usuario)
+        Dim unUsuario As New psi_bll.Usuario
+        usuarios = unUsuario.Listar
+        lstUsuarios.DataSource = usuarios
+        lstUsuarios.DataBind()
+    End Sub
+
+    Protected Sub btnGuardarNuevo_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Protected Sub cboDoc_SelectedIndexChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Protected Sub cboEstado_SelectedIndexChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Protected Sub cboIdioma_SelectedIndexChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Protected Sub cboCliente_SelectedIndexChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Protected Sub btnNuevo_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Protected Sub lstUsuarios_SelectedIndexChanged(sender As Object, e As EventArgs)
+
+    End Sub
+End Class

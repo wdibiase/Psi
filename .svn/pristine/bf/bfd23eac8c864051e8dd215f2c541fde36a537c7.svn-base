@@ -1,0 +1,41 @@
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="usuarios.aspx.vb" Inherits="psi.usuarios"
+    MasterPageFile="~/Admin.Master" %>
+
+<asp:Content runat="server" ContentPlaceHolderID="contenedor">
+    <div>
+        <form runat="server">
+            <div class="table-responsive" runat="server">
+            <h1>Lista de usuarios</h1><br />
+            <asp:Button ID="btnNuevo" runat="server" CssClass="btn-toolbar" Text="Nuevo" OnClick="btnNuevo_Click"/>
+            <asp:Button ID="btnEditar" runat="server" CssClass="btn-toolbar" Text="Editar" Enabled="false" />
+            <asp:Button ID="btnEstado" runat="server" CssClass="btn-toolbar" Text="Cambiar Estado" Enabled="false" />
+            <asp:Button ID="btnGuardar" runat="server" CssClass="btn-toolbar" Text="Guardar" Visible="false" />
+            <asp:Button ID="btnGuardarNuevo" runat="server" cssclass="btn-toolbar" Text="Guardar" Visible="false" OnClick="btnGuardarNuevo_Click" />
+            <asp:Button ID="btnCancelar" runat="server" CssClass="btn-toolbar" Text="Cancelar" Visible="false" />
+            <br /><br />
+            <asp:GridView ID="lstUsuarios" runat="server" CssClass="table-hover table-responsive"
+                    AllowCustomPaging="True" AllowPaging="True" AllowSorting="True" 
+                    OnSelectedIndexChanged="lstUsuarios_SelectedIndexChanged" EnableSortingAndPagingCallbacks="true"
+                    PagerSettings-Mode="NextPreviousFirstLast" PageSize="10"
+                    >
+                <AlternatingRowStyle CssClass="table" />
+                <Columns>
+                    <asp:ButtonField ButtonType="Image" ImageUrl="~/Images/bullet.png" InsertVisible="False" Text="Botón" CommandName="Select"/>
+                </Columns>
+            </asp:GridView><br />
+            <asp:Label runat="server" ID="lblUsuario" Text="Nombre de usuario "></asp:Label><asp:TextBox runat="server" ID="txtUsuario" ReadOnly="true" Enabled="false"></asp:TextBox><br />
+            <asp:Label runat="server" ID="lblEmail" Text="Email "></asp:Label><asp:TextBox runat="server" ID="txtEmail" ReadOnly="true" Enabled="false"></asp:TextBox><br />
+            <asp:Label runat="server" ID="lblTipoDoc" Text="Tipo de Doc. "></asp:Label>&nbsp; &nbsp;<asp:DropDownList runat="server" ID="cboDoc" OnSelectedIndexChanged="cboDoc_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList><br />
+            <asp:Label runat="server" ID="lblNroDoc" Text="Nro de Doc. "></asp:Label>&nbsp &nbsp <asp:TextBox runat="server" ID="txtDoc" ReadOnly="true" Enabled="false"></asp:TextBox><br />
+            <asp:Label runat="server" ID="lblNombre" Text="Nombre "></asp:Label><asp:TextBox runat="server" ID="txtNombre"></asp:TextBox>
+            <asp:Label runat="server" ID="lblApellido" Text="Calle "></asp:Label><asp:TextBox runat="server" ID="txtApellido"></asp:TextBox>
+            <asp:Label runat="server" ID="lblEstado" Text="Estado "></asp:Label><asp:DropDownList runat="server" ID="cboEstado" OnSelectedIndexChanged="cboEstado_SelectedIndexChanged"></asp:DropDownList><br />
+            <asp:Label runat="server" ID="lblIdioma" Text="Idioma "></asp:Label><asp:DropDownList runat="server" ID="cboIdioma" OnSelectedIndexChanged="cboIdioma_SelectedIndexChanged"></asp:DropDownList><br />
+            <asp:Label runat="server" ID="lblCliente" Text="Cliente "></asp:Label><asp:DropDownList runat="server" ID="cboCliente" OnSelectedIndexChanged="cboCliente_SelectedIndexChanged"></asp:DropDownList><br />
+            <asp:Label runat="server" ID="lblPass1" Text="Contraseña "></asp:Label><asp:TextBox runat="server" ID="txtPass1" TextMode="Password"></asp:TextBox>
+            <asp:Label runat="server" ID="lblPass2" Text="Repetir "></asp:Label><asp:TextBox runat="server" ID="txtPass2" TextMode="Password"></asp:TextBox>
+            </div>
+        </form>
+    </div>
+
+</asp:Content>

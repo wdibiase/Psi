@@ -1,0 +1,237 @@
+﻿Option Explicit On
+Imports System.Web.UI.WebControls
+
+Public Class clientes
+    Inherits System.Web.UI.Page
+
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        If Not Page.IsPostBack Then
+            CargarDatosClientes()
+            CargarSuscripciones()
+            CargarProvincias()
+            CargarPartidos(1)
+            CargarLocalidades(1)
+            CargarEstados()
+        End If
+    End Sub
+
+    Private Sub CargarSuscripciones()
+        Dim susc As List(Of psi_el.suscripcion)
+        Dim cliente As New psi_bll.Cliente
+        susc = cliente.ListarSuscripciones
+        cboSuscripcion.DataSource = susc
+        cboSuscripcion.DataTextField = "desc"
+        cboSuscripcion.DataValueField = "id"
+        cboSuscripcion.DataBind()
+    End Sub
+
+    Private Sub CargarProvincias()
+        Dim pcias As List(Of psi_el.provincia)
+        Dim cliente As New psi_bll.Cliente
+
+        pcias = cliente.ListarProvincias
+        cboProvincias.DataSource = pcias
+        cboProvincias.DataTextField = "desc"
+        cboProvincias.DataValueField = "id"
+        cboProvincias.DataBind()
+    End Sub
+
+    Private Sub CargarPartidos(idProv As Int16)
+        Dim pdos As List(Of psi_el.partido)
+        Dim cliente As New psi_bll.Cliente
+        pdos = cliente.ListarPartidos(idProv)
+        cboPartido.DataSource = pdos
+        cboPartido.DataTextField = "desc"
+        cboPartido.DataValueField = "id"
+        cboPartido.DataBind()
+    End Sub
+
+    Private Sub CargarLocalidades(idPartido As Int32)
+        Dim locs As List(Of psi_el.localidad)
+        Dim cliente As New psi_bll.Cliente
+        locs = cliente.ListarLocalidades(idPartido)
+        cboLocalidad.DataSource = locs
+        cboLocalidad.DataTextField = "desc"
+        cboLocalidad.DataValueField = "id"
+        cboLocalidad.DataBind()
+    End Sub
+
+    Private Sub CargarDatosClientes()
+        Dim misClientes As List(Of psi_el.Cliente)
+        Dim unCliente As New psi_bll.Cliente
+
+        misClientes = unCliente.ListarClientes()
+        gridClientes.DataSource = misClientes
+        gridClientes.DataBind()
+    End Sub
+
+    Private Sub CargarEstados()
+        Dim estados As List(Of psi_el.estado)
+        Dim estado As New psi_bll.Cliente
+
+        estados = estado.ListarEstados()
+        cboEstado.DataSource = estados
+        cboEstado.DataTextField = "desc"
+        cboEstado.DataValueField = "id"
+        cboEstado.DataBind()
+    End Sub
+
+    Protected Sub gridClientes_SelectedIndexChanged(sender As Object, e As EventArgs)
+        Dim row As GridViewRow = gridClientes.SelectedRow
+    End Sub
+
+    Private Sub gridClientes_RowCommand(sender As Object, e As GridViewCommandEventArgs) Handles gridClientes.RowCommand
+        Try
+            If e.CommandName = "Select" Then
+                Dim index As Integer = Convert.ToInt32(e.CommandArgument)
+                btnEditar.Enabled = True
+                btnEstado.Enabled = True
+
+                Dim selectedRow As GridViewRow = gridClientes.Rows(index)
+
+                txtIdCliente.Text = selectedRow.Cells(1).Text
+                cboSuscripcion.ClearSelection()
+                cboProvincias.ClearSelection()
+                cboPartido.ClearSelection()
+                cboLocalidad.ClearSelection()
+                cboEstado.ClearSelection()
+
+                cboSuscripcion.Items.FindByText(selectedRow.Cells(2).Text).Selected = True
+                txtCalle.Text = selectedRow.Cells(3).Text
+                txtNumero.Text = selectedRow.Cells(4).Text
+                txtPiso.Text = selectedRow.Cells(5).Text
+                txtDpto.Text = selectedRow.Cells(6).Text
+                cboProvincias.Items.FindByText(selectedRow.Cells(7).Text).Selected = True
+                CargarPartidos(cboProvincias.SelectedValue)
+                cboPartido.Items.FindByText(selectedRow.Cells(8).Text).Selected = True
+                CargarLocalidades(cboPartido.SelectedValue)
+                cboLocalidad.Items.FindByText(selectedRow.Cells(9).Text).Selected = True
+                cboEstado.Items.FindByText(selectedRow.Cells(10).Text).Selected = True
+                txtCUIT.Text = selectedRow.Cells(13).Text
+                txtRazonSocial.Text = selectedRow.Cells(14).Text
+            End If
+        Catch ex As Exception
+
+            Response.Redirect("error.aspx")
+        End Try
+    End Sub
+
+    Protected Sub cboProvincias_SelectedIndexChanged(sender As Object, e As EventArgs)
+        CargarPartidos(cboProvincias.SelectedItem.Value)
+        CargarLocalidades(cboPartido.SelectedItem.Value)
+    End Sub
+
+    Protected Sub cboPartido_SelectedIndexChanged(sender As Object, e As EventArgs)
+        CargarLocalidades(cboPartido.SelectedItem.Value)
+    End Sub
+
+    Protected Sub cboEstado_SelectedIndexChanged(sender As Object, e As EventArgs)
+        'CargarEstados()
+    End Sub
+
+    Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
+        btnEditar.Visible = False
+        btnGuardar.Visible = True
+        btnNuevo.Enabled = False
+        btnEstado.Visible = False
+        btnCancelar.Visible = True
+
+        cboSuscripcion.Enabled = True
+        txtCalle.Enabled = True
+        txtNumero.Enabled = True
+        txtDpto.Enabled = True
+        txtPiso.Enabled = True
+        cboProvincias.Enabled = True
+        cboPartido.Enabled = True
+        cboLocalidad.Enabled = True
+        cboEstado.Enabled = True
+        txtRazonSocial.Enabled = True
+        txtCUIT.Enabled = True
+    End Sub
+
+    Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
+        btnEditar.Visible = True
+        btnGuardar.Visible = False
+        btnNuevo.Enabled = True
+        btnEstado.Visible = True
+        btnCancelar.Visible = False
+
+        cboSuscripcion.Enabled = False
+        txtCalle.Enabled = False
+        txtNumero.Enabled = False
+        txtDpto.Enabled = False
+        txtPiso.Enabled = False
+        cboProvincias.Enabled = False
+        cboPartido.Enabled = False
+        cboLocalidad.Enabled = False
+        cboEstado.Enabled = False
+        txtRazonSocial.Enabled = False
+        txtCUIT.Enabled = False
+    End Sub
+
+    Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
+        Dim c As New psi_el.Cliente
+        Dim dato As New psi_bll.Cliente
+        c.id = CInt(txtIdCliente.Text)
+        c.calle = txtCalle.Text
+        c.cuit = txtCUIT.Text
+        c.dpto = txtDpto.Text
+        c.estado = CInt(cboEstado.SelectedValue.ToString)
+        c.localidad = cboLocalidad.SelectedValue.ToString
+        c.nro = txtNumero.Text
+        c.partido = cboPartido.SelectedValue.ToString
+        c.piso = txtPiso.Text
+        c.provincia = cboProvincias.SelectedValue.ToString
+        c.razonSocial = txtRazonSocial.Text
+        c.suscripcion = cboSuscripcion.SelectedValue.ToString
+        c.estado = cboEstado.SelectedValue.ToString
+        dato.Guardar(c)
+        dato = Nothing
+        c = Nothing
+        Response.Redirect("clientes.aspx")
+    End Sub
+
+    Protected Sub btnNuevo_Click(sender As Object, e As EventArgs)
+        LimpiarPantalla()
+        btnGuardar.Visible = False
+        btnGuardarNuevo.Visible = True
+    End Sub
+
+    Private Sub LimpiarPantalla()
+        txtIdCliente.Text = String.Empty
+        txtCalle.Text = String.Empty
+        txtCUIT.Text = String.Empty
+        txtNumero.Text = String.Empty
+        txtPiso.Text = String.Empty
+        txtDpto.Text = String.Empty
+        txtRazonSocial.Text = String.Empty
+        cboEstado.SelectedIndex = 1
+        cboProvincias.SelectedIndex = 0
+        cboSuscripcion.SelectedIndex = 1
+    End Sub
+
+    Private Sub Nuevo()
+        Dim c As New psi_el.Cliente
+        Dim dato As New psi_bll.Cliente
+        c.calle = txtCalle.Text
+        c.cuit = txtCUIT.Text
+        c.dpto = txtDpto.Text
+        c.estado = CInt(cboEstado.SelectedValue.ToString)
+        c.localidad = cboLocalidad.SelectedValue.ToString
+        c.nro = txtNumero.Text
+        c.partido = cboPartido.SelectedValue.ToString
+        If IsNumeric(txtPiso.Text) Then c.piso = txtPiso.Text
+        c.provincia = cboProvincias.SelectedValue.ToString
+        c.razonSocial = txtRazonSocial.Text
+        c.suscripcion = cboSuscripcion.SelectedValue.ToString
+        c.estado = cboEstado.SelectedValue.ToString
+        dato.Nuevo(c)
+        dato = Nothing
+        c = Nothing
+        Response.Redirect("clientes.aspx")
+    End Sub
+
+    Protected Sub btnGuardarNuevo_Click(sender As Object, e As EventArgs)
+        Nuevo()
+    End Sub
+End Class

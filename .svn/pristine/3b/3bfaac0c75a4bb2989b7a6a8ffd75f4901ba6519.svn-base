@@ -1,0 +1,32 @@
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="ABMevaluadores.aspx.vb" Inherits="psi.ABMevaluadores"
+    MasterPageFile="~/listaDoble.Master" %>
+
+<asp:Content ContentPlaceHolderID="listas" runat="server">
+    <div id="tablas" class="bajo-barra">
+        <form runat="server" id="panelIzq">
+            <div id="izq" class="box-izq">
+                <asp:GridView runat="server" ID="GridView1" Caption="Izq"
+                    
+                    Width="50px" ShowFooter="True" PagerSettings-Mode="NumericFirstLast">
+                <AlternatingRowStyle CssClass="table" />
+                <Columns>
+                    <asp:ButtonField ButtonType="Image" ImageUrl="~/Images/bullet.png" InsertVisible="False" Text="Botón" CommandName="Select"/>
+                </Columns>
+                </asp:GridView>
+            </div>
+            <div id="der" class="box-der">
+                <asp:GridView runat="server" ID="GridView2" Caption="Izq"
+                    CssClass="table-hover table-responsive"
+                    AllowCustomPaging="True" AllowPaging="True" AllowSorting="True" 
+                    OnSelectedIndexChanged="gridClientes_SelectedIndexChanged" EnableSortingAndPagingCallbacks="true"
+                    PagerSettings-Mode="NextPreviousFirstLast" PageSize="10"
+                    onchange = "return CabeceraClientes()" ShowFooter="True">
+                <AlternatingRowStyle CssClass="table" />
+                <Columns>
+                    <asp:ButtonField ButtonType="Image" ImageUrl="~/Images/bullet.png" InsertVisible="False" Text="Botón" CommandName="Select"/>
+                </Columns>
+                </asp:GridView>
+            </div>
+       </form>
+    </div>
+</asp:Content>
