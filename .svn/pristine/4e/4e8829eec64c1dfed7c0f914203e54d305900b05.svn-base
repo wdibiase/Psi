@@ -1,0 +1,48 @@
+﻿Partial Public Class _login
+    Inherits System.Web.UI.Page
+
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        If Not IsPostBack Then
+            If ((Not (Request.Cookies("UserName")) Is Nothing) _
+                        AndAlso (Not (Request.Cookies("Password")) Is Nothing)) Then
+                txtUsermail.Text = Request.Cookies("UserName").Value
+                txtPassword.Attributes("value") = Request.Cookies("Password").Value
+            End If
+        End If
+        'Dim anchor As System.Web.UI.HtmlControls.HtmlAnchor
+
+        'anchor = CType(Master.FindControl("lnkLogin"), HtmlAnchor)
+        'If Not anchor Is Nothing Then
+        '    MsgBox(anchor.ID)
+        'End If
+
+
+        'anchor.ID = "txt"
+        'anchor.InnerText = "click here"
+        'anchor.HRef = "http://www.google.com"
+        'Page.Header.Controls.Add(anchor)
+    End Sub
+
+    Protected Sub btnLogin_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnLogin.Click
+        lblLoginError.Visible = False
+        'Recuerdame:
+        If Me.chkRem.Checked Then
+            Response.Cookies("UserName").Expires = DateTime.Now.AddDays(30)
+            Response.Cookies("Password").Expires = DateTime.Now.AddDays(30)
+        Else
+            Response.Cookies("UserName").Expires = DateTime.Now.AddDays(-1)
+            Response.Cookies("Password").Expires = DateTime.Now.AddDays(-1)
+        End If
+        Response.Cookies("UserName").Value = txtUsermail.Text.Trim
+        Response.Cookies("Password").Value = txtPassword.Text.Trim
+
+        Dim login As New psi_bll.Usuario
+        If login.Validar(txtUsermail.Text.Trim, txtPassword.Text.Trim) Then
+            Response.Cookies("LoggedIn").Value = txtUsermail.Text.Trim
+            Response.Redirect("adminTools.aspx")
+        Else
+            Me.lblLoginError.Text = "Usuario no válido o Contraseña incorrecta"
+            lblLoginError.Visible = True
+        End If
+    End Sub
+End Class

@@ -1,0 +1,17 @@
+﻿.box-izq{
+    float:left;
+    padding-left:50px;
+    clear:left;
+    max-width:400px;
+    overflow-x:auto;
+    
+}
+
+.box-der{
+    float:right;
+    padding-right:50px;
+    clear:right;
+    max-width:400px;
+    overflow-x:auto;
+    
+}

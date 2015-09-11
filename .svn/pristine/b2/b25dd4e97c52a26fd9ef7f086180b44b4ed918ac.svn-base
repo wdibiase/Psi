@@ -1,0 +1,185 @@
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="usuarios.aspx.vb" Inherits="psi.usuarios"
+    MasterPageFile="~/Admin.Master" %>
+
+<asp:Content runat="server" ContentPlaceHolderID="barraNavegacion">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Conmutar la navegación</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="Default.aspx">Proyecto Psi</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+            <li><a href="noticias.aspx">Noticias</a></li>
+            <li><a href="nosotros.aspx">Nosotros</a></li>
+            <li><a href="contactese.aspx">Contáctese</a></li>
+            <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Servicios<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+            <li><a href="#">Presencia en la Web</a></li>
+            <li><a href="tests.aspx">Psicodiagnóstico</a></li>
+            <li><a href="#">Asistente virtual</a></li>
+            </ul>
+            </li>
+            <li><a class="btn btn-default btn-sm" href="login.aspx" id="lblPerfil" title="Perfil"></a></li>
+            </ul>
+            <form class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="Buscar..." data-translatable-string="Search..." />
+            </form>
+            </div>
+        </div>
+    </nav>
+</asp:Content>
+<asp:Content runat="server" ContentPlaceHolderID="toolbar">
+    <div class="container" id="MenuOpciones">
+        <div class="container-fluid">
+            <div class="col-sm-3 col-md-3" style="position: fixed; left: 0px; max-width:180px">
+                <div id="accordion" class="sidebar-nav">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                    <span class="glyphicon glyphicon-credit-card"></span>
+                                    Clientes
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse in">
+                            <div class="panel-body">
+                                <ul class="nav nav-sidebar">
+                                    <li><a href="#">Suscripciones</a></li>
+                                    <li><a href="clientes.aspx">Clientes</a></li>
+                                    <li><a href="usuarios.aspx">Usuarios</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                    <span class="glyphicon glyphicon-user">
+                                    </span>
+                                    Psicodiagnosis
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <ul class="nav nav-sidebar">
+                                    <li><a href="ABMevaluadores.aspx">Evaluadores</a></li>
+                                    <li><a href="coordinadores.aspx">Coordinadores</a></li>
+                                    <li><a href="pacientes.aspx">Pacientes</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseThree"><span class="glyphicon glyphicon-stats"></span>Tests</a> </h4>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <ul class="nav nav-sidebar">
+                                    <li><a href="#">Consignas</a></li>
+                                    <li><a href="protocoloWisc3.rdlc">Preguntas</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</asp:Content>
+<asp:Content runat="server" ContentPlaceHolderID="contenedor">
+    <div class="container-fluid " style="position:relative; left:170px;">
+        <div class="table">
+            <form runat="server">
+                <div class="table-responsive" runat="server">
+                <h1>Lista de usuarios</h1><br />
+                <asp:Button ID="btnNuevo" runat="server" CssClass="btn-toolbar" Text="Nuevo" OnClick="btnNuevo_Click"/>
+                <asp:Button ID="btnEditar" runat="server" CssClass="btn-toolbar" Text="Editar" Enabled="false" OnClick="btnEditar_Click" />
+                <asp:Button ID="btnEstado" runat="server" CssClass="btn-toolbar" Text="Cambiar Estado" Enabled="false" />
+                <asp:Button ID="btnGuardar" runat="server" CssClass="btn-toolbar" Text="Guardar" Visible="false" OnClick="btnGuardar_Click" />
+                <asp:Button ID="btnGuardarNuevo" runat="server" cssclass="btn-toolbar" Text="Guardar" Visible="false" OnClick="btnGuardarNuevo_Click" />
+                <asp:Button ID="btnCancelar" runat="server" CssClass="btn-toolbar" Text="Cancelar" Visible="false" />
+                <asp:Button  ID="btnPerfil" runat="server" CssClass="btn-toolbar" Text="Perfil" Enabled="false" OnClick="btnPerfil_Click" />
+                <br /><br />
+                <asp:GridView ID="lstUsuarios" runat="server" CssClass="table-hover table-responsive"
+                        AllowCustomPaging="True" AllowPaging="True" AllowSorting="True"
+                        OnSelectedIndexChanged="lstUsuarios_SelectedIndexChanged" EnableSortingAndPagingCallbacks="True"
+                        PagerSettings-Mode="NextPreviousFirstLast" CellPadding="4" ForeColor="#333333" GridLines="None" >
+                    <AlternatingRowStyle CssClass="table" BackColor="White" ForeColor="#284775" />
+                    <Columns>
+                        <asp:ButtonField ButtonType="Image" ImageUrl="~/Images/bullet.png" 
+                            InsertVisible="False" Text="Botón" CommandName="Select" />
+                    </Columns>
+                    <EditRowStyle BackColor="#999999" />
+                    <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                    <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+                    <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+                    <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+                    <SortedAscendingCellStyle BackColor="#E9E7E2" />
+                    <SortedAscendingHeaderStyle BackColor="#506C8C" />
+                    <SortedDescendingCellStyle BackColor="#FFFDF8" />
+                    <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
+                </asp:GridView>
+                <br />
+                </div>
+                <div class="table">
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <asp:Label runat="server" ID="lblUsuario" Text="Nombre de usuario " />
+                            <asp:TextBox runat="server" ID="txtUsuario" ReadOnly="true" Enabled="false" />
+                            <asp:Label runat="server" ID="lblEmail" Text="Email "></asp:Label>
+                            <asp:TextBox runat="server" ID="txtEmail" ReadOnly="true" Enabled="false" />
+                        </div>
+                        <div class="col-lg-2">
+                            <asp:Label runat="server" ID="lblTipoDoc" Text="Tipo de Doc. " />
+                            <asp:DropDownList runat="server" ID="cboDoc" OnSelectedIndexChanged="cboDoc_SelectedIndexChanged" AutoPostBack="true" />
+                        </div>
+                        <div class="col-lg-2">
+                            <asp:Label runat="server" ID="lblNroDoc" Text="Nro de Doc. " />
+                            <asp:TextBox runat="server" ID="txtDoc" ReadOnly="true" Enabled="false" />
+                        </div>
+                        <div class="col-lg-2">
+                            <asp:Label runat="server" ID="lblNombre" Text="Nombre " />
+                            <asp:TextBox runat="server" ID="txtNombre" />
+                            <asp:Label runat="server" ID="lblApellido" Text="Apellido " />
+                            <asp:TextBox runat="server" ID="txtApellido" />
+                        </div>
+                        <div class="col-lg-2">
+                            <asp:Label runat="server" ID="lblEstado" Text="Estado " />
+                            <asp:DropDownList runat="server" ID="cboEstado" OnSelectedIndexChanged="cboEstado_SelectedIndexChanged" />
+                            <asp:Label runat="server" ID="lblIdioma" Text="Idioma " />
+                            <asp:DropDownList runat="server" ID="cboIdioma" OnSelectedIndexChanged="cboIdioma_SelectedIndexChanged" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <asp:Label runat="server" ID="lblCliente" Text="Cliente "></asp:Label>
+                            <asp:DropDownList runat="server" ID="cboCliente" OnSelectedIndexChanged="cboCliente_SelectedIndexChanged"></asp:DropDownList>
+                        </div>
+                        <div class="col-lg-2">
+                            <asp:Label runat="server" ID="lblPass1" Text="Contraseña "></asp:Label>
+                            <asp:TextBox runat="server" ID="txtPass1" TextMode="Password"></asp:TextBox>
+                            <asp:Label runat="server" ID="lblPass2" Text="Repetir "></asp:Label>
+                            <asp:TextBox runat="server" ID="txtPass2" TextMode="Password"></asp:TextBox>
+                        </div>
+                        <div class="col-lg-2">
+                            <asp:Label runat="server" ID="Label1" Text="Perfil "></asp:Label>
+                            <asp:DropDownList runat="server" ID="lstPerfiles" />
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</asp:Content>

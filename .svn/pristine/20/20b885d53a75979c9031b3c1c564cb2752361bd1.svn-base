@@ -1,0 +1,45 @@
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="pacientes.aspx.vb" Inherits="psi.pacientes"
+    MasterPageFile="~/Admin.Master" %>
+
+<asp:Content runat="server" ContentPlaceHolderID="contenedor">
+    <div>
+        <form runat="server">
+            <div class="table-responsive" runat="server">
+            <h1>Lista de pacientes</h1><br />
+            <asp:Button ID="btnNuevo" runat="server" CssClass="btn-toolbar" Text="Nuevo" OnClick="btnNuevo_Click" />
+            <asp:Button ID="btnEditar" runat="server" CssClass="btn-toolbar" Text="Editar" Enabled="false" OnClick="btnEditar_Click" />
+            <asp:Button ID="btnEstado" runat="server" CssClass="btn-toolbar" Text="Cambiar Estado" Enabled="false" />
+            <asp:Button ID="btnGuardar" runat="server" CssClass="btn-toolbar" Text="Guardar" Visible="false" OnClick="btnGuardar_Click" />
+            <asp:Button ID="btnGuardarNuevo" runat="server" cssclass="btn-toolbar" Text="Guardar" Visible="false" OnClick="btnGuardarNuevo_Click" />
+            <asp:Button ID="btnCancelar" runat="server" CssClass="btn-toolbar" Text="Cancelar" Visible="false" OnClick="btnCancelar_Click" />
+            <br /><br />
+            <asp:GridView ID="gridPacientes" runat="server" CssClass="table-hover table-responsive"
+                    AllowCustomPaging="True" AllowPaging="True" AllowSorting="True" 
+                    OnSelectedIndexChanged="gridPacientes_SelectedIndexChanged" EnableSortingAndPagingCallbacks="true"
+                    PagerSettings-Mode="NextPreviousFirstLast" PageSize="10"
+                    >
+                <AlternatingRowStyle CssClass="table" />
+                <Columns>
+                    <asp:ButtonField ButtonType="Image" ImageUrl="~/Images/bullet.png" InsertVisible="False" Text="Botón" CommandName="Select"/>
+                </Columns>
+            </asp:GridView><br />
+            <asp:Label runat="server" ID="lblTipoDoc" Text="Tipo de documento "></asp:Label><asp:DropDownList runat="server" ID="cboDocumento"></asp:DropDownList><br />
+            <asp:Label runat="server" ID="lblNroDoc" Text="Nro de documento"></asp:Label><asp:TextBox runat="server" id="txtNroDoc"></asp:TextBox>
+            <asp:Label runat="server" ID="lblFechaNac" Text="Fecha de Nacimiento "></asp:Label><asp:TextBox runat="server" ID="txtFechaNac" TextMode="Date"></asp:TextBox>
+            <asp:Label runat="server" ID="lblApellido" Text="Apellido "></asp:Label>&nbsp; &nbsp;<asp:TextBox runat="server" ID="txtApellido" TextMode="Date"></asp:TextBox><br />
+            <asp:Label runat="server" ID="lblNombre" Text="Nombre "></asp:Label>&nbsp &nbsp &nbsp&nbsp;<asp:TextBox runat="server" ID="txtNombre" TextMode="Date"></asp:TextBox><br />
+            <asp:Label runat="server" ID="lblSexo" Text="Sexo "></asp:Label>&nbsp &nbsp<asp:DropDownList runat="server" ID="cboSexo">
+                    <asp:ListItem Value="1">Hombre</asp:ListItem>
+                    <asp:ListItem Value="2">Mujer</asp:ListItem>
+                </asp:DropDownList><br />
+            <asp:Label runat="server" ID="lblEscuela" Text="Escuela " /><asp:TextBox runat="server" ID="txtEscuela" TextMode="Date"></asp:TextBox><br />
+            <asp:Label runat="server" ID="lblAño" Text="Año " /><asp:TextBox runat="server" ID="txtAño" TextMode="Date"></asp:TextBox><br />
+            <asp:Label runat="server" ID="lblLateralidad" Text="Lateralidad " /><asp:DropDownList runat="server" ID="cboLateralidad" >
+                    <asp:ListItem Value="1">Diestro</asp:ListItem>
+                    <asp:ListItem Value="2">Zurdo</asp:ListItem>
+                    <asp:ListItem Value="3">Ambidiestro</asp:ListItem>
+                </asp:DropDownList>
+            </div>
+        </form>
+    </div>
+</asp:Content>

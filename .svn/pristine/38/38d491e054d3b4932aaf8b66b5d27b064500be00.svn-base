@@ -1,0 +1,5 @@
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="adminTools.aspx.vb" Inherits="psi.adminTools" MasterPageFile="~/Admin.Master" %>
+
+<asp:Content runat="server" ContentPlaceHolderID="contenedor">
+            <h1>Seleccione el menú lateral</h1>
+</asp:Content>

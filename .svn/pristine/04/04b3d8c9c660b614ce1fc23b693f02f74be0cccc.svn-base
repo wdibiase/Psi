@@ -1,0 +1,30 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Admin.Master.vb" Inherits="psi.AdminMaster" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="icon" href="../../favicon.ico" />
+
+    <title>Proyecto Psi</title>
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/dashboard.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="css/socialwidgets.css" />
+    <style type="text/css"></style>
+</head>
+    <body>
+        <asp:ContentPlaceHolder runat="server" ID="barraNavegacion">
+        </asp:ContentPlaceHolder>
+        <asp:ContentPlaceHolder runat="server" ID="toolbar">
+        </asp:ContentPlaceHolder>
+        <asp:ContentPlaceHolder runat="server" ID="contenedor">
+        </asp:ContentPlaceHolder>
+        <script src="js/jquery-2.1.4.js"></script>
+        <script src="js/bootstrap.js"></script>
+    </body>
+</html>
