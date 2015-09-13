@@ -10,8 +10,8 @@ Partial Public Class login
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         'RegisterHyperLink.NavigateUrl = "Register"
-        OpenAuthLogin.ReturnUrl = Request.QueryString("ReturnUrl")
-        Dim returnUrl = HttpUtility.UrlEncode(Request.QueryString("ReturnUrl"))
+        'OpenAuthLogin.ReturnUrl = Request.QueryString("ReturnUrl")
+        'Dim returnUrl = HttpUtility.UrlEncode(Request.QueryString("ReturnUrl"))
         'If Not [String].IsNullOrEmpty(returnUrl) Then
         '    RegisterHyperLink.NavigateUrl += "?ReturnUrl=" & returnUrl
         'End If
@@ -56,18 +56,22 @@ Partial Public Class login
         If login.Validar(txtUsermail.Text.Trim, txtPassword.Text.Trim) Then
             Response.Cookies("LoggedIn").Value = txtUsermail.Text.Trim
 
-            Dim strRedirect As String = Request.QueryString("ReturnUrl")
-            If String.IsNullOrEmpty(strRedirect) Then
-                strRedirect = "~/home.aspx"
-            End If
-            Response.Redirect(strRedirect)
-            'Dim ticket As System.Web.Security.FormsAuthenticationTicket = _
-            '    New System.Web.Security.FormsAuthenticationTicket(txtUsermail.Text.Trim, False, 240)
-            'Dim ticketEncrip As String = System.Web.Security.FormsAuthentication.Encrypt(ticket)
-            'Dim Ck As HttpCookie = New HttpCookie(System.Web.Security.FormsAuthentication.FormsCookieName, ticketEncrip)
-            'Ck.Expires = ticket.Expiration
-            'Response.Cookies.Add(Ck)
+            Dim usulog As New psi_el.seguridad
+            Dim cn As New psi_bll.Usuario
+            usulog = cn.Listar(txtUsermail.Text)
+            Session.Add("rol", usulog.perfil)
 
+            Dim strRedirect As String = Request.QueryString("ReturnUrl")
+            Select Case usulog.perfil
+                Case "Administrador"
+                    If String.IsNullOrEmpty(strRedirect) Then strRedirect = "~/admin/home.aspx"
+                Case Else
+                    strRedirect = "~/default.aspx"
+            End Select
+            'If String.IsNullOrEmpty(strRedirect) Then
+            '    strRedirect = "~/home.aspx"
+            '    End If
+            Response.Redirect(strRedirect)
         Else
             Me.lblLoginError.Text = "Usuario no válido o Contraseña incorrecta"
             lblLoginError.Visible = True

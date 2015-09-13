@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <system.web>
+    <authentication mode="Forms">
+    </authentication>
+    <authorization>
+      <allow roles="admin" />
+      <deny users="?" />
+    </authorization>
+    <membership defaultProvider="SqlProvider" userIsOnlineTimeWindow="15">
+      <providers>
+        <clear />
+        <add
+          name="SqlProvider"
+          type="System.Web.Security.SqlMembershipProvider"
+          connectionStringName="connStr"
+          applicationName="psi"
+          enablePasswordRetrieval="false"
+          enablePasswordReset="true"
+          requiresQuestionAndAnswer="true"
+          requiresUniqueEmail="true"
+          passwordFormat="Hashed" />
+      </providers>
+    </membership>
+  </system.web>
+</configuration>
