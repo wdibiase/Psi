@@ -38,9 +38,9 @@
                                 <li class="dropdown"><asp:LinkButton runat="server" PostBackUrl="#" class="dropdown-toggle" data-toggle="dropdown" role="button" 
                                         aria-haspopup="true" aria-expanded="false" ID="lnkSistema" Text="Sistema" />
                                     <ul class="dropdown-menu">
-                                        <li><a href="databases.aspx">Base de Datos</a></li>
-                                        <li><a href="#">...</a></li>
-                                        <li><a href="#">... </a></li>
+                                        <li><a href="#">Base de Datos</a></li>
+                                        <li><a href="tests.aspx">Psicodiagnóstico</a></li>
+                                        <li><a href="#">Asistente virtual</a></li>
                                     </ul>
                                 </li>
                                 <li class="dropdown">

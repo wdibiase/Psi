@@ -15,3 +15,8 @@
     overflow-x:auto;
     
 }
+
+.boton {
+    position:absolute;
+    left:50px;
+}

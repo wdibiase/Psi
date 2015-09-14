@@ -36,3 +36,4 @@ D:\OneDrive\UAI\2015\Psi\psi_el\obj\Debug\psi_el.vbproj.GenerateResource.Cache
 D:\OneDrive\UAI\2015\Psi\psi_el\obj\Debug\psi_el.dll
 D:\OneDrive\UAI\2015\Psi\psi_el\obj\Debug\psi_el.xml
 D:\OneDrive\UAI\2015\Psi\psi_el\obj\Debug\psi_el.pdb
+D:\OneDrive\UAI\2015\Psi\psi_el\obj\Debug\psi_el.vbprojResolveAssemblyReference.cache

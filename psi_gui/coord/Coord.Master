@@ -1,4 +1,4 @@
-<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Admin.Master.vb" Inherits="psi.AdminMaster" %>
+<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Coord.Master.vb" Inherits="psi.CoordMaster" %>
 
 <!DOCTYPE html>
 
@@ -33,14 +33,14 @@
                         </div>
                         <div id="navbar" class="navbar-collapse collapse">
                             <ul class="nav navbar-nav navbar-right">
-                                <li><asp:LinkButton runat="server" PostBackUrl="ABMclientes.aspx" Text="Clientes" ID="lnkClientes" /></li>
+                                <li><asp:LinkButton runat="server" PostBackUrl="ABMevaluadores.aspx" Text="Evalluadores" ID="lnkEvaluadores" /></li>
                                 <li><asp:LinkButton runat="server" PostBackUrl="ABMusuarios.aspx" Text="Usuarios" ID="lnkUsuarios" /></li>
                                 <li class="dropdown"><asp:LinkButton runat="server" PostBackUrl="#" class="dropdown-toggle" data-toggle="dropdown" role="button" 
                                         aria-haspopup="true" aria-expanded="false" ID="lnkSistema" Text="Sistema" />
                                     <ul class="dropdown-menu">
                                         <li><a href="databases.aspx">Base de Datos</a></li>
                                         <li><a href="#">...</a></li>
-                                        <li><a href="#">... </a></li>
+                                        <li><a href="#">...</a></li>
                                     </ul>
                                 </li>
                                 <li class="dropdown">

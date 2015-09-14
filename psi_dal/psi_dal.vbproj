@@ -124,6 +124,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Acceso.vb" />
+    <Compile Include="backup.vb" />
     <Compile Include="Cliente.vb" />
     <Compile Include="IdentityASP.vb" />
     <Compile Include="multidioma.vb" />

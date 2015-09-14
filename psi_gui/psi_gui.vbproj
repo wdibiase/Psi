@@ -198,15 +198,17 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="admin\ABMevaluadores.aspx" />
+    <Content Include="coord\ABMevaluadores.aspx" />
     <Content Include="admin\ABMusuarios.aspx" />
-    <Content Include="admin\adminTools.aspx" />
     <Content Include="admin\ABMclientes.aspx" />
+    <Content Include="admin\databases.aspx" />
+    <Content Include="blank_sample.aspx" />
     <Content Include="contactese.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="coord\homeCoord.aspx" />
     <Content Include="css\bootstrap-theme.css" />
     <Content Include="css\bootstrap-theme.min.css" />
     <Content Include="css\bootstrap.css" />
@@ -222,7 +224,7 @@
     <Content Include="css\wdb.css" />
     <Content Include="Default.aspx" />
     <Content Include="error.aspx" />
-    <Content Include="admin\home.aspx" />
+    <Content Include="admin\homeAdmin.aspx" />
     <Content Include="Images\1.jpg" />
     <Content Include="Images\2.jpg" />
     <Content Include="Images\3.jpg" />
@@ -250,7 +252,7 @@
     <Content Include="nosotros.aspx" />
     <Content Include="noticias.aspx" />
     <Content Include="OpenAuthProviders.ascx" />
-    <Content Include="admin\pacientes.aspx" />
+    <Content Include="coord\pacientes.aspx" />
     <Content Include="Main.Master" />
     <Content Include="css\bootstrap-theme.css.map" />
     <Content Include="css\bootstrap.css.map" />
@@ -259,6 +261,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <None Include="admin\Web.config.bak" />
+    <Content Include="coord\Coord.Master" />
     <None Include="js\jquery-2.1.4.intellisense.js" />
     <Content Include="psi_gui.vbproj.user" />
     <Content Include="js\bootstrap.js" />
@@ -271,7 +274,7 @@
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.4.js" />
     <Content Include="Scripts\jquery-2.1.4.min.js" />
-    <Content Include="admin\tests.aspx" />
+    <Content Include="coord\tests.aspx" />
     <Content Include="ejemploACORDEON.aspx" />
     <Content Include="Unauthorized.aspx" />
     <Content Include="web.config" />
@@ -297,10 +300,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="admin\ABMevaluadores.aspx.designer.vb">
+    <Compile Include="coord\ABMevaluadores.aspx.designer.vb">
       <DependentUpon>ABMevaluadores.aspx</DependentUpon>
     </Compile>
-    <Compile Include="admin\ABMevaluadores.aspx.vb">
+    <Compile Include="coord\ABMevaluadores.aspx.vb">
       <DependentUpon>ABMevaluadores.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
@@ -318,13 +321,6 @@
       <DependentUpon>ABMusuarios.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="admin\adminTools.aspx.designer.vb">
-      <DependentUpon>adminTools.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\adminTools.aspx.vb">
-      <DependentUpon>adminTools.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
     <Compile Include="admin\ABMclientes.aspx.designer.vb">
       <DependentUpon>ABMclientes.aspx</DependentUpon>
     </Compile>
@@ -332,12 +328,40 @@
       <DependentUpon>ABMclientes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="admin\databases.aspx.designer.vb">
+      <DependentUpon>databases.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\databases.aspx.vb">
+      <DependentUpon>databases.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="blank_sample.aspx.designer.vb">
+      <DependentUpon>blank_sample.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="blank_sample.aspx.vb">
+      <DependentUpon>blank_sample.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="contactese.aspx.designer.vb">
       <DependentUpon>contactese.aspx</DependentUpon>
     </Compile>
     <Compile Include="contactese.aspx.vb">
       <DependentUpon>contactese.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="coord\Coord.Master.designer.vb">
+      <DependentUpon>Coord.Master</DependentUpon>
+    </Compile>
+    <Compile Include="coord\Coord.Master.vb">
+      <DependentUpon>Coord.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="coord\homeCoord.aspx.designer.vb">
+      <DependentUpon>homeCoord.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="coord\homeCoord.aspx.vb">
+      <DependentUpon>homeCoord.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Default.aspx.designer.vb">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -363,12 +387,12 @@
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="admin\home.aspx.designer.vb">
-      <DependentUpon>home.aspx</DependentUpon>
+    <Compile Include="admin\homeAdmin.aspx.designer.vb">
+      <DependentUpon>homeAdmin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="admin\home.aspx.vb">
-      <DependentUpon>home.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+    <Compile Include="admin\homeAdmin.aspx.vb">
+      <DependentUpon>homeAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="login.aspx.designer.vb">
       <DependentUpon>login.aspx</DependentUpon>
@@ -427,17 +451,17 @@
       <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="admin\pacientes.aspx.designer.vb">
+    <Compile Include="coord\pacientes.aspx.designer.vb">
       <DependentUpon>pacientes.aspx</DependentUpon>
     </Compile>
-    <Compile Include="admin\pacientes.aspx.vb">
+    <Compile Include="coord\pacientes.aspx.vb">
       <DependentUpon>pacientes.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="admin\tests.aspx.designer.vb">
+    <Compile Include="coord\tests.aspx.designer.vb">
       <DependentUpon>tests.aspx</DependentUpon>
     </Compile>
-    <Compile Include="admin\tests.aspx.vb">
+    <Compile Include="coord\tests.aspx.vb">
       <DependentUpon>tests.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
@@ -463,7 +487,7 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="admin\protocoloWisc3.rdlc" />
+    <EmbeddedResource Include="coord\protocoloWisc3.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="My Project\Application.myapp">

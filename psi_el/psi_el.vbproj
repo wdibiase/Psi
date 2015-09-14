@@ -122,6 +122,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="backup.vb" />
     <Compile Include="Cliente.vb" />
     <Compile Include="consigna.vb" />
     <Compile Include="Control.vb" />

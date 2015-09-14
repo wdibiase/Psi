@@ -11,5 +11,5 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class home
+Partial Public Class homeCoord
 End Class
