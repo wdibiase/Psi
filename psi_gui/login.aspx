@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="login.aspx.vb"  Inherits="psi.login" MasterPageFile="~/Main.Master" Title="Psi Login" %>
+<%@ MasterType VirtualPath="~/Main.Master" %>
 
 <asp:Content runat="server" ContentPlaceHolderID="cuerpo">
     <meta charset="utf-8" />

@@ -2,8 +2,11 @@
     MasterPageFile="~/admin/Admin.Master" %>
 
 <asp:Content runat="server" ContentPlaceHolderID="barraHerramientas">
+</asp:Content>
 
-    <div class="container" id="MenuLateral" style="display:block; float:left">
+<asp:Content runat="server" ContentPlaceHolderID="pagina">
+
+    <div class="container" id="MenuLateral" style="display:block; float:left; width:20%; max-width:30%;">
         <div class="container-fluid">
             <div id="accordion" class="sidebar-nav">
                 <div class="panel panel-default">
@@ -49,10 +52,8 @@
             </div>
         </div>
     </div>
-</asp:Content>
 
-<asp:Content runat="server" ContentPlaceHolderID="pagina">
-    <div style="display:block; float:left " id="MenuOpciones" role="tabpanel">
+    <div style="display:block; float:left; width:70%; max-width:80%;" id="MenuOpciones" role="tabpanel">
         <asp:Panel runat="server" ID="panelLista" Visible="true">
             <div class="container-fluid" role="tabpanel">
                 <asp:GridView ID="lstBackups" runat="server" CssClass="table-hover table-responsive" 

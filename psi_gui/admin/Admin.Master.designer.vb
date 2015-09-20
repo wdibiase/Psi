@@ -32,6 +32,15 @@ Partial Public Class AdminMaster
     Protected WithEvents barraNavegacion As Global.System.Web.UI.WebControls.ContentPlaceHolder
 
     '''<summary>
+    '''Control lnkProyecto.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lnkProyecto As Global.System.Web.UI.WebControls.LinkButton
+
+    '''<summary>
     '''Control lnkClientes.
     '''</summary>
     '''<remarks>

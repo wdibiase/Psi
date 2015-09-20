@@ -34,7 +34,7 @@ Public Class ABMclientes
         txtCUIT.Enabled = False
         txtRazonSocial.Enabled = False
 
-        btnNuevo.Enabled = True
+        lnkNuevo.Enabled = True
         btnEditar.Enabled = True
         btnEstado.Enabled = True
         btnGuardar.Visible = False
@@ -52,6 +52,7 @@ Public Class ABMclientes
             CargarEstados()
             estadoInicial()
             verLista()
+            Traducir(Me)
         End If
     End Sub
 
@@ -171,29 +172,6 @@ Public Class ABMclientes
         'CargarEstados()
     End Sub
 
-    Protected Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
-        LimpiarPantalla()
-
-        cboSuscripcion.Enabled = True
-        cboProvincias.Enabled = True
-        cboPartido.Enabled = True
-        cboLocalidad.Enabled = True
-        txtCalle.Enabled = True
-        txtNumero.Enabled = True
-        txtPiso.Enabled = True
-        txtDpto.Enabled = True
-        cboEstado.Enabled = True
-        txtCUIT.Enabled = True
-        txtRazonSocial.Enabled = True
-
-        btnNuevo.Visible = False
-        btnEditar.Visible = False
-        btnEstado.Visible = False
-        btnGuardar.Visible = False
-        btnGuardarNuevo.Visible = True
-        btnCancelar.Visible = True
-    End Sub
-
     Private Sub LimpiarPantalla()
         txtIdCliente.Text = String.Empty
         txtCalle.Text = String.Empty
@@ -233,14 +211,10 @@ Public Class ABMclientes
         Nuevo()
     End Sub
 
-    Protected Sub Asignar_Click(sender As Object, e As EventArgs) Handles Asignar.Click
-
-    End Sub
-
     Protected Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
         btnEditar.Visible = False
         btnGuardar.Visible = True
-        btnNuevo.Enabled = False
+        lnkNuevo.Enabled = False
         btnEstado.Visible = False
         btnCancelar.Visible = True
 
@@ -285,7 +259,7 @@ Public Class ABMclientes
 
     Protected Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
         estadoInicial()
-        btnNuevo.Visible = True
+        lnkNuevo.Visible = True
         btnEditar.Visible = True
         btnEstado.Visible = True
     End Sub
@@ -317,5 +291,28 @@ Public Class ABMclientes
                 .Cells(12).Visible = False
             End If
         End With
+    End Sub
+
+    Protected Sub lnkNuevo_Click(sender As Object, e As EventArgs)
+        LimpiarPantalla()
+
+        cboSuscripcion.Enabled = True
+        cboProvincias.Enabled = True
+        cboPartido.Enabled = True
+        cboLocalidad.Enabled = True
+        txtCalle.Enabled = True
+        txtNumero.Enabled = True
+        txtPiso.Enabled = True
+        txtDpto.Enabled = True
+        cboEstado.Enabled = True
+        txtCUIT.Enabled = True
+        txtRazonSocial.Enabled = True
+
+        lnkNuevo.Visible = False
+        btnEditar.Visible = False
+        btnEstado.Visible = False
+        btnGuardar.Visible = False
+        btnGuardarNuevo.Visible = True
+        btnCancelar.Visible = True
     End Sub
 End Class

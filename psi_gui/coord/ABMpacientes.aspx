@@ -1,4 +1,5 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="ABMusuarios.aspx.vb" Inherits="psi.ABMusuarios" MasterPageFile="~/admin/Admin.Master" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="ABMpacientes.aspx.vb" Inherits="psi.ABMpacientes"
+    MasterPageFile="~/coord/Coord.Master" %>
 <asp:Content runat="server" ContentPlaceHolderID="pagina">
     <div class="col-md-12" id="MenuOpciones" role="tabpanel">
             <ul class="nav nav-tabs" id="abm" role="tablist">
@@ -9,7 +10,7 @@
             <asp:Button ID="submit" runat="server" Visible="false" OnClick="Detalle_Click" />
             <asp:Panel runat="server" ID="panelLista" Visible="true">
                 <div class="container-fluid" role="tabpanel">
-                    <asp:GridView ID="lstUsuarios" runat="server" CssClass="table-hover table-responsive" 
+                    <asp:GridView ID="gridPacientes" runat="server" CssClass="table-hover table-responsive" 
                             AllowPaging="True" PageSize="5">
                         <AlternatingRowStyle CssClass="table" BackColor="White" ForeColor="#284775" />
                         <Columns>
@@ -41,56 +42,36 @@
                 <div class="table">
                     <div class="row">
                         <div class="col-lg-8">
-                            <asp:Label runat="server" ID="lblCliente" Text="Cliente " />
-                            <asp:DropDownList runat="server" ID="cboCliente" Enabled="true" />
-                            <asp:Label runat="server" ID="lblUsuario" Text="Nombre de usuario " />
-                            <asp:TextBox runat="server" ID="txtUsuario" Enabled="true" />
-                            <asp:Label runat="server" ID="lblEstado" Text="Estado " />
-                            <asp:DropDownList runat="server" ID="cboEstado" Enabled="true" />
-                            <br />
-                        </div>
-                        <div class="col-lg-8">
                             <asp:Label runat="server" ID="lblTipoDoc" Text="Tipo de Doc. " />
-                            <asp:DropDownList runat="server" ID="cboDoc" AutoPostBack="true" />
+                            <asp:DropDownList runat="server" ID="cboDocumento" AutoPostBack="true" />
                             <asp:Label runat="server" ID="lblNroDoc" Text="Nro de Doc. " />
-                            <asp:TextBox runat="server" ID="txtDoc" />
+                            <asp:TextBox runat="server" ID="txtNroDoc" />
                             <br />
                         </div>
                         <div class="col-lg-8">
-                            <asp:Label runat="server" ID="lblEmail" Text="Email " />
-                            <asp:TextBox runat="server" ID="txtEmail" />
                             <asp:Label runat="server" ID="lblNombre" Text="Nombre " />
                             <asp:TextBox runat="server" ID="txtNombre" />
                             <asp:Label runat="server" ID="lblApellido" Text="Apellido " />
                             <asp:TextBox runat="server" ID="txtApellido" />
+                            <asp:Label runat="server" ID="lblSexo" Text="Sexo" />
+                            <asp:DropDownList runat="server" ID="cboSexo" />
                             <br />
                         </div>
-                        <!-- <div class="col-lg-8">
-                            <asp:Label runat="server" ID="lblPass1" Text="Contraseña " />
-                            <asp:TextBox runat="server" ID="txtPass1" TextMode="Password" />
-                            <asp:Label runat="server" ID="lblPass2" Text="Repetir " />
-                            <asp:TextBox runat="server" ID="txtPass2" TextMode="Password" />
-                            <br />
-                        </div> -->
-                        <div class="col-lg-8">
-                            <asp:Label runat="server" ID="lblIdioma" Text="Idioma " />
-                            <asp:DropDownList runat="server" ID="cboIdioma" AutoPostBack="true" />
-                            <asp:Label runat="server" ID="Label1" Text="Perfil " />
-                            <asp:DropDownList runat="server" ID="lstPerfiles" />
+                        <<div class="col-lg-8">
+                            <asp:Label runat="server" ID="lblFechaNac" Text="Fecha Nac. " />
+                            <asp:TextBox runat="server" ID="txtFechaNac" TextMode="Date" />
+                            <asp:Label runat="server" ID="lblEscuela" Text="Escuela " />
+                            <asp:TextBox runat="server" ID="txtEscuela"  />
+                            <asp:Label runat="server" ID="lblAño" Text="Año " />
+                            <asp:TextBox runat="server" ID="txtAño" />
+                            <asp:Label runat="server" ID="lblLateralidad" Text="Lateralidad" />
+                            <asp:DropDownList runat="server" ID="cboLateralidad" />
                         </div>
                         <div style="position:inherit; left:20px">
-                            <asp:RequiredFieldValidator ID="rfvUsuario" runat="server" ControlToValidate="txtUsuario" CssClass="alert-warning" ErrorMessage="Falta el nombre de usuario" />
-                            <asp:RequiredFieldValidator ID="rfvEmail" runat="server" ControlToValidate="txtEmail" ErrorMessage="Falta el e-mail" CssClass="alert-warning" />
-                            <asp:RequiredFieldValidator ID="rfvNombre" runat="server" ControlToValidate="txtNombre" ErrorMessage="Falta el nombre" CssClass="alert-warning" />
-                            <asp:RequiredFieldValidator ID="rfvNroDoc" runat="server" ControlToValidate="txtDoc" ErrorMessage="Falta el documento" CssClass="alert-warning" />
-                            <asp:RequiredFieldValidator ID="rfvPass" runat="server" ControlToValidate="txtPass1" ErrorMessage="Contraseña obligatoria" CssClass="alert-warning" />
-                            <asp:CompareValidator ID="cvPass" runat="server" ControlToCompare="txtPass1" ControlToValidate="txtPass2" 
-                                ErrorMessage="Las contraseñas no coinciden" CssClass="alert-danger" />
                         </div>
                     </div>
                 </div>
             </asp:Panel>
     </div>
 </asp:Content>
-
 

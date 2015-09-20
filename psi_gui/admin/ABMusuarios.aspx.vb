@@ -19,9 +19,6 @@
         panelDetalle.Visible = True
     End Sub
 
-    Sub Asignar_Click(sender As Object, e As EventArgs) Handles Asignar.Click
-    End Sub
-
     Private Sub estadoInicial()
         cboCliente.Enabled = False
         txtUsuario.Enabled = False
@@ -36,7 +33,7 @@
         cboIdioma.Enabled = False
         lstPerfiles.Enabled = False
 
-        btnNuevo.Enabled = True
+        lnkNuevo.Enabled = True
         btnEditar.Enabled = True
         btnEstado.Enabled = True
         btnGuardar.Visible = False
@@ -54,8 +51,7 @@
             CargarUsuarios()
             estadoInicial()
             verLista()
-        Else
-            TabName.Value = Request.Form(TabName.UniqueID)
+            Traducir(Me)
         End If
     End Sub
 
@@ -127,32 +123,6 @@
     Protected Sub btnGuardarNuevo_Click(sender As Object, e As EventArgs) Handles btnGuardarNuevo.Click
         estadoInicial()
         Nuevo()
-    End Sub
-
-    Protected Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
-        limpiarPantalla()
-
-        cboCliente.Enabled = True
-        txtUsuario.Enabled = True
-        cboEstado.Enabled = True
-        cboDoc.Enabled = True
-        txtDoc.Enabled = True
-        txtEmail.Enabled = True
-        txtNombre.Enabled = True
-        txtApellido.Enabled = True
-        'txtPass1.Enabled = True
-        'txtPass2.Enabled = True
-        cboIdioma.Enabled = True
-        lstPerfiles.Enabled = True
-
-        btnNuevo.Visible = False
-        btnEditar.Visible = False
-        btnEstado.Visible = False
-        btnGuardar.Visible = False
-        btnGuardarNuevo.Visible = True
-        btnCancelar.Visible = True
-
-        cboCliente.Focus()
     End Sub
 
     Private Sub Nuevo()
@@ -248,7 +218,7 @@
     Protected Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
         btnEditar.Visible = False
         btnGuardar.Visible = True
-        btnNuevo.Enabled = False
+        lnkNuevo.Enabled = False
         btnEstado.Visible = False
         btnCancelar.Visible = True
 
@@ -308,10 +278,35 @@
 
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
         estadoInicial()
-        btnNuevo.Visible = True
+        lnkNuevo.Visible = True
         btnEditar.Visible = True
         btnEstado.Visible = True
     End Sub
 
 
+    Protected Sub lnkNuevo_Click(sender As Object, e As EventArgs)
+        limpiarPantalla()
+
+        cboCliente.Enabled = True
+        txtUsuario.Enabled = True
+        cboEstado.Enabled = True
+        cboDoc.Enabled = True
+        txtDoc.Enabled = True
+        txtEmail.Enabled = True
+        txtNombre.Enabled = True
+        txtApellido.Enabled = True
+        'txtPass1.Enabled = True
+        'txtPass2.Enabled = True
+        cboIdioma.Enabled = True
+        lstPerfiles.Enabled = True
+
+        lnkNuevo.Visible = False
+        btnEditar.Visible = False
+        btnEstado.Visible = False
+        btnGuardar.Visible = False
+        btnGuardarNuevo.Visible = True
+        btnCancelar.Visible = True
+
+        cboCliente.Focus()
+    End Sub
 End Class

@@ -7,7 +7,7 @@
         <ul class="nav nav-tabs" id="abm">
             <li id="liLista" class="active"><asp:LinkButton runat="server" ID="Lista" Text="Lista" OnClick="Lista_Click" /></li>
             <li id="liDetalle"><asp:LinkButton runat="server" ID="Detalle" Text="Detalle" OnClick="Detalle_Click" /></li>
-            <li id="l3"><asp:LinkButton runat="server" ID="Asignar" Text="Asignar" OnClick="Asignar_Click" /></li>
+            <li id="l3"><asp:LinkButton runat="server" ID="lnkNuevo" Text="Nuevo" OnClick="lnkNuevo_Click" /></li>
         </ul>
         <asp:Panel runat="server" ID="panelLista" Visible="true">
             <div class="container-fluid" role="tabpanel">
@@ -34,7 +34,6 @@
             </div>
         </asp:Panel>
         <asp:Panel runat="server" id="panelDetalle" Visible="true">
-            <asp:Button ID="btnNuevo" runat="server" CssClass="btn-toolbar" Text="Nuevo" OnClick="btnNuevo_Click"/>
             <asp:Button ID="btnEditar" runat="server" CssClass="btn-toolbar" Text="Editar" OnClick="btnEditar_Click" />
             <asp:Button ID="btnEstado" runat="server" CssClass="btn-toolbar" Text="Cambiar Estado" OnClick="btnEstado_Click" />
             <asp:Button ID="btnGuardar" runat="server" CssClass="btn-toolbar" Text="Guardar" OnClick="btnGuardar_Click" />

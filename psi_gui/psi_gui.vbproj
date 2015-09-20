@@ -252,7 +252,7 @@
     <Content Include="nosotros.aspx" />
     <Content Include="noticias.aspx" />
     <Content Include="OpenAuthProviders.ascx" />
-    <Content Include="coord\pacientes.aspx" />
+    <Content Include="coord\ABMpacientes.aspx" />
     <Content Include="Main.Master" />
     <Content Include="css\bootstrap-theme.css.map" />
     <Content Include="css\bootstrap.css.map" />
@@ -260,7 +260,6 @@
     <Content Include="errores.Master" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
-    <None Include="admin\Web.config.bak" />
     <Content Include="coord\Coord.Master" />
     <None Include="js\jquery-2.1.4.intellisense.js" />
     <Content Include="psi_gui.vbproj.user" />
@@ -300,6 +299,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="comunes.vb" />
     <Compile Include="coord\ABMevaluadores.aspx.designer.vb">
       <DependentUpon>ABMevaluadores.aspx</DependentUpon>
     </Compile>
@@ -333,7 +333,7 @@
     </Compile>
     <Compile Include="admin\databases.aspx.vb">
       <DependentUpon>databases.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="blank_sample.aspx.designer.vb">
       <DependentUpon>blank_sample.aspx</DependentUpon>
@@ -451,11 +451,11 @@
       <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="coord\pacientes.aspx.designer.vb">
-      <DependentUpon>pacientes.aspx</DependentUpon>
+    <Compile Include="coord\ABMpacientes.aspx.designer.vb">
+      <DependentUpon>ABMpacientes.aspx</DependentUpon>
     </Compile>
-    <Compile Include="coord\pacientes.aspx.vb">
-      <DependentUpon>pacientes.aspx</DependentUpon>
+    <Compile Include="coord\ABMpacientes.aspx.vb">
+      <DependentUpon>ABMpacientes.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="coord\tests.aspx.designer.vb">

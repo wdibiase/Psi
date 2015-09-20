@@ -11,16 +11,70 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class pacientes
+Partial Public Class ABMpacientes
 
     '''<summary>
-    '''Control btnNuevo.
+    '''Control Lista.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btnNuevo As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents Lista As Global.System.Web.UI.WebControls.LinkButton
+
+    '''<summary>
+    '''Control Detalle.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Detalle As Global.System.Web.UI.WebControls.LinkButton
+
+    '''<summary>
+    '''Control lnkNuevo.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lnkNuevo As Global.System.Web.UI.WebControls.LinkButton
+
+    '''<summary>
+    '''Control submit.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents submit As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''Control panelLista.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents panelLista As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
+    '''Control gridPacientes.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents gridPacientes As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''Control panelDetalle.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents panelDetalle As Global.System.Web.UI.WebControls.Panel
 
     '''<summary>
     '''Control btnEditar.
@@ -68,15 +122,6 @@ Partial Public Class pacientes
     Protected WithEvents btnCancelar As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''Control gridPacientes.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents gridPacientes As Global.System.Web.UI.WebControls.GridView
-
-    '''<summary>
     '''Control lblTipoDoc.
     '''</summary>
     '''<remarks>
@@ -113,22 +158,22 @@ Partial Public Class pacientes
     Protected WithEvents txtNroDoc As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control lblFechaNac.
+    '''Control lblNombre.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lblFechaNac As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lblNombre As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control txtFechaNac.
+    '''Control txtNombre.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txtFechaNac As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtNombre As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control lblApellido.
@@ -149,24 +194,6 @@ Partial Public Class pacientes
     Protected WithEvents txtApellido As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control lblNombre.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents lblNombre As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''Control txtNombre.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents txtNombre As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
     '''Control lblSexo.
     '''</summary>
     '''<remarks>
@@ -183,6 +210,24 @@ Partial Public Class pacientes
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents cboSexo As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''Control lblFechaNac.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lblFechaNac As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control txtFechaNac.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents txtFechaNac As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control lblEscuela.

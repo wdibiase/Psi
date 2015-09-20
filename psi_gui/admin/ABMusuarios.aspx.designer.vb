@@ -32,22 +32,13 @@ Partial Public Class ABMusuarios
     Protected WithEvents Detalle As Global.System.Web.UI.WebControls.LinkButton
 
     '''<summary>
-    '''Control Asignar.
+    '''Control lnkNuevo.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Asignar As Global.System.Web.UI.WebControls.LinkButton
-
-    '''<summary>
-    '''Control TabName.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents TabName As Global.System.Web.UI.WebControls.HiddenField
+    Protected WithEvents lnkNuevo As Global.System.Web.UI.WebControls.LinkButton
 
     '''<summary>
     '''Control submit.
@@ -84,15 +75,6 @@ Partial Public Class ABMusuarios
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents panelDetalle As Global.System.Web.UI.WebControls.Panel
-
-    '''<summary>
-    '''Control btnNuevo.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents btnNuevo As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''Control btnEditar.

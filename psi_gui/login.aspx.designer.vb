@@ -57,4 +57,16 @@ Partial Public Class login
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents lblLoginError As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Propiedad Master.
+    '''</summary>
+    '''<remarks>
+    '''Propiedad generada automáticamente.
+    '''</remarks>
+    Public Shadows ReadOnly Property Master() As psi.Main
+        Get
+            Return CType(MyBase.Master, psi.Main)
+        End Get
+    End Property
 End Class

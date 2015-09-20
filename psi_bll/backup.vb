@@ -8,4 +8,9 @@
         Dim conexion As New psi_dal.backup
         Return conexion.Crear(ruta, nombreBackUp)
     End Function
+
+    Public Function RestaurarBackup(ruta As String, nombreBackup As String, idBackup As Int16) As Boolean
+        Dim conexion As New psi_dal.backup
+        Return conexion.Restaurar(ruta, nombreBackup, idBackup)
+    End Function
 End Class

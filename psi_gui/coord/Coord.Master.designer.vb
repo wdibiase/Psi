@@ -32,6 +32,15 @@ Partial Public Class CoordMaster
     Protected WithEvents barraNavegacion As Global.System.Web.UI.WebControls.ContentPlaceHolder
 
     '''<summary>
+    '''Control lnkProyecto.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lnkProyecto As Global.System.Web.UI.WebControls.LinkButton
+
+    '''<summary>
     '''Control lnkEvaluadores.
     '''</summary>
     '''<remarks>
@@ -41,13 +50,13 @@ Partial Public Class CoordMaster
     Protected WithEvents lnkEvaluadores As Global.System.Web.UI.WebControls.LinkButton
 
     '''<summary>
-    '''Control lnkUsuarios.
+    '''Control lnkPacientes.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lnkUsuarios As Global.System.Web.UI.WebControls.LinkButton
+    Protected WithEvents lnkPacientes As Global.System.Web.UI.WebControls.LinkButton
 
     '''<summary>
     '''Control lnkSistema.

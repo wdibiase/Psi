@@ -40,4 +40,13 @@
         params(1) = acc.BuildParam("@nombreBK", bkName)
         Return acc.Grabar("usp_databaseBackup", params)
     End Function
+
+    Public Function Restaurar(path As String, bkName As String, bkIx As Int16) As Boolean
+        Dim acc As New Acceso
+        Dim params(2) As SqlClient.SqlParameter
+        params(0) = acc.BuildParam("@path", path)
+        params(1) = acc.BuildParam("@nombreBK", bkName)
+        params(2) = acc.BuildParam("@id", bkIx)
+        Return acc.Grabar("usp_databaseRestore", params)
+    End Function
 End Class

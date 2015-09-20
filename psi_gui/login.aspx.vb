@@ -33,15 +33,12 @@ Partial Public Class login
         Response.Cookies("Password").Value = txtPassword.Text.Trim
 
         If login.Validar(txtUsermail.Text.Trim, txtPassword.Text.Trim) Then
-            Response.Cookies("LoggedIn").Value = txtUsermail.Text.Trim
+            'Response.Cookies("LoggedIn").Value = txtUsermail.Text.Trim
 
-            Dim usulog As New psi_el.seguridad
-            Dim cn As New psi_bll.Usuario
-            usulog = cn.Listar(txtUsermail.Text)
-            Session.Add("rol", usulog.perfil)
+            LoggedUser(txtUsermail.Text.Trim)
 
             Dim strRedirect As String = Request.QueryString("ReturnUrl")
-            Select Case usulog.perfil
+            Select Case UsuarioLogueado.perfil
                 Case "Administrador"
                     If String.IsNullOrEmpty(strRedirect) Then strRedirect = "~/admin/homeAdmin.aspx"
                 Case "Coordinador"

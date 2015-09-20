@@ -1,10 +1,11 @@
-﻿Public Class pacientes
+﻿Public Class ABMpacientes
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not Page.IsPostBack Then
             CargarDocs()
             CargarPacientes()
+            Traducir(Me)
         End If
     End Sub
 
@@ -25,14 +26,7 @@
         paciente.año = txtAño.Text
         paciente.lateralidad = cboLateralidad.SelectedIndex
         dato.Nuevo(paciente)
-        Response.Redirect("pacientes.aspx")
-    End Sub
-
-    Protected Sub btnNuevo_Click(sender As Object, e As EventArgs)
-        LimpiarPantalla()
-        'btnGuardar.Visible = False
-        'btnGuardarNuevo.Visible = True
-        txtNroDoc.Focus()
+        Response.Redirect("ABMpacientes.aspx")
     End Sub
 
     Protected Sub btnEditar_Click(sender As Object, e As EventArgs)
@@ -59,7 +53,7 @@
         dato.Guardar(p)
         dato = Nothing
         p = Nothing
-        Response.Redirect("pacientes.aspx")
+        Response.Redirect("ABMpacientes.aspx")
     End Sub
 
     Protected Sub btnCancelar_Click(sender As Object, e As EventArgs)
@@ -125,4 +119,18 @@
             Response.Redirect("error.aspx")
         End Try
     End Sub
+
+    Protected Sub Lista_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Protected Sub Detalle_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Protected Sub lnkNuevo_Click(sender As Object, e As EventArgs)
+        LimpiarPantalla()
+        txtNroDoc.Focus()
+    End Sub
+
 End Class
