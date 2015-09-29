@@ -59,11 +59,14 @@ Partial Public Class login
     Protected WithEvents lblLoginError As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control OpenAuthLogin.
+    '''Propiedad Master.
     '''</summary>
     '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''Propiedad generada automáticamente.
     '''</remarks>
-    Protected WithEvents OpenAuthLogin As Global.psi.OpenAuthProviders
+    Public Shadows ReadOnly Property Master() As psi.Main
+        Get
+            Return CType(MyBase.Master, psi.Main)
+        End Get
+    End Property
 End Class

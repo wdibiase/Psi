@@ -9,13 +9,6 @@ Partial Public Class login
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        'RegisterHyperLink.NavigateUrl = "Register"
-        OpenAuthLogin.ReturnUrl = Request.QueryString("ReturnUrl")
-        Dim returnUrl = HttpUtility.UrlEncode(Request.QueryString("ReturnUrl"))
-        'If Not [String].IsNullOrEmpty(returnUrl) Then
-        '    RegisterHyperLink.NavigateUrl += "?ReturnUrl=" & returnUrl
-        'End If
-
         If Not IsPostBack Then
             If (Not (Request.Cookies("UserName")) Is Nothing) _
                         AndAlso (Not (Request.Cookies("Password")) Is Nothing) Then
@@ -23,20 +16,6 @@ Partial Public Class login
                 txtPassword.Attributes("value") = Request.Cookies("Password").Value
             End If
         End If
-
-        '
-        'Dim anchor As System.Web.UI.HtmlControls.HtmlAnchor
-
-        'anchor = CType(Master.FindControl("lnkLogin"), HtmlAnchor)
-        'If Not anchor Is Nothing Then
-        '    MsgBox(anchor.ID)
-        'End If
-
-
-        'anchor.ID = "txt"
-        'anchor.InnerText = "click here"
-        'anchor.HRef = "http://www.google.com"
-        'Page.Header.Controls.Add(anchor)
     End Sub
 
     Protected Sub btnLogin_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnLogin.Click
@@ -54,20 +33,23 @@ Partial Public Class login
         Response.Cookies("Password").Value = txtPassword.Text.Trim
 
         If login.Validar(txtUsermail.Text.Trim, txtPassword.Text.Trim) Then
-            Response.Cookies("LoggedIn").Value = txtUsermail.Text.Trim
+            'Response.Cookies("LoggedIn").Value = txtUsermail.Text.Trim
+
+            LoggedUser(txtUsermail.Text.Trim)
 
             Dim strRedirect As String = Request.QueryString("ReturnUrl")
-            If String.IsNullOrEmpty(strRedirect) Then
-                strRedirect = "~/home.aspx"
-            End If
-            Response.Redirect(strRedirect)
-            'Dim ticket As System.Web.Security.FormsAuthenticationTicket = _
-            '    New System.Web.Security.FormsAuthenticationTicket(txtUsermail.Text.Trim, False, 240)
-            'Dim ticketEncrip As String = System.Web.Security.FormsAuthentication.Encrypt(ticket)
-            'Dim Ck As HttpCookie = New HttpCookie(System.Web.Security.FormsAuthentication.FormsCookieName, ticketEncrip)
-            'Ck.Expires = ticket.Expiration
-            'Response.Cookies.Add(Ck)
+            Select Case UsuarioLogueado.perfil
+                Case "Administrador"
+                    If String.IsNullOrEmpty(strRedirect) Then strRedirect = "~/admin/homeAdmin.aspx"
+                Case "Evaluador"
+                    If String.IsNullOrEmpty(strRedirect) Then strRedirect = "~/eval/homeEval.aspx"
+                Case "Coordinador"
+                    If String.IsNullOrEmpty(strRedirect) Then strRedirect = "~/eval/coord/homeCoord.aspx"
 
+                Case Else
+                    strRedirect = "~/default.aspx"
+            End Select
+            Response.Redirect(strRedirect)
         Else
             Me.lblLoginError.Text = "Usuario no válido o Contraseña incorrecta"
             lblLoginError.Visible = True

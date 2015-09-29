@@ -198,15 +198,17 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ABMevaluadores.aspx" />
-    <Content Include="ABMusuarios.aspx" />
-    <Content Include="adminTools.aspx" />
-    <Content Include="ABMclientes.aspx" />
+    <Content Include="eval\coord\ABMevaluadores.aspx" />
+    <Content Include="admin\ABMusuarios.aspx" />
+    <Content Include="admin\ABMclientes.aspx" />
+    <Content Include="admin\databases.aspx" />
+    <Content Include="blank_sample.aspx" />
     <Content Include="contactese.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="eval\coord\homeCoord.aspx" />
     <Content Include="css\bootstrap-theme.css" />
     <Content Include="css\bootstrap-theme.min.css" />
     <Content Include="css\bootstrap.css" />
@@ -222,7 +224,8 @@
     <Content Include="css\wdb.css" />
     <Content Include="Default.aspx" />
     <Content Include="error.aspx" />
-    <Content Include="home.aspx" />
+    <Content Include="admin\homeAdmin.aspx" />
+    <Content Include="eval\homeEval.aspx" />
     <Content Include="Images\1.jpg" />
     <Content Include="Images\2.jpg" />
     <Content Include="Images\3.jpg" />
@@ -250,14 +253,16 @@
     <Content Include="nosotros.aspx" />
     <Content Include="noticias.aspx" />
     <Content Include="OpenAuthProviders.ascx" />
-    <Content Include="pacientes.aspx" />
+    <Content Include="eval\coord\ABMpacientes.aspx" />
     <Content Include="Main.Master" />
     <Content Include="css\bootstrap-theme.css.map" />
     <Content Include="css\bootstrap.css.map" />
-    <Content Include="Admin.Master" />
+    <Content Include="admin\Admin.Master" />
     <Content Include="errores.Master" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
+    <Content Include="eval\coord\Coord.Master" />
+    <Content Include="eval\Eval.Master" />
     <None Include="js\jquery-2.1.4.intellisense.js" />
     <Content Include="psi_gui.vbproj.user" />
     <Content Include="js\bootstrap.js" />
@@ -265,68 +270,107 @@
     <Content Include="js\jquery-2.1.4.js" />
     <Content Include="js\jquery-2.1.4.min.js" />
     <Content Include="packages.config" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
-    <None Include="Scripts\jquery-2.1.4.intellisense.js" />
-    <Content Include="Scripts\jquery-2.1.4.js" />
-    <Content Include="Scripts\jquery-2.1.4.min.js" />
-    <Content Include="tests.aspx" />
+    <Content Include="eval\coord\tests.aspx" />
     <Content Include="ejemploACORDEON.aspx" />
-    <Content Include="Web.config">
+    <Content Include="Unauthorized.aspx" />
+    <Content Include="web.config" />
+    <None Include="Web.config.bak">
       <SubType>Designer</SubType>
-    </Content>
+    </None>
+    <None Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+    <None Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="js\jquery-2.1.4.min.map" />
     <None Include="js\_references.js" />
-    <Content Include="Scripts\jquery-2.1.4.min.map" />
-    <None Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
+    <None Include="Web.config.Debug.bak">
+      <DependentUpon>Web.config.bak</DependentUpon>
     </None>
-    <None Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
+    <None Include="Web.config.Release.bak">
+      <DependentUpon>Web.config.bak</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ABMevaluadores.aspx.designer.vb">
+    <Compile Include="comunes.vb" />
+    <Compile Include="eval\Eval.Master.designer.vb">
+      <DependentUpon>Eval.Master</DependentUpon>
+    </Compile>
+    <Compile Include="eval\Eval.Master.vb">
+      <DependentUpon>Eval.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="eval\coord\ABMevaluadores.aspx.designer.vb">
       <DependentUpon>ABMevaluadores.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ABMevaluadores.aspx.vb">
+    <Compile Include="eval\coord\ABMevaluadores.aspx.vb">
       <DependentUpon>ABMevaluadores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin.Master.designer.vb">
+    <Compile Include="admin\Admin.Master.designer.vb">
       <DependentUpon>Admin.Master</DependentUpon>
     </Compile>
-    <Compile Include="Admin.Master.vb">
+    <Compile Include="admin\Admin.Master.vb">
       <DependentUpon>Admin.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ABMusuarios.aspx.designer.vb">
+    <Compile Include="admin\ABMusuarios.aspx.designer.vb">
       <DependentUpon>ABMusuarios.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ABMusuarios.aspx.vb">
+    <Compile Include="admin\ABMusuarios.aspx.vb">
       <DependentUpon>ABMusuarios.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="adminTools.aspx.designer.vb">
-      <DependentUpon>adminTools.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="adminTools.aspx.vb">
-      <DependentUpon>adminTools.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ABMclientes.aspx.designer.vb">
+    <Compile Include="admin\ABMclientes.aspx.designer.vb">
       <DependentUpon>ABMclientes.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ABMclientes.aspx.vb">
+    <Compile Include="admin\ABMclientes.aspx.vb">
       <DependentUpon>ABMclientes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\databases.aspx.designer.vb">
+      <DependentUpon>databases.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\databases.aspx.vb">
+      <DependentUpon>databases.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="blank_sample.aspx.designer.vb">
+      <DependentUpon>blank_sample.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="blank_sample.aspx.vb">
+      <DependentUpon>blank_sample.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="contactese.aspx.designer.vb">
       <DependentUpon>contactese.aspx</DependentUpon>
     </Compile>
     <Compile Include="contactese.aspx.vb">
       <DependentUpon>contactese.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="eval\coord\Coord.Master.designer.vb">
+      <DependentUpon>Coord.Master</DependentUpon>
+    </Compile>
+    <Compile Include="eval\coord\Coord.Master.vb">
+      <DependentUpon>Coord.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="eval\coord\homeCoord.aspx.designer.vb">
+      <DependentUpon>homeCoord.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="eval\coord\homeCoord.aspx.vb">
+      <DependentUpon>homeCoord.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.vb">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.vb">
+      <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="error.aspx.designer.vb">
@@ -343,15 +387,22 @@
       <DependentUpon>errores.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="eval\homeEval.aspx.designer.vb">
+      <DependentUpon>homeEval.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="eval\homeEval.aspx.vb">
+      <DependentUpon>homeEval.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="home.aspx.designer.vb">
-      <DependentUpon>home.aspx</DependentUpon>
+    <Compile Include="admin\homeAdmin.aspx.designer.vb">
+      <DependentUpon>homeAdmin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="home.aspx.vb">
-      <DependentUpon>home.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+    <Compile Include="admin\homeAdmin.aspx.vb">
+      <DependentUpon>homeAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="login.aspx.designer.vb">
       <DependentUpon>login.aspx</DependentUpon>
@@ -365,6 +416,9 @@
     </Compile>
     <Compile Include="Main.Master.vb">
       <DependentUpon>Main.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="multiIdioma.vb">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -407,17 +461,17 @@
       <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="pacientes.aspx.designer.vb">
-      <DependentUpon>pacientes.aspx</DependentUpon>
+    <Compile Include="eval\coord\ABMpacientes.aspx.designer.vb">
+      <DependentUpon>ABMpacientes.aspx</DependentUpon>
     </Compile>
-    <Compile Include="pacientes.aspx.vb">
-      <DependentUpon>pacientes.aspx</DependentUpon>
+    <Compile Include="eval\coord\ABMpacientes.aspx.vb">
+      <DependentUpon>ABMpacientes.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="tests.aspx.designer.vb">
+    <Compile Include="eval\coord\tests.aspx.designer.vb">
       <DependentUpon>tests.aspx</DependentUpon>
     </Compile>
-    <Compile Include="tests.aspx.vb">
+    <Compile Include="eval\coord\tests.aspx.vb">
       <DependentUpon>tests.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
@@ -428,6 +482,13 @@
       <DependentUpon>ejemploACORDEON.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="Unauthorized.aspx.designer.vb">
+      <DependentUpon>Unauthorized.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Unauthorized.aspx.vb">
+      <DependentUpon>Unauthorized.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -436,7 +497,6 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="protocoloWisc3.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="My Project\Application.myapp">

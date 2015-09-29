@@ -122,12 +122,15 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="backup.vb" />
     <Compile Include="Cliente.vb" />
     <Compile Include="consigna.vb" />
+    <Compile Include="Control.vb" />
     <Compile Include="documento.vb" />
     <Compile Include="estado.vb" />
     <Compile Include="Historial.vb" />
     <Compile Include="idioma.vb" />
+    <Compile Include="lateralidad.vb" />
     <Compile Include="localidad.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -151,6 +154,7 @@
     <Compile Include="protocoloWisc3.vb" />
     <Compile Include="provincia.vb" />
     <Compile Include="seguridad.vb" />
+    <Compile Include="sexo.vb" />
     <Compile Include="subtestWisc3.vb" />
     <Compile Include="suscripcion.vb" />
     <Compile Include="test.vb" />
@@ -168,12 +172,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Content\bootstrap-theme.css.map" />
-    <None Include="Content\bootstrap.css.map" />
-    <None Include="fonts\glyphicons-halflings-regular.eot" />
-    <None Include="fonts\glyphicons-halflings-regular.ttf" />
-    <None Include="fonts\glyphicons-halflings-regular.woff" />
-    <None Include="fonts\glyphicons-halflings-regular.woff2" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -184,19 +182,6 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="packages.config" />
-    <None Include="Scripts\jquery-2.1.4.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Content\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap-theme.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\jquery-2.1.4.intellisense.js" />
-    <Content Include="Scripts\jquery-2.1.4.js" />
-    <Content Include="Scripts\jquery-2.1.4.min.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

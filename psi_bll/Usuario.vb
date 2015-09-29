@@ -4,6 +4,17 @@
         Return u.Listar
     End Function
 
+    Public Function Listar(user As String) As psi_el.Usuario
+        Dim u As New psi_dal.Usuario
+        Return u.Listar(user)
+    End Function
+
+    Public Function Listar(cliente As String, excepto As String) As List(Of psi_el.Usuario)
+        Dim u As New psi_dal.Usuario
+        Return u.Listar(cliente, excepto)
+    End Function
+
+
     Public Function ListarDocs() As List(Of psi_el.documento)
         Dim d As New psi_dal.Usuario
         Return d.ListarDocs

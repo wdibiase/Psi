@@ -39,6 +39,58 @@
         Return usuarios
     End Function
 
+    Public Function Listar(user As String) As psi_el.Usuario
+        Dim entidadUsuario As New psi_el.seguridad
+        Dim a As New Acceso
+        Dim P(0) As SqlClient.SqlParameter
+        P(0) = a.BuildParam("@Usuario", user)
+
+        Dim dt As DataTable = a.Leer("dbo.usp_usuariosSelect", P)
+        Dim u As psi_el.Usuario = Nothing
+        For Each fila As DataRow In dt.Rows
+            u = New psi_el.seguridad
+            u.nombreUsuario = fila("usuario")
+            u.tipoDoc = fila("descDoc")
+            u.numDoc = fila("numDoc")
+            u.apellido = fila("apellido")
+            u.nombre = fila("nombre")
+            u.estado = fila("descestado")
+            u.idioma = fila("cultura")
+            u.cliente = fila("razonSocial")
+            u.email = fila("email")
+            u.pwd = fila("pwd")
+            If Len(fila("descPerfil").ToString) > 0 Then u.perfil = fila("descPerfil")
+        Next
+        Return u
+    End Function
+
+    Public Function Listar(cliente As String, excepcion As String) As List(Of psi_el.Usuario)
+        Dim usuarios As New List(Of psi_el.Usuario)
+        Dim a As New Acceso
+        Dim P(0) As SqlClient.SqlParameter
+        P(0) = a.BuildParam("@cliente", cliente)
+        Dim dt As DataTable = a.Leer("dbo.usp_usuariosSelect", P)
+        Dim u As psi_el.Usuario
+        For Each fila As DataRow In dt.Rows
+            If fila("usuario") <> excepcion Then
+                u = New psi_el.seguridad
+                u.nombreUsuario = fila("usuario")
+                u.tipoDoc = fila("descDoc")
+                u.numDoc = fila("numDoc")
+                u.apellido = fila("apellido")
+                u.nombre = fila("nombre")
+                u.estado = fila("descestado")
+                u.idioma = fila("cultura")
+                u.cliente = fila("razonSocial")
+                u.email = fila("email")
+                u.pwd = fila("pwd")
+                If Len(fila("descPerfil").ToString) > 0 Then u.perfil = fila("descPerfil")
+                usuarios.Add(u)
+            End If
+        Next
+        Return usuarios
+    End Function
+
     Public Function ListarDocs() As List(Of psi_el.documento)
         Dim docs As New List(Of psi_el.documento)
         Dim a As New Acceso

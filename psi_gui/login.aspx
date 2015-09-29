@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="login.aspx.vb"  Inherits="psi.login" MasterPageFile="~/Main.Master" Title="Psi Login" %>
-<%@ Register Src="~/OpenAuthProviders.ascx" TagPrefix="uc" TagName="OpenAuthProviders" %>
+<%@ MasterType VirtualPath="~/Main.Master" %>
 
 <asp:Content runat="server" ContentPlaceHolderID="cuerpo">
     <meta charset="utf-8" />
@@ -28,9 +28,6 @@
             <asp:Button ID="btnLogin" CssClass="btn btn-lg btn-primary btn-block" runat="server" 
                     Text="Iniciar Sesión" OnClick="btnLogin_Click" />
             <asp:Label ID="lblLoginError" runat="server" Visible="false" />
-            <section id="socialLoginForm">
-                <uc:openauthproviders runat="server" id="OpenAuthLogin" />
-            </section>
         </div>
     </div> 
     <script src="js/ie10-viewport-bug-workaround.js" type="text/javascript"></script>

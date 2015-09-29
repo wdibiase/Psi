@@ -60,28 +60,28 @@
         p.Value = valor
         Return p
     End Function
-    Public Function BuildParam(nombre As String, valor As Single) As Data.SqlClient.SqlParameter
+    Public Function BuildParam(nombre As String, valor As Single?) As Data.SqlClient.SqlParameter
         Dim p As New SqlClient.SqlParameter
         p.DbType = SqlDbType.Float
         p.ParameterName = nombre
         p.Value = valor
         Return p
     End Function
-    Public Function BuildParam(nombre As String, valor As Int32) As Data.SqlClient.SqlParameter
+    Public Function BuildParam(nombre As String, valor As Int32?) As Data.SqlClient.SqlParameter
         Dim p As New SqlClient.SqlParameter
         p.DbType = SqlDbType.Int
         p.ParameterName = nombre
         p.Value = valor
         Return p
     End Function
-    Public Function BuildParam(nombre As String, valor As Int64) As Data.SqlClient.SqlParameter
+    Public Function BuildParam(nombre As String, valor As Int64?) As Data.SqlClient.SqlParameter
         Dim p As New SqlClient.SqlParameter
         p.DbType = SqlDbType.BigInt
         p.ParameterName = nombre
         p.Value = valor
         Return p
     End Function
-    Public Function BuildParam(nombre As String, valor As Boolean) As Data.SqlClient.SqlParameter
+    Public Function BuildParam(nombre As String, valor As Boolean?) As Data.SqlClient.SqlParameter
         Dim p As New SqlClient.SqlParameter
         p.DbType = SqlDbType.Bit
         p.ParameterName = nombre
@@ -95,13 +95,7 @@
     '    p.Value = FormatDateTime(valor, DateFormat.GeneralDate)
     '    Return p
     'End Function
-    Function BuildParam(p1 As String, valor As Short) As SqlClient.SqlParameter
-        Dim p As New SqlClient.SqlParameter
-        p.DbType = SqlDbType.BigInt
-        p.ParameterName = p1
-        p.Value = valor
-        Return p
-    End Function
+
 #End Region
 
 End Class

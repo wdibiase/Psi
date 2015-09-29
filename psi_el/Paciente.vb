@@ -99,4 +99,14 @@
             _lateralidad = value
         End Set
     End Property
+
+    Private _eval As Integer?
+    Public Property evaluador As Integer?
+        Get
+            Return _eval
+        End Get
+        Set(value As Integer?)
+            _eval = value
+        End Set
+    End Property
 End Class
