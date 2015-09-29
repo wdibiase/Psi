@@ -130,6 +130,7 @@
     <Compile Include="estado.vb" />
     <Compile Include="Historial.vb" />
     <Compile Include="idioma.vb" />
+    <Compile Include="lateralidad.vb" />
     <Compile Include="localidad.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -153,6 +154,7 @@
     <Compile Include="protocoloWisc3.vb" />
     <Compile Include="provincia.vb" />
     <Compile Include="seguridad.vb" />
+    <Compile Include="sexo.vb" />
     <Compile Include="subtestWisc3.vb" />
     <Compile Include="suscripcion.vb" />
     <Compile Include="test.vb" />

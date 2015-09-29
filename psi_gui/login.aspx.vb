@@ -41,8 +41,10 @@ Partial Public Class login
             Select Case UsuarioLogueado.perfil
                 Case "Administrador"
                     If String.IsNullOrEmpty(strRedirect) Then strRedirect = "~/admin/homeAdmin.aspx"
+                Case "Evaluador"
+                    If String.IsNullOrEmpty(strRedirect) Then strRedirect = "~/eval/homeEval.aspx"
                 Case "Coordinador"
-                    If String.IsNullOrEmpty(strRedirect) Then strRedirect = "~/coord/homeCoord.aspx"
+                    If String.IsNullOrEmpty(strRedirect) Then strRedirect = "~/eval/coord/homeCoord.aspx"
 
                 Case Else
                     strRedirect = "~/default.aspx"

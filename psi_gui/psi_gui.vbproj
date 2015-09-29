@@ -198,7 +198,7 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="coord\ABMevaluadores.aspx" />
+    <Content Include="eval\coord\ABMevaluadores.aspx" />
     <Content Include="admin\ABMusuarios.aspx" />
     <Content Include="admin\ABMclientes.aspx" />
     <Content Include="admin\databases.aspx" />
@@ -208,7 +208,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="coord\homeCoord.aspx" />
+    <Content Include="eval\coord\homeCoord.aspx" />
     <Content Include="css\bootstrap-theme.css" />
     <Content Include="css\bootstrap-theme.min.css" />
     <Content Include="css\bootstrap.css" />
@@ -225,6 +225,7 @@
     <Content Include="Default.aspx" />
     <Content Include="error.aspx" />
     <Content Include="admin\homeAdmin.aspx" />
+    <Content Include="eval\homeEval.aspx" />
     <Content Include="Images\1.jpg" />
     <Content Include="Images\2.jpg" />
     <Content Include="Images\3.jpg" />
@@ -252,7 +253,7 @@
     <Content Include="nosotros.aspx" />
     <Content Include="noticias.aspx" />
     <Content Include="OpenAuthProviders.ascx" />
-    <Content Include="coord\ABMpacientes.aspx" />
+    <Content Include="eval\coord\ABMpacientes.aspx" />
     <Content Include="Main.Master" />
     <Content Include="css\bootstrap-theme.css.map" />
     <Content Include="css\bootstrap.css.map" />
@@ -260,7 +261,8 @@
     <Content Include="errores.Master" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
-    <Content Include="coord\Coord.Master" />
+    <Content Include="eval\coord\Coord.Master" />
+    <Content Include="eval\Eval.Master" />
     <None Include="js\jquery-2.1.4.intellisense.js" />
     <Content Include="psi_gui.vbproj.user" />
     <Content Include="js\bootstrap.js" />
@@ -268,12 +270,7 @@
     <Content Include="js\jquery-2.1.4.js" />
     <Content Include="js\jquery-2.1.4.min.js" />
     <Content Include="packages.config" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
-    <None Include="Scripts\jquery-2.1.4.intellisense.js" />
-    <Content Include="Scripts\jquery-2.1.4.js" />
-    <Content Include="Scripts\jquery-2.1.4.min.js" />
-    <Content Include="coord\tests.aspx" />
+    <Content Include="eval\coord\tests.aspx" />
     <Content Include="ejemploACORDEON.aspx" />
     <Content Include="Unauthorized.aspx" />
     <Content Include="web.config" />
@@ -290,7 +287,6 @@
   <ItemGroup>
     <Content Include="js\jquery-2.1.4.min.map" />
     <None Include="js\_references.js" />
-    <Content Include="Scripts\jquery-2.1.4.min.map" />
     <None Include="Web.config.Debug.bak">
       <DependentUpon>Web.config.bak</DependentUpon>
     </None>
@@ -300,10 +296,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="comunes.vb" />
-    <Compile Include="coord\ABMevaluadores.aspx.designer.vb">
+    <Compile Include="eval\Eval.Master.designer.vb">
+      <DependentUpon>Eval.Master</DependentUpon>
+    </Compile>
+    <Compile Include="eval\Eval.Master.vb">
+      <DependentUpon>Eval.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="eval\coord\ABMevaluadores.aspx.designer.vb">
       <DependentUpon>ABMevaluadores.aspx</DependentUpon>
     </Compile>
-    <Compile Include="coord\ABMevaluadores.aspx.vb">
+    <Compile Include="eval\coord\ABMevaluadores.aspx.vb">
       <DependentUpon>ABMevaluadores.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
@@ -349,17 +352,17 @@
       <DependentUpon>contactese.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="coord\Coord.Master.designer.vb">
+    <Compile Include="eval\coord\Coord.Master.designer.vb">
       <DependentUpon>Coord.Master</DependentUpon>
     </Compile>
-    <Compile Include="coord\Coord.Master.vb">
+    <Compile Include="eval\coord\Coord.Master.vb">
       <DependentUpon>Coord.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="coord\homeCoord.aspx.designer.vb">
+    <Compile Include="eval\coord\homeCoord.aspx.designer.vb">
       <DependentUpon>homeCoord.aspx</DependentUpon>
     </Compile>
-    <Compile Include="coord\homeCoord.aspx.vb">
+    <Compile Include="eval\coord\homeCoord.aspx.vb">
       <DependentUpon>homeCoord.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
@@ -383,6 +386,13 @@
     <Compile Include="errores.Master.vb">
       <DependentUpon>errores.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="eval\homeEval.aspx.designer.vb">
+      <DependentUpon>homeEval.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="eval\homeEval.aspx.vb">
+      <DependentUpon>homeEval.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
@@ -451,17 +461,17 @@
       <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="coord\ABMpacientes.aspx.designer.vb">
+    <Compile Include="eval\coord\ABMpacientes.aspx.designer.vb">
       <DependentUpon>ABMpacientes.aspx</DependentUpon>
     </Compile>
-    <Compile Include="coord\ABMpacientes.aspx.vb">
+    <Compile Include="eval\coord\ABMpacientes.aspx.vb">
       <DependentUpon>ABMpacientes.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="coord\tests.aspx.designer.vb">
+    <Compile Include="eval\coord\tests.aspx.designer.vb">
       <DependentUpon>tests.aspx</DependentUpon>
     </Compile>
-    <Compile Include="coord\tests.aspx.vb">
+    <Compile Include="eval\coord\tests.aspx.vb">
       <DependentUpon>tests.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
@@ -487,7 +497,6 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="coord\protocoloWisc3.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="My Project\Application.myapp">

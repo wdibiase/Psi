@@ -1,4 +1,4 @@
-﻿Public Class CoordMaster
+﻿Public Class EvalMaster
     Inherits System.Web.UI.MasterPage
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -6,7 +6,7 @@
         If UsuarioLogueado Is Nothing Then
             Response.Redirect("../login.aspx")
         Else
-            If Not UsuarioLogueado.perfil = "Coordinador" Then
+            If Not UsuarioLogueado.perfil = "Evaluador" Then
                 Response.Redirect("../unauthorized.aspx")
             End If
             lnkLogged.Text = UsuarioLogueado.nombreUsuario

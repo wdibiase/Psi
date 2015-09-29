@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="ABMevaluadores.aspx.vb" Inherits="psi.ABMevaluadores"
-    MasterPageFile="~/coord/Coord.Master" %>
+    MasterPageFile="~/eval/coord/Coord.Master" %>
 
 <asp:Content runat="server" ContentPlaceHolderID="pagina">
     <div class="col-md-12" id="MenuOpciones" role="tabpanel">

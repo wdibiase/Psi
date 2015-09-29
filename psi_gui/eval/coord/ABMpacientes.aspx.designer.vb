@@ -41,15 +41,6 @@ Partial Public Class ABMpacientes
     Protected WithEvents lnkNuevo As Global.System.Web.UI.WebControls.LinkButton
 
     '''<summary>
-    '''Control submit.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents submit As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
     '''Control panelLista.
     '''</summary>
     '''<remarks>
@@ -86,13 +77,13 @@ Partial Public Class ABMpacientes
     Protected WithEvents btnEditar As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''Control btnEstado.
+    '''Control btnAsignar.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btnEstado As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btnAsignar As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''Control btnGuardar.
@@ -230,6 +221,24 @@ Partial Public Class ABMpacientes
     Protected WithEvents txtFechaNac As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''Control lblEdad.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lblEdad As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control lblEdadCalculada.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lblEdadCalculada As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''Control lblEscuela.
     '''</summary>
     '''<remarks>
@@ -282,4 +291,22 @@ Partial Public Class ABMpacientes
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents cboLateralidad As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''Control lbPsp.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lbPsp As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control cboPsp.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents cboPsp As Global.System.Web.UI.WebControls.DropDownList
 End Class

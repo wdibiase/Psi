@@ -204,7 +204,7 @@
                 'pwd = txtPass1.Text
                 txtPass2.Text = txtPass1.Text
                 txtEmail.Text = selectedRow.Cells(10).Text
-                If Len(Replace(selectedRow.Cells(11).Text, "&nbsp;", "")) > 0 Then
+                If Replace(selectedRow.Cells(11).Text, "&nbsp;", "") <> "" Then
                     lstPerfiles.Items.FindByText(selectedRow.Cells(11).Text).Selected = True
                 End If
                 verDetalle()

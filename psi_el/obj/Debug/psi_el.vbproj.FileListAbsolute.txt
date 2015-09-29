@@ -31,6 +31,7 @@ D:\OneDrive\UAI\2015\Psi\psi_el\bin\Debug\Microsoft.Owin.Security.xml
 D:\OneDrive\UAI\2015\Psi\psi_el\bin\Debug\Microsoft.Owin.Security.Cookies.xml
 D:\OneDrive\UAI\2015\Psi\psi_el\bin\Debug\Microsoft.Owin.Security.OAuth.xml
 D:\OneDrive\UAI\2015\Psi\psi_el\bin\Debug\Newtonsoft.Json.xml
+D:\OneDrive\UAI\2015\Psi\psi_el\obj\Debug\psi_el.vbprojResolveAssemblyReference.cache
 D:\OneDrive\UAI\2015\Psi\psi_el\obj\Debug\psi_el.Resources.resources
 D:\OneDrive\UAI\2015\Psi\psi_el\obj\Debug\psi_el.vbproj.GenerateResource.Cache
 D:\OneDrive\UAI\2015\Psi\psi_el\obj\Debug\psi_el.dll

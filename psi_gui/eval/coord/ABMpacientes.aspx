@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="ABMpacientes.aspx.vb" Inherits="psi.ABMpacientes"
-    MasterPageFile="~/coord/Coord.Master" %>
+    MasterPageFile="~/eval/coord/Coord.Master" %>
 <asp:Content runat="server" ContentPlaceHolderID="pagina">
     <div class="col-md-12" id="MenuOpciones" role="tabpanel">
             <ul class="nav nav-tabs" id="abm" role="tablist">
@@ -7,7 +7,6 @@
                 <li id="liDetalle"><asp:LinkButton runat="server" ID="Detalle" Text="Detalle" OnClick="Detalle_Click" CausesValidation="false" /></li>
                 <li id="l3"><asp:LinkButton runat="server" ID="lnkNuevo" Text="Nuevo" OnClick="lnkNuevo_Click" CausesValidation="false" /></li>
             </ul>
-            <asp:Button ID="submit" runat="server" Visible="false" OnClick="Detalle_Click" />
             <asp:Panel runat="server" ID="panelLista" Visible="true">
                 <div class="container-fluid" role="tabpanel">
                     <asp:GridView ID="gridPacientes" runat="server" CssClass="table-hover table-responsive" 
@@ -34,7 +33,7 @@
             </asp:Panel>
             <asp:Panel runat="server" id="panelDetalle" Visible="true">
                 <asp:Button ID="btnEditar" runat="server" CssClass="btn-toolbar" Text="Editar" Enabled="false" OnClick="btnEditar_Click" CausesValidation="false" />
-                <asp:Button ID="btnEstado" runat="server" CssClass="btn-toolbar" Text="Cambiar Estado" Enabled="false" />
+                <asp:Button ID="btnAsignar" runat="server" CssClass="btn-toolbar" Text="Asignar Psp" Enabled="false" OnClick="btnAsignar_Click" />
                 <asp:Button ID="btnGuardar" runat="server" CssClass="btn-toolbar" Text="Guardar" Visible="false" OnClick="btnGuardar_Click" />
                 <asp:Button ID="btnGuardarNuevo" runat="server" cssclass="btn-toolbar" Text="Guardar" Visible="false" OnClick="btnGuardarNuevo_Click" />
                 <asp:Button ID="btnCancelar" runat="server" CssClass="btn-toolbar" Text="Cancelar" Visible="false" CausesValidation="false" />
@@ -57,17 +56,23 @@
                             <asp:DropDownList runat="server" ID="cboSexo" />
                             <br />
                         </div>
-                        <<div class="col-lg-8">
+                        <div class="col-lg-8">
                             <asp:Label runat="server" ID="lblFechaNac" Text="Fecha Nac. " />
                             <asp:TextBox runat="server" ID="txtFechaNac" TextMode="Date" />
-                            <asp:Label runat="server" ID="lblEscuela" Text="Escuela " />
-                            <asp:TextBox runat="server" ID="txtEscuela"  />
-                            <asp:Label runat="server" ID="lblAño" Text="Año " />
-                            <asp:TextBox runat="server" ID="txtAño" />
-                            <asp:Label runat="server" ID="lblLateralidad" Text="Lateralidad" />
-                            <asp:DropDownList runat="server" ID="cboLateralidad" />
+                            <asp:Label runat="server" ID="lblEdad" Text="Edad: " />
+                            <asp:Label runat="server" ID="lblEdadCalculada" Text="" />
                         </div>
-                        <div style="position:inherit; left:20px">
+                        <div class="col-lg-8">
+                            <asp:Label ID="lblEscuela" runat="server" Text="Escuela " />
+                            <asp:TextBox ID="txtEscuela" runat="server" />
+                            <asp:Label ID="lblAño" runat="server" Text="Año " />
+                            <asp:TextBox ID="txtAño" runat="server" />
+                            <asp:Label ID="lblLateralidad" runat="server" Text="Lateralidad" />
+                            <asp:DropDownList ID="cboLateralidad" runat="server" AutoPostBack="true" />
+                        </div>
+                        <div class="col-lg-8">
+                            <asp:Label ID="lbPsp" runat="server" Text="Psp " />
+                            <asp:DropDownList runat="server" ID="cboPsp" AutoPostBack="true" />
                         </div>
                     </div>
                 </div>
