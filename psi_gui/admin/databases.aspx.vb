@@ -27,7 +27,17 @@
 
     Protected Sub lnkBackup_Click(sender As Object, e As EventArgs) Handles lnkBackup.Click
         Dim conexion As New psi_bll.backup
+
         conexion.CrearBackup("C:\Program Files\Microsoft SQL Server\MSSQL11.SQLSERVER\MSSQL\Backup\", txtBackupName.Text)
+    End Sub
+
+    Private Sub lstBackups_PageIndexChanging(sender As Object, e As GridViewPageEventArgs) Handles lstBackups.PageIndexChanging
+        Dim BDs As List(Of psi_el.backup)
+        Dim unBackup As New psi_bll.backup
+        BDs = unBackup.ListarBackups
+        lstBackups.DataSource = BDs
+        lstBackups.PageIndex = e.NewPageIndex
+        lstBackups.DataBind()
     End Sub
 
     Private Sub lstBackups_RowCommand(sender As Object, e As GridViewCommandEventArgs) Handles lstBackups.RowCommand
@@ -40,5 +50,9 @@
         Catch ex As Exception
             Response.Redirect("error.aspx")
         End Try
+    End Sub
+
+    Private Sub lstBackups_SelectedIndexChanged(sender As Object, e As EventArgs)
+        'Dim row As GridViewRow = lstBackups.SelectedRow
     End Sub
 End Class

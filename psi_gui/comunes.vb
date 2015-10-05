@@ -6,11 +6,12 @@
         UsuarioLogueado = unUsuario.Listar(usuario)
     End Sub
 
-    Public Sub Traducir(pagina As Page)
+    Public Sub Traducir(pagina As Page, Optional idioma As String = "")
         Dim i As New multiIdioma
         If Not IsNothing(UsuarioLogueado) Then
-            i.TraducirMaster(UsuarioLogueado.idioma, pagina.Master)
-            i.TraducirPagina(UsuarioLogueado.idioma, pagina.Page)
+            If idioma = "" Then idioma = UsuarioLogueado.idioma
+            i.TraducirMaster(idioma, pagina.Master)
+            i.TraducirPagina(idioma, pagina.Page)
             i = Nothing
         End If
     End Sub

@@ -118,7 +118,11 @@ Public Class ABMclientes
     End Sub
 
     Protected Sub gridClientes_SelectedIndexChanged(sender As Object, e As EventArgs)
-        Dim row As GridViewRow = gridClientes.SelectedRow
+        'Dim row As GridViewRow = gridClientes.SelectedRow
+    End Sub
+
+    Private Sub gridClientes_PageIndexChanging(sender As Object, e As GridViewPageEventArgs) Handles gridClientes.PageIndexChanging
+        'PONER CODIGO ACA
     End Sub
 
     Private Sub gridClientes_RowCommand(sender As Object, e As GridViewCommandEventArgs) Handles gridClientes.RowCommand

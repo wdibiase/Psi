@@ -31,6 +31,30 @@
         Return acc.Grabar("usp_pacientesUpdate", params)
     End Function
 
+    Public Function Listar(cuit As String) As List(Of psi_el.Paciente)
+        Dim pacientes As New List(Of psi_el.Paciente)
+        Dim a As New Acceso
+        Dim params(0) As SqlClient.SqlParameter
+        params(0) = a.BuildParam("@cuit", cuit)
+        Dim dt As DataTable = a.Leer("dbo.usp_pacientesSelect", params)
+        Dim miPaciente As psi_el.Paciente
+        For Each fila As DataRow In dt.Rows
+            miPaciente = New psi_el.Paciente
+            miPaciente.tipoDoc = fila("descDoc").ToString
+            miPaciente.DNI = fila("dni").ToString
+            miPaciente.fechaNacimiento = fila("fechaNacimiento").ToString
+            miPaciente.nombre = fila("nombre").ToString
+            miPaciente.apellido = fila("apellido").ToString
+            miPaciente.sexo = fila("sexo").ToString
+            miPaciente.escuela = fila("escuela").ToString
+            miPaciente.año = fila("año").ToString
+            miPaciente.lateralidad = fila("lateralidad").ToString
+            miPaciente.evaluador = fila("evaluador").ToString
+            pacientes.Add(miPaciente)
+        Next
+        Return pacientes
+    End Function
+
     Public Function Listar() As List(Of psi_el.Paciente)
         Dim pacientes As New List(Of psi_el.Paciente)
         Dim a As New Acceso
@@ -47,9 +71,31 @@
             miPaciente.escuela = fila("escuela").ToString
             miPaciente.año = fila("año").ToString
             miPaciente.lateralidad = fila("lateralidad").ToString
-            If fila("evaluador").ToString <> "" Then
-                miPaciente.evaluador = fila("evaluador").ToString
-            End If
+            miPaciente.evaluador = fila("evaluador").ToString
+            pacientes.Add(miPaciente)
+        Next
+        Return pacientes
+    End Function
+
+    Public Function Listar(evaluador As Integer) As List(Of psi_el.Paciente)
+        Dim pacientes As New List(Of psi_el.Paciente)
+        Dim a As New Acceso
+        Dim params(0) As SqlClient.SqlParameter
+        params(0) = a.BuildParam("@evaluador", evaluador)
+        Dim dt As DataTable = a.Leer("dbo.usp_pacientesSelect", params)
+        Dim miPaciente As psi_el.Paciente
+        For Each fila As DataRow In dt.Rows
+            miPaciente = New psi_el.Paciente
+            miPaciente.tipoDoc = fila("descDoc").ToString
+            miPaciente.DNI = fila("dni").ToString
+            miPaciente.fechaNacimiento = fila("fechaNacimiento").ToString
+            miPaciente.nombre = fila("nombre").ToString
+            miPaciente.apellido = fila("apellido").ToString
+            miPaciente.sexo = fila("sexo").ToString
+            miPaciente.escuela = fila("escuela").ToString
+            miPaciente.año = fila("año").ToString
+            miPaciente.lateralidad = fila("lateralidad").ToString
+            miPaciente.evaluador = fila("evaluador").ToString
             pacientes.Add(miPaciente)
         Next
         Return pacientes
