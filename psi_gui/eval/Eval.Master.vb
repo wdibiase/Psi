@@ -6,7 +6,7 @@
         If UsuarioLogueado Is Nothing Then
             Response.Redirect("../login.aspx")
         Else
-            If Not UsuarioLogueado.perfil = "Evaluador" Then
+            If Not (UsuarioLogueado.perfil = "Evaluador" Or UsuarioLogueado.perfil = "Coordinador") Then
                 Response.Redirect("../unauthorized.aspx")
             End If
             lnkLogged.Text = UsuarioLogueado.nombreUsuario

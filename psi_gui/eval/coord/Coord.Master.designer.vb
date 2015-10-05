@@ -59,13 +59,22 @@ Partial Public Class CoordMaster
     Protected WithEvents lnkPacientes As Global.System.Web.UI.WebControls.LinkButton
 
     '''<summary>
-    '''Control lnkSistema.
+    '''Control lnkGestion.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lnkSistema As Global.System.Web.UI.WebControls.LinkButton
+    Protected WithEvents lnkGestion As Global.System.Web.UI.WebControls.LinkButton
+
+    '''<summary>
+    '''Control lnkHC.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lnkHC As Global.System.Web.UI.WebControls.LinkButton
 
     '''<summary>
     '''Control lnkLogged.

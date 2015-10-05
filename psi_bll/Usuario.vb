@@ -14,7 +14,6 @@
         Return u.Listar(cliente, excepto)
     End Function
 
-
     Public Function ListarDocs() As List(Of psi_el.documento)
         Dim d As New psi_dal.Usuario
         Return d.ListarDocs

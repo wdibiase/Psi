@@ -47,6 +47,6 @@
         params(0) = acc.BuildParam("@path", path)
         params(1) = acc.BuildParam("@nombreBK", bkName)
         params(2) = acc.BuildParam("@id", bkIx)
-        Return acc.Grabar("usp_databaseRestore", params)
+        Return acc.Grabar("master.dbo.usp_databaseRestore", params)
     End Function
 End Class

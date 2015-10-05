@@ -73,6 +73,7 @@
                         <div class="col-lg-8">
                             <asp:Label ID="lbPsp" runat="server" Text="Psp " />
                             <asp:DropDownList runat="server" ID="cboPsp" AutoPostBack="true" />
+                            <asp:RequiredFieldValidator ID="rfvEval" runat="server" ErrorMessage="Evaluador sin asignar" ControlToValidate="cboPsp" />
                         </div>
                     </div>
                 </div>

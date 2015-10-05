@@ -1,7 +1,12 @@
 ﻿Public Class paciente
     Public Function Listar() As List(Of psi_el.Paciente)
         Dim pac As New psi_dal.paciente
-        Return pac.Listar
+        Return pac.Listar()
+    End Function
+
+    Public Function Listar(evaluador As Integer) As List(Of psi_el.Paciente)
+        Dim pac As New psi_dal.paciente
+        Return pac.Listar(evaluador)
     End Function
 
     Public Function Guardar(paciente As psi_el.Paciente)
