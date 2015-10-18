@@ -155,6 +155,8 @@
   <ItemGroup>
     <Compile Include="backup.vb" />
     <Compile Include="Cliente.vb" />
+    <Compile Include="consigna.vb" />
+    <Compile Include="historial.vb" />
     <Compile Include="multiIdioma.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -176,6 +178,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="paciente.vb" />
+    <Compile Include="pregunta.vb" />
     <Compile Include="Usuario.vb" />
   </ItemGroup>
   <ItemGroup>

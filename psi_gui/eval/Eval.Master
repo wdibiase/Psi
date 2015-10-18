@@ -1,4 +1,5 @@
 <%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Eval.Master.vb" Inherits="psi.EvalMaster" %>
+<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="atk" %>
 
 <!DOCTYPE html>
 
@@ -15,6 +16,7 @@
     <link href="../css/bootstrap.css" rel="stylesheet" />
     <link href="../css/dashboard.css" rel="stylesheet" />
     <link href="../css/wdb.css" rel="stylesheet" />
+    <link href="../css/Tabs.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="css/socialwidgets.css" />
     <style type="text/css"></style>
 </head>
@@ -36,14 +38,6 @@
                         <ul class="nav navbar-nav navbar-right">
                             <li><asp:LinkButton runat="server" PostBackUrl="ABMevaluadores.aspx" Text="Evaluadores" ID="lnkEvaluadores" /></li>
                             <li><asp:LinkButton runat="server" PostBackUrl="pacientes.aspx" Text="Pacientes" ID="lnkPacientes" /></li>
-                            <li class="dropdown"><asp:LinkButton runat="server" PostBackUrl="#" class="dropdown-toggle" data-toggle="dropdown" role="button" 
-                                    aria-haspopup="true" aria-expanded="false" ID="lnkSistema" Text="???" />
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">...</a></li>
-                                    <li><a href="#">...</a></li>
-                                    <li><a href="#">...</a></li>
-                                </ul>
-                            </li>
                             <li class="dropdown">
                                 <asp:LinkButton runat="server" ID="lnkLogged" Text="loggedUser" CssClass="dropdown-header" data-toggle="dropdown" 
                                     role="button" aria-haspopup="true" aria-expanded="false"/>
@@ -60,6 +54,57 @@
                     </div>
                 </div>
             </nav>
+            <!-- Paneles popup -->
+            <div>
+                <asp:scriptmanager id="ScriptManager1" runat="server">
+                </asp:scriptmanager>
+                <atk:ModalPopupExtender ID="popupPerfil" runat="server" TargetControlID="lnkPerfil" PopupControlID="pnlPerfil" 
+                    EnableViewState="true" DropShadow="true" BackgroundCssClass="modalBackground" />
+                <asp:Panel ID="pnlPerfil" runat="server" Width="400px" Height="250px" CssClass="modalPopup" Style="display: none" >
+                    <div class="table">
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <asp:Label runat="server" ID="lblUsuario" Text="Nombre de usuario " />
+                                <asp:TextBox runat="server" ID="txtUsuario" Enabled="true" />
+                                <br />
+                            </div>
+                            <div class="col-lg-8">
+                                <asp:Label runat="server" ID="lblEmail" Text="Email " />
+                                <asp:TextBox runat="server" ID="txtEmail" />
+                                <asp:Label runat="server" ID="lblNombre" Text="Nombre " />
+                                <asp:TextBox runat="server" ID="txtNombre"/>
+                                <asp:Label runat="server" ID="lblApellido" Text="Apellido " />
+                                <asp:TextBox runat="server" ID="txtApellido" />
+                                <br />
+                            </div>
+                            <div class="col-lg-8">
+                                <asp:Label runat="server" ID="lblIdioma" Text="Idioma " />
+                                <asp:DropDownList runat="server" ID="cboIdioma" />
+                            </div>
+                            <div style="position:inherit; left:20px">
+                                <asp:RequiredFieldValidator ID="rfvUsuario" runat="server" ControlToValidate="txtUsuario" CssClass="alert-warning" ErrorMessage="Falta el nombre de usuario" />
+                                <asp:RequiredFieldValidator ID="rfvEmail" runat="server" ControlToValidate="txtEmail" ErrorMessage="Falta el e-mail" CssClass="alert-warning" />
+                                <asp:RequiredFieldValidator ID="rfvNombre" runat="server" ControlToValidate="txtNombre" ErrorMessage="Falta el nombre" CssClass="alert-warning" />
+                            </div>
+                        </div>
+                    </div>
+                    <asp:Button runat="server" ID="btnOk" Text="Ok" OnClick="btnOk_Click" />
+                    <asp:Button runat="server" ID="btnCancel" Text="Cancelar" />
+                </asp:Panel>
+                <atk:ModalPopupExtender ID="popupPassword" runat="server" TargetControlID="lnkPassword" PopupControlID="pnlPassword"
+                    EnableViewState="true" DropShadow="true" BackgroundCssClass="modalBackground" />
+                <asp:Panel runat="server" ID="pnlPassword" Width="400px" Height="100px" CssClass="modalPopup" Style="display:none" >
+                    <div class="col-lg-8">
+                        <asp:Label runat="server" ID="lblPass1" Text="Contraseña " />
+                        <asp:TextBox runat="server" ID="txtPass1" TextMode="Password" />
+                        <asp:Label runat="server" ID="lblPass2" Text="Repetir " />
+                        <asp:TextBox runat="server" ID="txtPass2" TextMode="Password" />
+                        <br />
+                        <asp:Button runat="server" ID="btnClaveOk" Text="Ok" OnClick="btnClaveOk_Click" />
+                        <asp:Button runat="server" ID="btnClaveCancel" Text="Cancelar" OnClick="btnClaveCancel_Click" />
+                    </div>
+                </asp:Panel>
+            </div>
         </asp:ContentPlaceHolder>
         <asp:ContentPlaceHolder runat="server" ID="barraHerramientas"></asp:ContentPlaceHolder>
         <asp:ContentPlaceHolder runat="server" ID="pagina"></asp:ContentPlaceHolder>

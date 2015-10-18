@@ -129,7 +129,7 @@
         Try
             If e.CommandName = "Select" Then
                 Dim index As Integer = Convert.ToInt32(e.CommandArgument)
-                'btnEditar.Enabled = True
+                'btnEditarHC.Enabled = True
                 'btnEstado.Enabled = True
 
                 Dim selectedRow As GridViewRow = gridPacientes.Rows(index)
@@ -138,8 +138,8 @@
                 cboLateralidad.ClearSelection()
                 cboSexo.ClearSelection()
                 cboPsp.ClearSelection()
-                txtNroDoc.Text = selectedRow.Cells(1).Text
-                cboDocumento.Items.FindByText(selectedRow.Cells(2).Text).Selected = True
+                txtNroDoc.Text = selectedRow.Cells(2).Text
+                cboDocumento.Items.FindByText(selectedRow.Cells(1).Text).Selected = True
                 txtFechaNac.Text = selectedRow.Cells(3).Text
                 txtNombre.Text = selectedRow.Cells(4).Text
                 txtApellido.Text = selectedRow.Cells(5).Text
@@ -201,6 +201,7 @@
     Private Sub verLista()
         panelLista.Visible = True
         panelDetalle.Visible = False
+        If txtNroDoc.Text <> String.Empty Then MostrarHistorial(txtNroDoc.Text)
     End Sub
 
     Private Sub verDetalle()
@@ -228,19 +229,162 @@
     End Sub
 
     Private Sub gridPacientes_RowDataBound(sender As Object, e As GridViewRowEventArgs) Handles gridPacientes.RowDataBound
+        Dim aux As String = String.Empty
         With e.Row
-            'If .RowType = DataControlRowType.DataRow Then
-            '    .Cells(10).Visible = False
-            'End If
+            If .RowType = DataControlRowType.Header Then
+                .Cells(0).Text = ""
+                .Cells(2).Text = "Nro. de Doc."
+                .Cells(1).Text = "Tipo de Doc."
+                .Cells(3).Text = "Fecha de Nac."
+                .Cells(4).Text = "Nombre"
+                .Cells(5).Text = "Apellido"
+                .Cells(6).Text = "Sexo"
+                .Cells(7).Text = "Escuela"
+                .Cells(8).Text = "Año"
+                .Cells(9).Text = "Lateralidad"
+                .Cells(10).Visible = False
+            End If
+            If .RowType = DataControlRowType.DataRow Then
+                .Cells(10).Visible = False
+                aux = .Cells(1).Text
+                .Cells(1).Text = .Cells(2).Text
+                .Cells(2).Text = aux
+            End If
         End With
     End Sub
 
-    Protected Sub btnEvaluar_Click(sender As Object, e As EventArgs) Handles btnEvaluar.Click
-        Response.Redirect("abmHC.aspx")
-    End Sub
-
     Protected Sub btnVerHC_Click(sender As Object, e As EventArgs)
+        'Session.Add("paciente", txtNroDoc.Text)
+        'Response.Redirect("abmHC.aspx", False)
+        lstHC.Visible = True
+        MostrarHistorial(txtNroDoc.Text)
+        If lstHC.Rows.Count = 0 Then
+            'Sin HC
+            MsgBox("No tiene HC")
+        End If
+    End Sub
+
+    Private Sub MostrarHistorial(paciente As Integer)
+        Dim items As List(Of psi_el.Historial)
+        Dim item As New psi_bll.historial
+        items = item.Listar(paciente)
+        lstHC.DataSource = items
+        lstHC.DataBind()
+    End Sub
+
+    Protected Sub btnSel_Click(sender As Object, e As EventArgs) 'Handles btnSel.Click
+        If rbl.SelectedItem.Value = 1 Then
+            'Nota
+            lblNota.Visible = True
+            txtNota.Visible = True
+            btnGuardarNota.Visible = True
+            btnCancelarNota.Visible = True
+            txtNota.Focus()
+        Else
+            'Test
+            Dim test As New psi_el.Historial
+
+            Dim idHistorial As Long
+            Dim dato As New psi_bll.historial
+            test.aprobado = False
+            test.fecha = Now
+            test.paciente = txtNroDoc.Text
+            test.tipoNota = 2
+            test.test.codigo = 1
+
+            '1ro ver si tiene alguno sin completar.
+            idHistorial = dato.TestSinCompletar(txtNroDoc.Text)
+            If idHistorial > 0 Then
+                Dim w As New wisc3
+                w.CompletarTest(idHistorial)
+            Else
+                idHistorial = dato.Nuevo(test, UsuarioLogueado.numDoc)
+                CrearTest(idHistorial)
+            End If
+            Session("idHC") = idHistorial
+            Session("idTest") = 1
+            Session("idSubtest") = 1
+            Response.Redirect("wisc3.aspx", False)
+        End If
+    End Sub
+
+    Private Sub GuardarNota()
+        Dim nota As New psi_el.Historial
+        Dim dato As New psi_bll.historial
+
+        nota.aprobado = False
+        nota.fecha = Now
+        nota.observaciones = txtNota.Text
+        nota.paciente = txtNroDoc.Text
+        nota.tipoNota = 1
+        nota.test.codigo = 0
+
+        dato.Nuevo(nota, UsuarioLogueado.numDoc)
+        dato = Nothing
+        nota = Nothing
+
+        lblNota.Visible = False
+        txtNota.Visible = False
+        btnGuardarNota.Visible = False
+        btnCancelarNota.Visible = False
+        Response.Redirect("pacientes.aspx")
+    End Sub
+
+    Protected Sub btnGuardarNota_Click(sender As Object, e As EventArgs)
+        GuardarNota()
+    End Sub
+
+    Protected Sub btnCancelarNota_Click(sender As Object, e As EventArgs)
 
     End Sub
 
+    Private Sub CrearTest(id As Long)
+        Dim dato As New psi_bll.consigna
+        Dim i As Integer
+        For i = 1 To 13
+            dato.CrearTestBorrador(id, 1, i)
+        Next
+    End Sub
+
+    Protected Sub btnEditarHC_Click(sender As Object, e As EventArgs) Handles btnEditarHC.Click
+        Dim regHC As New psi_el.Historial
+        regHC.idHito = lstHC.Rows(Session("regHC").ToString).Cells(1).Text
+        regHC.fecha = lstHC.Rows(Session("regHC").ToString).Cells(2).Text
+        regHC.paciente = lstHC.Rows(Session("regHC").ToString).Cells(3).Text
+        regHC.tipoNota = lstHC.Rows(Session("regHC").ToString).Cells(4).Text
+        regHC.observaciones = lstHC.Rows(Session("regHC").ToString).Cells(5).Text
+        regHC.aprobado = lstHC.Rows(Session("regHC").ToString).Cells(6).Text
+
+        If regHC.tipoNota = 1 Then
+            'Nota
+            lblNota.Visible = True
+            txtNota.Visible = True
+            btnGuardarNota.Visible = True
+            btnCancelarNota.Visible = True
+            txtNota.Focus()
+        Else
+            'Test
+            Dim w As New wisc3
+            w.CompletarTest(regHC.idHito)
+
+            Session("idHC") = regHC.idHito
+            Session("idTest") = 1
+            Session("idSubtest") = 1
+            Response.Redirect("wisc3.aspx", False)
+        End If
+    End Sub
+
+    Private Sub lstHC_RowCommand(sender As Object, e As GridViewCommandEventArgs) Handles lstHC.RowCommand
+        Try
+            If e.CommandName = "Select" Then
+                Dim index As Integer = Convert.ToInt32(e.CommandArgument)
+                btnEditarHC.Enabled = True
+                'btnEstado.Enabled = True
+                Session("regHC") = index
+            End If
+        Catch ex As Exception
+            MsgBox(Err.Description)
+            Response.Redirect("error.aspx")
+        End Try
+    End Sub
 End Class

@@ -126,6 +126,8 @@
     <Compile Include="Acceso.vb" />
     <Compile Include="backup.vb" />
     <Compile Include="Cliente.vb" />
+    <Compile Include="consigna.vb" />
+    <Compile Include="historial.vb" />
     <Compile Include="IdentityASP.vb" />
     <Compile Include="multidioma.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -144,6 +146,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="paciente.vb" />
+    <Compile Include="pregunta.vb" />
     <Compile Include="Startup.vb" />
     <Compile Include="Usuario.vb" />
   </ItemGroup>

@@ -1,42 +1,58 @@
 ﻿Public Class consigna
-    Private _pregunta As String
-    Private _respuesta As String
-    Private _subtest As String
-    Private _valorRespuesta As Int16
+    Private _idHito As Long
+    Private _pregunta As Pregunta
+    Private _respuestaDada As String
+    Private _puntajeObtenido As Integer
 
-    Public Property pregunta As String
+    Public Property idHito As Long
+        Get
+            Return _idHito
+        End Get
+        Set(value As Long)
+            _idHito = value
+        End Set
+    End Property
+
+    Public Property pregunta As Pregunta
         Get
             Return _pregunta
         End Get
-        Set(value As String)
+        Set(value As Pregunta)
             _pregunta = value
         End Set
     End Property
 
-    Public Property respuesta As String
+    Public ReadOnly Property idPregunta() As Integer
         Get
-            Return _respuesta
+            Return _pregunta.idPregunta
+        End Get
+    End Property
+
+    Public ReadOnly Property descPregunta() As String
+        Get
+            Return _pregunta.descPregunta
+        End Get
+    End Property
+
+    Public Property respuestaDada As String
+        Get
+            Return _respuestaDada
         End Get
         Set(value As String)
-            _respuesta = value
+            _respuestaDada = value
         End Set
     End Property
 
-    Public Property subtest As String
+    Public Property puntajeObtenido As Integer
         Get
-            Return _subtest
+            Return _puntajeObtenido
         End Get
-        Set(value As String)
-            _subtest = value
+        Set(value As Integer)
+            _puntajeObtenido = value
         End Set
     End Property
 
-    Public Property valorRespuesta As Int16
-        Get
-            Return _valorRespuesta
-        End Get
-        Set(value As Int16)
-            _valorRespuesta = value
-        End Set
-    End Property
+    Public Sub New()
+        Me.pregunta = New Pregunta
+    End Sub
 End Class

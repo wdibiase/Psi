@@ -157,8 +157,8 @@
                 cboLateralidad.ClearSelection()
                 cboSexo.ClearSelection()
                 cboPsp.ClearSelection()
-                txtNroDoc.Text = selectedRow.Cells(1).Text
-                cboDocumento.Items.FindByText(selectedRow.Cells(2).Text).Selected = True
+                txtNroDoc.Text = selectedRow.Cells(2).Text
+                cboDocumento.Items.FindByText(selectedRow.Cells(1).Text).Selected = True
                 txtFechaNac.Text = selectedRow.Cells(3).Text
                 txtNombre.Text = selectedRow.Cells(4).Text
                 txtApellido.Text = selectedRow.Cells(5).Text
@@ -259,10 +259,25 @@
     End Sub
 
     Private Sub gridPacientes_RowDataBound(sender As Object, e As GridViewRowEventArgs) Handles gridPacientes.RowDataBound
+        Dim aux As String = String.Empty
         With e.Row
-            'If .RowType = DataControlRowType.DataRow Then
-            '    .Cells(10).Visible = False
-            'End If
+            If .RowType = DataControlRowType.Header Then
+                .Cells(0).Text = ""
+                .Cells(2).Text = "Nro. de Doc."
+                .Cells(1).Text = "Tipo de Doc."
+                .Cells(3).Text = "Fecha de Nac."
+                .Cells(4).Text = "Nombre"
+                .Cells(5).Text = "Apellido"
+                .Cells(6).Text = "Sexo"
+                .Cells(7).Text = "Escuela"
+                .Cells(8).Text = "Año"
+                .Cells(9).Text = "Lateralidad"
+            End If
+            If .RowType = DataControlRowType.DataRow Then
+                aux = .Cells(1).Text
+                .Cells(1).Text = .Cells(2).Text
+                .Cells(2).Text = aux
+            End If
         End With
     End Sub
 End Class
