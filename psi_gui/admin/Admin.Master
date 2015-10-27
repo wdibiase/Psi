@@ -68,7 +68,8 @@
                 </asp:scriptmanager>
                 <atk:ModalPopupExtender ID="popupPerfil" runat="server" TargetControlID="lnkPerfil" PopupControlID="pnlPerfil" 
                     EnableViewState="true" DropShadow="true" BackgroundCssClass="modalBackground" />
-                <asp:Panel ID="pnlPerfil" runat="server" Width="400px" Height="250px" CssClass="modalPopup" Style="display: none" >
+                <asp:Panel ID="pnlPerfil" runat="server" Width="400px" Height="250px" CssClass="modalPopup" 
+                    Style="display: none">
                     <div class="table">
                         <div class="row">
                             <div class="col-lg-8">
@@ -108,7 +109,7 @@
                         <asp:Label runat="server" ID="lblPass2" Text="Repetir " />
                         <asp:TextBox runat="server" ID="txtPass2" TextMode="Password" />
                         <br />
-                        <asp:Button runat="server" ID="btnClaveOk" Text="Ok" OnClick="btnClaveOk_Click" />
+                        <asp:Button runat="server" ID="btnClaveOk" Text="Ok" OnClick="btnClaveOk_Click"/>
                         <asp:Button runat="server" ID="btnClaveCancel" Text="Cancelar" OnClick="btnClaveCancel_Click" />
                     </div>
                 </asp:Panel>

@@ -113,6 +113,15 @@ Partial Public Class databases
     Protected WithEvents panelDetalle As Global.System.Web.UI.WebControls.Panel
 
     '''<summary>
+    '''Control lblBackupName.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lblBackupName As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''Control txtBackupName.
     '''</summary>
     '''<remarks>

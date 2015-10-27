@@ -7,7 +7,7 @@
         cmd.CommandType = CommandType.StoredProcedure
         cmd.CommandText = sp
         cmd.Parameters.AddRange(params)
-        Dim Resp As String = cmd.ExecuteNonQuery()
+        Dim Resp As String = cmd.ExecuteNonQuery()  'Retorna rows affected
         con.Close()
         Return Resp
     End Function
@@ -15,22 +15,18 @@
     Public Function Leer(sp As String, Optional Param() As Data.SqlClient.SqlParameter = Nothing) As DataTable
         Dim dt As New DataTable
         Dim da As New SqlClient.SqlDataAdapter
-        Try
-            da.SelectCommand = New SqlClient.SqlCommand
-            da.SelectCommand.Connection = New SqlClient.SqlConnection(My.Resources.connStr)
-            da.SelectCommand.CommandType = CommandType.StoredProcedure
-            da.SelectCommand.CommandText = sp
-            If Not Param Is Nothing Then
-                da.SelectCommand.Parameters.AddRange(Param)
-            End If
-            da.Fill(dt)
-        Catch
-            MsgBox(Err.Description)
-        End Try
+        da.SelectCommand = New SqlClient.SqlCommand
+        da.SelectCommand.Connection = New SqlClient.SqlConnection(My.Resources.connStr)
+        da.SelectCommand.CommandType = CommandType.StoredProcedure
+        da.SelectCommand.CommandText = sp
+        If Not Param Is Nothing Then
+            da.SelectCommand.Parameters.AddRange(Param)
+        End If
+        da.Fill(dt)
         Return dt
     End Function
 
-    Public Function GrabarConId(sp As String, params() As Data.SqlClient.SqlParameter, salida As String) As String
+    Public Function GrabarConId(sp As String, params() As Data.SqlClient.SqlParameter, Optional paramSalida As String = vbNullString) As Long
         Dim cmd As New Data.SqlClient.SqlCommand
         Dim con As New Data.SqlClient.SqlConnection(My.Resources.connStr)
         con.Open()
@@ -38,11 +34,32 @@
         cmd.CommandType = CommandType.StoredProcedure
         cmd.CommandText = sp
         cmd.Parameters.AddRange(params)
-        cmd.Parameters(salida).Direction = ParameterDirection.Output
-        cmd.ExecuteNonQuery()
-        Dim Resp As String = cmd.Parameters(salida).Value.ToString
+        'cmd.Parameters(paramSalida).Direction = ParameterDirection.Output
+        'cmd.Parameters(salida).Value.ToString
+        Dim salida As Long = cmd.ExecuteScalar  'Retorna id
         con.Close()
-        Return Resp
+        Return salida
+    End Function
+
+    'Public Function Ejecutar(sql As String) As Long
+    '    Dim cmd As New Data.SqlClient.SqlCommand
+    '    Dim conn As New Data.SqlClient.SqlConnection(My.Resources.connStr)
+    '    cmd.CommandType = CommandType.Text
+    '    cmd.CommandText = sql
+    '    conn.Open()
+    '    cmd.Connection = conn
+    '    Return cmd.ExecuteScalar
+    'End Function
+
+    Public Function Ejecutar(sql As String) As DataTable
+        Dim dt As New DataTable
+        Dim da As New SqlClient.SqlDataAdapter
+        da.SelectCommand = New SqlClient.SqlCommand
+        da.SelectCommand.Connection = New SqlClient.SqlConnection(My.Resources.connStr)
+        da.SelectCommand.CommandType = CommandType.Text
+        da.SelectCommand.CommandText = sql
+        da.Fill(dt)
+        Return dt
     End Function
 
 #Region "Builder"
@@ -95,7 +112,13 @@
     '    p.Value = FormatDateTime(valor, DateFormat.GeneralDate)
     '    Return p
     'End Function
-
+    Public Function Output(nombre As String) As Data.SqlClient.SqlParameter
+        Dim p As New SqlClient.SqlParameter
+        p.DbType = DbType.Int64
+        p.ParameterName = nombre
+        p.Direction = ParameterDirection.Output
+        Return p
+    End Function
 #End Region
 
 End Class
