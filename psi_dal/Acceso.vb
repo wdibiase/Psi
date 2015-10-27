@@ -41,14 +41,25 @@
         Return salida
     End Function
 
-    Public Function Ejecutar(sql As String) As Long
-        Dim cmd As New Data.SqlClient.SqlCommand
-        Dim conn As New Data.SqlClient.SqlConnection(My.Resources.connStr)
-        cmd.CommandType = CommandType.Text
-        cmd.CommandText = sql
-        conn.Open()
-        cmd.Connection = conn
-        Return cmd.ExecuteScalar
+    'Public Function Ejecutar(sql As String) As Long
+    '    Dim cmd As New Data.SqlClient.SqlCommand
+    '    Dim conn As New Data.SqlClient.SqlConnection(My.Resources.connStr)
+    '    cmd.CommandType = CommandType.Text
+    '    cmd.CommandText = sql
+    '    conn.Open()
+    '    cmd.Connection = conn
+    '    Return cmd.ExecuteScalar
+    'End Function
+
+    Public Function Ejecutar(sql As String) As DataTable
+        Dim dt As New DataTable
+        Dim da As New SqlClient.SqlDataAdapter
+        da.SelectCommand = New SqlClient.SqlCommand
+        da.SelectCommand.Connection = New SqlClient.SqlConnection(My.Resources.connStr)
+        da.SelectCommand.CommandType = CommandType.Text
+        da.SelectCommand.CommandText = sql
+        da.Fill(dt)
+        Return dt
     End Function
 
 #Region "Builder"

@@ -3,7 +3,7 @@
     Private _idSubtest As Int16
     Private _idPregunta As Int16
     Private _descPregunta As String
-    Private _puntaje As Int16
+    Private _puntaje As String
 
     Public Property idTest As Int16
         Get

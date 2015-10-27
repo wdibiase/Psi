@@ -16,7 +16,7 @@
     <link href="../css/bootstrap.css" rel="stylesheet" />
     <link href="../css/dashboard.css" rel="stylesheet" />
     <link href="../css/wdb.css" rel="stylesheet" />
-    <link href="../css/Tabs.css" rel="stylesheet" />
+    <link href="../css/ajaxTab.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="css/socialwidgets.css" />
     <style type="text/css"></style>
 </head>
@@ -106,8 +106,9 @@
                 </asp:Panel>
             </div>
         </asp:ContentPlaceHolder>
-        <asp:ContentPlaceHolder runat="server" ID="barraHerramientas"></asp:ContentPlaceHolder>
-        <asp:ContentPlaceHolder runat="server" ID="pagina"></asp:ContentPlaceHolder>
+        <asp:ContentPlaceHolder runat="server" ID="barraHerramientas" />
+        <asp:ContentPlaceHolder runat="server" ID="pagina" />
+        <asp:ContentPlaceHolder runat="server" ID="footer" />
         <script src="../js/jquery-2.1.4.js"></script>
         <script src="../js/bootstrap.js"></script>
     </form>

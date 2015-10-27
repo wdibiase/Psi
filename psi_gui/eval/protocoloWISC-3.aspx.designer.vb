@@ -11,437 +11,518 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class pacientes
+Partial Public Class protocoloWISC_3
 
     '''<summary>
-    '''Control Lista.
+    '''Control protocoloWISC3.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Lista As Global.System.Web.UI.WebControls.LinkButton
+    Protected WithEvents protocoloWISC3 As Global.System.Web.UI.HtmlControls.HtmlForm
 
     '''<summary>
-    '''Control Detalle.
+    '''Control tblResultado.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Detalle As Global.System.Web.UI.WebControls.LinkButton
+    Protected WithEvents tblResultado As Global.System.Web.UI.WebControls.Table
 
     '''<summary>
-    '''Control lnkNuevo.
+    '''Control subtests.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lnkNuevo As Global.System.Web.UI.WebControls.LinkButton
+    Protected WithEvents subtests As Global.System.Web.UI.WebControls.TableHeaderCell
 
     '''<summary>
-    '''Control panelLista.
+    '''Control pb.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents panelLista As Global.System.Web.UI.WebControls.Panel
+    Protected WithEvents pb As Global.System.Web.UI.WebControls.TableHeaderCell
 
     '''<summary>
-    '''Control gridPacientes.
+    '''Control pe.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents gridPacientes As Global.System.Web.UI.WebControls.GridView
+    Protected WithEvents pe As Global.System.Web.UI.WebControls.TableHeaderCell
 
     '''<summary>
-    '''Control panelDetalle.
+    '''Control cfi.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents panelDetalle As Global.System.Web.UI.WebControls.Panel
+    Protected WithEvents cfi As Global.System.Web.UI.WebControls.TableCell
 
     '''<summary>
-    '''Control btnEvaluar.
+    '''Control pb1.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btnEvaluar As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents pb1 As Global.System.Web.UI.WebControls.TableCell
 
     '''<summary>
-    '''Control btnVerHC.
+    '''Control pe1.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btnVerHC As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents pe1 As Global.System.Web.UI.WebControls.TableCell
 
     '''<summary>
-    '''Control btnGuardar.
+    '''Control inf.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btnGuardar As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents inf As Global.System.Web.UI.WebControls.TableCell
 
     '''<summary>
-    '''Control btnGuardarNuevo.
+    '''Control pb2.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btnGuardarNuevo As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents pb2 As Global.System.Web.UI.WebControls.TableCell
 
     '''<summary>
-    '''Control btnCancelar.
+    '''Control pe2.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btnCancelar As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents pe2 As Global.System.Web.UI.WebControls.TableCell
 
     '''<summary>
-    '''Control btnEditarHC.
+    '''Control cla.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btnEditarHC As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents cla As Global.System.Web.UI.WebControls.TableCell
 
     '''<summary>
-    '''Control lblTipoDoc.
+    '''Control pb3.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lblTipoDoc As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents pb3 As Global.System.Web.UI.WebControls.TableCell
 
     '''<summary>
-    '''Control cboDocumento.
+    '''Control pe3.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents cboDocumento As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents pe3 As Global.System.Web.UI.WebControls.TableCell
 
     '''<summary>
-    '''Control lblNroDoc.
+    '''Control ana.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lblNroDoc As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents ana As Global.System.Web.UI.WebControls.TableCell
 
     '''<summary>
-    '''Control txtNroDoc.
+    '''Control pb4.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txtNroDoc As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents pb4 As Global.System.Web.UI.WebControls.TableCell
 
     '''<summary>
-    '''Control lblNombre.
+    '''Control pe4.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lblNombre As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents pe4 As Global.System.Web.UI.WebControls.TableCell
 
     '''<summary>
-    '''Control txtNombre.
+    '''Control ohi.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txtNombre As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ohi As Global.System.Web.UI.WebControls.TableCell
 
     '''<summary>
-    '''Control lblApellido.
+    '''Control pb5.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lblApellido As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents pb5 As Global.System.Web.UI.WebControls.TableCell
 
     '''<summary>
-    '''Control txtApellido.
+    '''Control pe5.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txtApellido As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents pe5 As Global.System.Web.UI.WebControls.TableCell
 
     '''<summary>
-    '''Control lblSexo.
+    '''Control ari.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lblSexo As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents ari As Global.System.Web.UI.WebControls.TableCell
 
     '''<summary>
-    '''Control cboSexo.
+    '''Control pb6.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents cboSexo As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents pb6 As Global.System.Web.UI.WebControls.TableCell
 
     '''<summary>
-    '''Control lblFechaNac.
+    '''Control pe6.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lblFechaNac As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents pe6 As Global.System.Web.UI.WebControls.TableCell
 
     '''<summary>
-    '''Control txtFechaNac.
+    '''Control ccu.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txtFechaNac As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ccu As Global.System.Web.UI.WebControls.TableCell
 
     '''<summary>
-    '''Control lblEdad.
+    '''Control pb7.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lblEdad As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents pb7 As Global.System.Web.UI.WebControls.TableCell
 
     '''<summary>
-    '''Control lblEdadCalculada.
+    '''Control pe7.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lblEdadCalculada As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents pe7 As Global.System.Web.UI.WebControls.TableCell
 
     '''<summary>
-    '''Control lblEscuela.
+    '''Control voc.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lblEscuela As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents voc As Global.System.Web.UI.WebControls.TableCell
 
     '''<summary>
-    '''Control txtEscuela.
+    '''Control pb8.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txtEscuela As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents pb8 As Global.System.Web.UI.WebControls.TableCell
 
     '''<summary>
-    '''Control lblAño.
+    '''Control pe8.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lblAño As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents pe8 As Global.System.Web.UI.WebControls.TableCell
 
     '''<summary>
-    '''Control txtAño.
+    '''Control cob.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txtAño As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents cob As Global.System.Web.UI.WebControls.TableCell
 
     '''<summary>
-    '''Control lblLateralidad.
+    '''Control pb9.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lblLateralidad As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents pb9 As Global.System.Web.UI.WebControls.TableCell
 
     '''<summary>
-    '''Control cboLateralidad.
+    '''Control pe9.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents cboLateralidad As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents pe9 As Global.System.Web.UI.WebControls.TableCell
 
     '''<summary>
-    '''Control lbPsp.
+    '''Control com.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lbPsp As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents com As Global.System.Web.UI.WebControls.TableCell
 
     '''<summary>
-    '''Control cboPsp.
+    '''Control pb10.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents cboPsp As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents pb10 As Global.System.Web.UI.WebControls.TableCell
 
     '''<summary>
-    '''Control lstHC.
+    '''Control pe10.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lstHC As Global.System.Web.UI.WebControls.GridView
+    Protected WithEvents pe10 As Global.System.Web.UI.WebControls.TableCell
 
     '''<summary>
-    '''Control panel2.
+    '''Control bsi.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents panel2 As Global.System.Web.UI.WebControls.Panel
+    Protected WithEvents bsi As Global.System.Web.UI.WebControls.TableCell
 
     '''<summary>
-    '''Control Button1.
+    '''Control pb11.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents Button1 As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents pb11 As Global.System.Web.UI.WebControls.TableCell
 
     '''<summary>
-    '''Control mpe.
+    '''Control pe11.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents mpe As Global.AjaxControlToolkit.ModalPopupExtender
+    Protected WithEvents pe11 As Global.System.Web.UI.WebControls.TableCell
 
     '''<summary>
-    '''Control pnlpopup.
+    '''Control rdi.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents pnlpopup As Global.System.Web.UI.WebControls.Panel
+    Protected WithEvents rdi As Global.System.Web.UI.WebControls.TableCell
 
     '''<summary>
-    '''Control lblPregunta.
+    '''Control pb12.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lblPregunta As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents pb12 As Global.System.Web.UI.WebControls.TableCell
 
     '''<summary>
-    '''Control rbl.
+    '''Control pe12.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents rbl As Global.System.Web.UI.WebControls.RadioButtonList
+    Protected WithEvents pe12 As Global.System.Web.UI.WebControls.TableCell
 
     '''<summary>
-    '''Control cboAvailTest.
+    '''Control lsb.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents cboAvailTest As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents lsb As Global.System.Web.UI.WebControls.TableCell
 
     '''<summary>
-    '''Control btnSel.
+    '''Control pb13.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btnSel As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents pb13 As Global.System.Web.UI.WebControls.TableCell
 
     '''<summary>
-    '''Control btnCan.
+    '''Control pe13.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btnCan As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents pe13 As Global.System.Web.UI.WebControls.TableCell
 
     '''<summary>
-    '''Control lblNota.
+    '''Control pVe.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lblNota As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents pVe As Global.System.Web.UI.WebControls.TableCell
 
     '''<summary>
-    '''Control txtNota.
+    '''Control pEj.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txtNota As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents pEj As Global.System.Web.UI.WebControls.TableCell
 
     '''<summary>
-    '''Control btnGuardarNota.
+    '''Control pCV.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btnGuardarNota As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents pCV As Global.System.Web.UI.WebControls.TableCell
 
     '''<summary>
-    '''Control btnCancelarNota.
+    '''Control pOP.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btnCancelarNota As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents pOP As Global.System.Web.UI.WebControls.TableCell
+
+    '''<summary>
+    '''Control pAD.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents pAD As Global.System.Web.UI.WebControls.TableCell
+
+    '''<summary>
+    '''Control pVP.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents pVP As Global.System.Web.UI.WebControls.TableCell
+
+    '''<summary>
+    '''Control verbal.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents verbal As Global.System.Web.UI.WebControls.TableCell
+
+    '''<summary>
+    '''Control ejec.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents ejec As Global.System.Web.UI.WebControls.TableCell
+
+    '''<summary>
+    '''Control cv.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents cv As Global.System.Web.UI.WebControls.TableCell
+
+    '''<summary>
+    '''Control op.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents op As Global.System.Web.UI.WebControls.TableCell
+
+    '''<summary>
+    '''Control ad.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents ad As Global.System.Web.UI.WebControls.TableCell
+
+    '''<summary>
+    '''Control vp.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents vp As Global.System.Web.UI.WebControls.TableCell
+
+    '''<summary>
+    '''Control graphST.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents graphST As Global.AjaxControlToolkit.LineChart
 End Class

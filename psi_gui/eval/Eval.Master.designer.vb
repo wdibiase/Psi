@@ -345,4 +345,13 @@ Partial Public Class EvalMaster
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents pagina As Global.System.Web.UI.WebControls.ContentPlaceHolder
+
+    '''<summary>
+    '''Control footer.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents footer As Global.System.Web.UI.WebControls.ContentPlaceHolder
 End Class

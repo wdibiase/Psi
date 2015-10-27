@@ -66,18 +66,18 @@
         End Get
     End Property
 
-    Private _test As test
-    Public Property test As test
+    Private _test As Int16
+    Public Property test As Int16
         Get
             Return _test
         End Get
-        Set(value As test)
+        Set(value As Int16)
             _test = value
         End Set
     End Property
 
-    Public Sub New()
-        Me.test = New test
-    End Sub
+    'Public Sub New()
+    '    Me.test = New test
+    'End Sub
 
 End Class

@@ -14,355 +14,22 @@ Option Explicit On
 Partial Public Class wisc3
 
     '''<summary>
-    '''Control lnkCompFig.
+    '''Control lblP.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lnkCompFig As Global.System.Web.UI.WebControls.LinkButton
+    Protected WithEvents lblP As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control lnkInformacion.
+    '''Control lblPaciente.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lnkInformacion As Global.System.Web.UI.WebControls.LinkButton
-
-    '''<summary>
-    '''Control lnkClaves.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents lnkClaves As Global.System.Web.UI.WebControls.LinkButton
-
-    '''<summary>
-    '''Control lnkAnalogias.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents lnkAnalogias As Global.System.Web.UI.WebControls.LinkButton
-
-    '''<summary>
-    '''Control lnkOrdHist.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents lnkOrdHist As Global.System.Web.UI.WebControls.LinkButton
-
-    '''<summary>
-    '''Control lnkAritmetica.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents lnkAritmetica As Global.System.Web.UI.WebControls.LinkButton
-
-    '''<summary>
-    '''Control lnkContCubos.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents lnkContCubos As Global.System.Web.UI.WebControls.LinkButton
-
-    '''<summary>
-    '''Control lnkVocabulario.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents lnkVocabulario As Global.System.Web.UI.WebControls.LinkButton
-
-    '''<summary>
-    '''Control lnkCompObj.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents lnkCompObj As Global.System.Web.UI.WebControls.LinkButton
-
-    '''<summary>
-    '''Control lnkComprension.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents lnkComprension As Global.System.Web.UI.WebControls.LinkButton
-
-    '''<summary>
-    '''Control lnkSimbolos.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents lnkSimbolos As Global.System.Web.UI.WebControls.LinkButton
-
-    '''<summary>
-    '''Control lnkDigitos.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents lnkDigitos As Global.System.Web.UI.WebControls.LinkButton
-
-    '''<summary>
-    '''Control lnkLab.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents lnkLab As Global.System.Web.UI.WebControls.LinkButton
-
-    '''<summary>
-    '''Control st1.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents st1 As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''Control lst01.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents lst01 As Global.System.Web.UI.WebControls.GridView
-
-    '''<summary>
-    '''Control st2.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents st2 As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''Control lst02.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents lst02 As Global.System.Web.UI.WebControls.GridView
-
-    '''<summary>
-    '''Control st3.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents st3 As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''Control lst03.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents lst03 As Global.System.Web.UI.WebControls.GridView
-
-    '''<summary>
-    '''Control st4.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents st4 As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''Control lst04.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents lst04 As Global.System.Web.UI.WebControls.GridView
-
-    '''<summary>
-    '''Control st5.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents st5 As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''Control lst05.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents lst05 As Global.System.Web.UI.WebControls.GridView
-
-    '''<summary>
-    '''Control st6.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents st6 As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''Control lst06.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents lst06 As Global.System.Web.UI.WebControls.GridView
-
-    '''<summary>
-    '''Control st7.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents st7 As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''Control lst07.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents lst07 As Global.System.Web.UI.WebControls.GridView
-
-    '''<summary>
-    '''Control st8.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents st8 As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''Control lst08.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents lst08 As Global.System.Web.UI.WebControls.GridView
-
-    '''<summary>
-    '''Control st9.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents st9 As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''Control lst09.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents lst09 As Global.System.Web.UI.WebControls.GridView
-
-    '''<summary>
-    '''Control st10.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents st10 As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''Control lst10.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents lst10 As Global.System.Web.UI.WebControls.GridView
-
-    '''<summary>
-    '''Control st11.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents st11 As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''Control lst11.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents lst11 As Global.System.Web.UI.WebControls.GridView
-
-    '''<summary>
-    '''Control st12.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents st12 As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''Control lst12.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents lst12 As Global.System.Web.UI.WebControls.GridView
-
-    '''<summary>
-    '''Control st13.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents st13 As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''Control lst13.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents lst13 As Global.System.Web.UI.WebControls.GridView
+    Protected WithEvents lblPaciente As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''Control lblObservaciones.
@@ -401,11 +68,281 @@ Partial Public Class wisc3
     Protected WithEvents btnVolver As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''Control hidValue.
+    '''Control btnCalcular.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents hidValue As Global.System.Web.UI.HtmlControls.HtmlInputHidden
+    Protected WithEvents btnCalcular As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''Control btnImprimir.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btnImprimir As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''Control lblCI.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lblCI As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control txtCI.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents txtCI As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control tabWisc.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents tabWisc As Global.AjaxControlToolkit.TabContainer
+
+    '''<summary>
+    '''Control tp01.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents tp01 As Global.AjaxControlToolkit.TabPanel
+
+    '''<summary>
+    '''Control lst01.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lst01 As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''Control tp02.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents tp02 As Global.AjaxControlToolkit.TabPanel
+
+    '''<summary>
+    '''Control lst02.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lst02 As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''Control tp03.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents tp03 As Global.AjaxControlToolkit.TabPanel
+
+    '''<summary>
+    '''Control lst03.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lst03 As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''Control tp04.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents tp04 As Global.AjaxControlToolkit.TabPanel
+
+    '''<summary>
+    '''Control lst04.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lst04 As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''Control tp05.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents tp05 As Global.AjaxControlToolkit.TabPanel
+
+    '''<summary>
+    '''Control lst05.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lst05 As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''Control tp06.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents tp06 As Global.AjaxControlToolkit.TabPanel
+
+    '''<summary>
+    '''Control lst06.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lst06 As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''Control tp07.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents tp07 As Global.AjaxControlToolkit.TabPanel
+
+    '''<summary>
+    '''Control lst07.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lst07 As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''Control tp08.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents tp08 As Global.AjaxControlToolkit.TabPanel
+
+    '''<summary>
+    '''Control lst08.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lst08 As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''Control tp09.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents tp09 As Global.AjaxControlToolkit.TabPanel
+
+    '''<summary>
+    '''Control lst09.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lst09 As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''Control tp10.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents tp10 As Global.AjaxControlToolkit.TabPanel
+
+    '''<summary>
+    '''Control lst10.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lst10 As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''Control tp11.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents tp11 As Global.AjaxControlToolkit.TabPanel
+
+    '''<summary>
+    '''Control lst11.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lst11 As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''Control tp12.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents tp12 As Global.AjaxControlToolkit.TabPanel
+
+    '''<summary>
+    '''Control lst12.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lst12 As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''Control tp13.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents tp13 As Global.AjaxControlToolkit.TabPanel
+
+    '''<summary>
+    '''Control lst13.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lst13 As Global.System.Web.UI.WebControls.GridView
 End Class

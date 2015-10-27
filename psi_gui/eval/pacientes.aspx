@@ -110,14 +110,25 @@
         <atk:ModalPopupExtender ID="mpe" runat="server" TargetControlID="btnEvaluar" PopupControlID="pnlpopup" 
             EnableViewState="true" DropShadow="true" CancelControlID="btnCan"
             BackgroundCssClass="modalBackground"/>
-        <asp:Panel ID="pnlpopup" runat="server" Width="250px" Height="120px" CssClass="modalPopup" Style="display: none" >
-            <asp:Label runat="server" ID="lblPregunta" Text="Seleccione tipo:" />
-            <asp:RadioButtonList runat="server" RepeatDirection="Vertical" ID="rbl">
-                <asp:ListItem Text="Nota" Value="1" Selected="True"></asp:ListItem>
-                <asp:ListItem Text="Test" Value="2"></asp:ListItem>
-            </asp:RadioButtonList>
-            <asp:Button runat="server" ID="btnSel" Text="Aceptar" OnClick="btnSel_Click" />
-            <asp:Button runat="server" ID="btnCan" Text="Cancelar" />
+        <asp:Panel ID="pnlpopup" runat="server" Width="250px" Height="140px" CssClass="modalPopup" Style="display:none" >
+            <div style="clear:both" id="titulo">
+                <asp:Label runat="server" ID="lblPregunta" Text="Seleccione tipo:" />
+            </div>
+            <div style="position:relative" id="opciones">
+                <div style="float:left;padding:7px;" id="radios">
+                    <asp:RadioButtonList runat="server" RepeatDirection="Vertical" ID="rbl">
+                        <asp:ListItem Text="Test" Value="2" />
+                        <asp:ListItem Text="Nota" Value="1" Selected="True"></asp:ListItem>
+                    </asp:RadioButtonList>
+                </div>
+                <div style="float:left;padding:9px" id="listado">
+                    <asp:DropDownList runat="server" ID="cboAvailTest" />
+                </div>
+            </div>
+            <div style="float:inherit; clear:both;" id="botones">
+                <asp:Button runat="server" ID="btnSel" Text="Aceptar" OnClick="btnSel_Click" />
+                <asp:Button runat="server" ID="btnCan" Text="Cancelar" />
+            </div>
         </asp:Panel>
     </div>
 

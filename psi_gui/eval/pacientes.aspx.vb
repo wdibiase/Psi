@@ -8,10 +8,21 @@
             CargarLateralidades()
             CargarSexos()
             CargarPsps()
+            CargarTestDisponibles()
             Traducir(Me)
             estadoInicial()
             verLista()
         End If
+    End Sub
+
+    Private Sub CargarTestDisponibles()
+        Dim tests As List(Of psi_el.test)
+        Dim t As New psi_bll.test
+        tests = t.Listar
+        cboAvailTest.DataSource = tests
+        cboAvailTest.DataTextField = "test_version"
+        cboAvailTest.DataValueField = "codigo"
+        cboAvailTest.DataBind()
     End Sub
 
     Protected Sub gridPacientes_SelectedIndexChanged(sender As Object, e As EventArgs)
@@ -110,6 +121,7 @@
         cboLateralidad.SelectedIndex = 0
         cboSexo.SelectedIndex = 0
         cboPsp.SelectedIndex = 0
+        cboAvailTest.SelectedIndex = 0
     End Sub
 
     Private Sub CargarPsps()
@@ -290,21 +302,15 @@
             test.fecha = Now
             test.paciente = txtNroDoc.Text
             test.tipoNota = 2
-            test.test.codigo = 1
+            test.test = cboAvailTest.SelectedItem.Value
 
             '1ro ver si tiene alguno sin completar.
             idHistorial = dato.TestSinCompletar(txtNroDoc.Text)
-            If idHistorial > 0 Then
-                Dim w As New wisc3
-                w.CompletarTest(idHistorial)
-            Else
+            If idHistorial = 0 Then
                 idHistorial = dato.Nuevo(test, UsuarioLogueado.numDoc)
-                CrearTest(idHistorial)
+                CrearTest(idHistorial, test.test)
             End If
-            Session("idHC") = idHistorial
-            Session("idTest") = 1
-            Session("idSubtest") = 1
-            Response.Redirect("wisc3.aspx", False)
+            Response.Redirect("wisc3.aspx?idHC=" + idHistorial.ToString + "&idTest=" + test.test.ToString + "&idSubtest=1", False)
         End If
     End Sub
 
@@ -317,7 +323,7 @@
         nota.observaciones = txtNota.Text
         nota.paciente = txtNroDoc.Text
         nota.tipoNota = 1
-        nota.test.codigo = 0
+        nota.test = 0
 
         dato.Nuevo(nota, UsuarioLogueado.numDoc)
         dato = Nothing
@@ -338,11 +344,11 @@
 
     End Sub
 
-    Private Sub CrearTest(id As Long)
+    Private Sub CrearTest(id As Long, tipoTest As Integer)
         Dim dato As New psi_bll.consigna
         Dim i As Integer
         For i = 1 To 13
-            dato.CrearTestBorrador(id, 1, i)
+            dato.CrearTestBorrador(id, tipoTest, i)
         Next
     End Sub
 
@@ -354,6 +360,7 @@
         regHC.tipoNota = lstHC.Rows(Session("regHC").ToString).Cells(4).Text
         regHC.observaciones = lstHC.Rows(Session("regHC").ToString).Cells(5).Text
         regHC.aprobado = lstHC.Rows(Session("regHC").ToString).Cells(6).Text
+        regHC.test = lstHC.Rows(Session("regHC").ToString).Cells(8).Text
 
         If regHC.tipoNota = 1 Then
             'Nota
@@ -364,13 +371,7 @@
             txtNota.Focus()
         Else
             'Test
-            Dim w As New wisc3
-            w.CompletarTest(regHC.idHito)
-
-            Session("idHC") = regHC.idHito
-            Session("idTest") = 1
-            Session("idSubtest") = 1
-            Response.Redirect("wisc3.aspx", False)
+            Response.Redirect("wisc3.aspx?idHC=" + regHC.idHito.ToString + "&idTest=" + regHC.test.ToString + "&idSubtest=1", False)
         End If
     End Sub
 

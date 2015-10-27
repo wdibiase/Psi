@@ -18,4 +18,11 @@
         Dim bd As New psi_dal.historial
         Return bd.TestSinCompletar(paciente)
     End Function
+
+    Public Function ObtenerPaciente(idHistorial As Long) As psi_el.Paciente
+        Dim miPaciente As psi_el.Paciente
+        Dim acceso As New psi_dal.historial
+        miPaciente = acceso.ObtenerDatosPaciente(idHistorial)
+        Return miPaciente
+    End Function
 End Class

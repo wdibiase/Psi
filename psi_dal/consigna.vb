@@ -1,5 +1,5 @@
 ﻿Public Class consigna
-    Public Function Leer(idHC As Long?, test As Integer, subtest As Integer) As List(Of psi_el.consigna)
+    Public Function Leer(idHC As Long, test As Integer, subtest As Integer) As List(Of psi_el.consigna)
         Dim consignas As New List(Of psi_el.consigna)
         Dim a As New Acceso
         Dim params(2) As SqlClient.SqlParameter
@@ -10,15 +10,12 @@
         Dim item As psi_el.consigna
         For Each fila As DataRow In dt.Rows
             item = New psi_el.consigna
-            'item.pregunta = New psi_el.Pregunta
-
             item.pregunta.idTest = fila("idTest").ToString
             item.pregunta.idSubtest = fila("idSubtest").ToString
             item.pregunta.idPregunta = fila("idPregunta").ToString
             item.pregunta.descPregunta = fila("descPregunta").ToString
             item.pregunta.puntaje = fila("puntaje").ToString
-
-            If IsNumeric(fila("idHito").ToString) Then item.idHito = fila("idHito").ToString
+            item.idHito = fila("idHito").ToString
             item.respuestaDada = fila("respuestaDada").ToString
             If IsNumeric(fila("puntajeObtenido").ToString) Then item.puntajeObtenido = fila("puntajeObtenido").ToString
             consignas.Add(item)
