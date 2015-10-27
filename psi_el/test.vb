@@ -29,4 +29,10 @@
             _version = value
         End Set
     End Property
+
+    Public ReadOnly Property test_version As String
+        Get
+            Return _nombre & " " & _version
+        End Get
+    End Property
 End Class

@@ -24,20 +24,6 @@ Password=Pa$$w0rd;.
 	<summary>
   Clase de recurso fuertemente tipado, para buscar cadenas traducidas, etc.
 </summary>
-</member><member name="F:psi_dal.IdentityASP._manager">
-	<summary>
- Propiedad que devuelve el manager de usuarios
- </summary>
-</member><member name="M:psi_dal.IdentityASP.InitializeManager">
-	<summary>
- Inizializa el manager UserManager
- </summary>
-</member><member name="M:psi_dal.IdentityASP.CrearCookieIdentidadYSignIn(Microsoft.AspNet.Identity.EntityFramework.IdentityUser,System.Boolean)">
-	<summary>
- Método privado que pone en contexto al usuario que se firmará y lo firma.
- </summary>
-	<param name="usuario"></param>
-	<param name="esPersistente"></param>
 </member>
 </members>
 </doc>

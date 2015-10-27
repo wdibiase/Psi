@@ -10,10 +10,19 @@
     End Sub
 
     Protected Sub lnkLogged_Click(sender As Object, e As EventArgs)
+        Dim home As String = Nothing
         If UsuarioLogueado Is Nothing Then
             Response.Redirect("login.aspx")
         Else
-            Response.Redirect("home.aspx")
+            Select Case UsuarioLogueado.perfil
+                Case "Coordinador"
+                    home = "~\eval\coord\homeCoord.aspx"
+                Case "Evaluador"
+                    home = "~\eval\homeEval.aspx"
+                Case "Administrador"
+                    home = "~\admin\homeAdmin.aspx"
+            End Select
+            Response.Redirect(home)
         End If
     End Sub
 End Class

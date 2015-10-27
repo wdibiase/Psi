@@ -3,7 +3,7 @@
     Private _idSubtest As Int16
     Private _idPregunta As Int16
     Private _descPregunta As String
-    Private _puntaje As Int16
+    Private _puntaje As String
 
     Public Property idTest As Int16
         Get
@@ -41,11 +41,11 @@
         End Set
     End Property
 
-    Public Property puntaje As Int16
+    Public Property puntaje As String
         Get
             Return _puntaje
         End Get
-        Set(value As Int16)
+        Set(value As String)
             _puntaje = value
         End Set
     End Property

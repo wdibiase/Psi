@@ -113,6 +113,15 @@ Partial Public Class pacientes
     Protected WithEvents btnCancelar As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
+    '''Control btnEditarHC.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btnEditarHC As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''Control lblTipoDoc.
     '''</summary>
     '''<remarks>
@@ -311,15 +320,6 @@ Partial Public Class pacientes
     Protected WithEvents cboPsp As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''Control panelHC.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents panelHC As Global.System.Web.UI.WebControls.Panel
-
-    '''<summary>
     '''Control lstHC.
     '''</summary>
     '''<remarks>
@@ -327,4 +327,121 @@ Partial Public Class pacientes
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents lstHC As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''Control panel2.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents panel2 As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
+    '''Control Button1.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents Button1 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''Control mpe.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents mpe As Global.AjaxControlToolkit.ModalPopupExtender
+
+    '''<summary>
+    '''Control pnlpopup.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents pnlpopup As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
+    '''Control lblPregunta.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lblPregunta As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control rbl.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents rbl As Global.System.Web.UI.WebControls.RadioButtonList
+
+    '''<summary>
+    '''Control cboAvailTest.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents cboAvailTest As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''Control btnSel.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btnSel As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''Control btnCan.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btnCan As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''Control lblNota.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lblNota As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control txtNota.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents txtNota As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control btnGuardarNota.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btnGuardarNota As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''Control btnCancelarNota.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btnCancelarNota As Global.System.Web.UI.WebControls.Button
 End Class

@@ -22,7 +22,7 @@
                     <div id="collapseOne" class="panel-collapse collapse in">
                         <div class="panel-body">
                             <ul class="nav nav-sidebar">
-                                <li><asp:linkButton runat="server" ID="lnkBackup" Text="Backup" CommandArgument='<%#Eval("ID") %>' /></li>
+                                <li><asp:linkButton runat="server" ID="lnkBackup" Text="Backup" /></li>
                                 <li><asp:LinkButton runat="server" ID="lnkRestore" Text="Restore" /></li>
                                 <li><asp:LinkButton runat="server" ID="lnkDrop" Text="Drop" /></li>
                             </ul>
@@ -33,9 +33,8 @@
                     <div class="panel-heading">
                         <h4 class="panel-title">
                             <asp:LinkButton runat="server" ID="Menu2" data-toggle="collapse" data-parent="#accordion"
-                                    href="#collapseTwo">
+                                    href="#collapseTwo" Text="Integridad">
                                 <span class="glyphicon glyphicon-credit-card"></span>
-                                Integridad
                             </asp:LinkButton>
                         </h4>
                     </div>
@@ -79,6 +78,7 @@
             </div>
         </asp:Panel>
         <asp:Panel runat="server" id="panelDetalle" Visible="true">
+            <asp:Label runat="server" ID="lblBackupName" Text="Nombre del backup: " />
             <asp:TextBox runat="server" ID="txtBackupName"></asp:TextBox>
         </asp:Panel>
     </div>

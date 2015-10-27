@@ -49,12 +49,12 @@
         End Set
     End Property
 
-    Private _aprobado As Boolean
-    Public Property aprobado As Boolean
+    Private _aprobado As Short
+    Public Property aprobado As Short
         Get
             Return _aprobado
         End Get
-        Set(value As Boolean)
+        Set(value As Short)
             _aprobado = value
         End Set
     End Property
@@ -65,4 +65,19 @@
             Return _dvh
         End Get
     End Property
+
+    Private _test As Int16
+    Public Property test As Int16
+        Get
+            Return _test
+        End Get
+        Set(value As Int16)
+            _test = value
+        End Set
+    End Property
+
+    'Public Sub New()
+    '    Me.test = New test
+    'End Sub
+
 End Class

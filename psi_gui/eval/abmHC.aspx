@@ -36,21 +36,23 @@
             <asp:Button ID="btnCancelar" runat="server" CssClass="btn-toolbar" Text="Cancelar" Visible="false" CausesValidation="false" />
         </asp:Panel>
 
-        <asp:scriptmanager id="ScriptManager1" runat="server">
-        </asp:scriptmanager>
         <atk:ModalPopupExtender ID="mpe" runat="server" TargetControlID="lnkNuevo" PopupControlID="pnlpopup" 
-            EnableViewState="true" DropShadow="true"
+            EnableViewState="true" DropShadow="true" CancelControlID="btnCan"
             BackgroundCssClass="modalBackground"/>
-
         <asp:Panel ID="pnlpopup" runat="server" Width="250px" Height="120px" CssClass="modalPopup" >
             <asp:Label runat="server" ID="lblPregunta" Text="Seleccione tipo:" />
             <asp:RadioButtonList runat="server" RepeatDirection="Vertical" ID="rbl">
                 <asp:ListItem Text="Nota" Value="1" Selected="True"></asp:ListItem>
                 <asp:ListItem Text="Test" Value="2"></asp:ListItem>
             </asp:RadioButtonList>
-            <asp:Button runat="server" ID="btnSel" Text="Ok" OnClick="btnSel_Click" />
+            <asp:Button runat="server" ID="btnSel" Text="Aceptar" OnClick="btnSel_Click" />
+            <asp:Button runat="server" ID="btnCan" Text="Cancelar" />
         </asp:Panel>
     </div>
 
+    <asp:Label ID="lblNota" runat="server" Text="Nota: " Visible="false" />
+    <asp:TextBox ID="txtNota" runat="server" Visible="false" TextMode="MultiLine" />
+    <asp:Button ID="btnGuardarNota" runat="server" Visible="false" Text="Guardar" OnClick="btnGuardarNota_Click" />
+    <asp:Button ID="btnCancelarNota" runat="server" Visible="false" Text="Cancelar" OnClick="btnCancelarNota_Click" />
 </asp:Content>
 
