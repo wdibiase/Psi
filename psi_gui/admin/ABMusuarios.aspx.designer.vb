@@ -390,4 +390,16 @@ Partial Public Class ABMusuarios
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents cvPass As Global.System.Web.UI.WebControls.CompareValidator
+
+    '''<summary>
+    '''Propiedad Master.
+    '''</summary>
+    '''<remarks>
+    '''Propiedad generada automáticamente.
+    '''</remarks>
+    Public Shadows ReadOnly Property Master() As psi.AdminMaster
+        Get
+            Return CType(MyBase.Master, psi.AdminMaster)
+        End Get
+    End Property
 End Class

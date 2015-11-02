@@ -345,4 +345,16 @@ Partial Public Class wisc3
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents lst13 As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''Propiedad Master.
+    '''</summary>
+    '''<remarks>
+    '''Propiedad generada automáticamente.
+    '''</remarks>
+    Public Shadows ReadOnly Property Master() As psi.EvalMaster
+        Get
+            Return CType(MyBase.Master, psi.EvalMaster)
+        End Get
+    End Property
 End Class

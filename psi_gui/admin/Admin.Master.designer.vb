@@ -347,6 +347,24 @@ Partial Public Class AdminMaster
     Protected WithEvents barraHerramientas As Global.System.Web.UI.WebControls.ContentPlaceHolder
 
     '''<summary>
+    '''Control informacion.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents informacion As Global.System.Web.UI.WebControls.ContentPlaceHolder
+
+    '''<summary>
+    '''Control lblError.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lblError As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''Control pagina.
     '''</summary>
     '''<remarks>

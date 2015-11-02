@@ -14,6 +14,11 @@
         Return items.Listar(paciente)
     End Function
 
+    Public Function Listar(idHC As Long) As psi_el.Historial
+        Dim items As New psi_dal.historial
+        Return items.Listar(idHC)
+    End Function
+
     Public Function TestSinCompletar(paciente As Integer) As Long
         Dim bd As New psi_dal.historial
         Return bd.TestSinCompletar(paciente)
@@ -24,5 +29,10 @@
         Dim acceso As New psi_dal.historial
         miPaciente = acceso.ObtenerDatosPaciente(idHistorial)
         Return miPaciente
+    End Function
+
+    Public Function Editable(hc As Long) As Boolean
+        Dim a As New psi_dal.historial
+        Return a.Editable(hc)
     End Function
 End Class

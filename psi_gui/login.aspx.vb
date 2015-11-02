@@ -1,8 +1,4 @@
-﻿Imports Microsoft.Owin.Security
-Imports Microsoft.AspNet.Identity
-Imports Microsoft.AspNet.Identity.Owin
-Imports Microsoft.AspNet.Identity.EntityFramework
-Imports System.Web
+﻿Imports System.Web
 Imports System.Web.UI
 
 Partial Public Class login

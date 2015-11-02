@@ -64,7 +64,7 @@
 
             <!-- Paneles popup -->
             <div>
-                <asp:scriptmanager id="ScriptManager1" runat="server">
+                <asp:scriptmanager id="ScriptManager1" runat="server" EnableScriptGlobalization="true" EnableScriptLocalization="true">
                 </asp:scriptmanager>
                 <atk:ModalPopupExtender ID="popupPerfil" runat="server" TargetControlID="lnkPerfil" PopupControlID="pnlPerfil" 
                     EnableViewState="true" DropShadow="true" BackgroundCssClass="modalBackground" />
@@ -117,6 +117,11 @@
 
         </asp:ContentPlaceHolder>
         <asp:ContentPlaceHolder runat="server" ID="barraHerramientas"></asp:ContentPlaceHolder>
+        <asp:ContentPlaceHolder runat="server" ID="informacion">
+            <div style="position: absolute; width:400px; left: 50%; margin-left: -200px;">
+                <asp:Label runat="server" ID="lblError" Visible="true" />
+            </div>
+        </asp:ContentPlaceHolder>
         <asp:ContentPlaceHolder runat="server" ID="pagina"></asp:ContentPlaceHolder>
         <script src="../js/jquery-2.1.4.js"></script>
         <script src="../js/bootstrap.js"></script>

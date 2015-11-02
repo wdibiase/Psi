@@ -3,6 +3,8 @@
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not Page.IsPostBack Then
+            panelBackup.Visible = True
+            panelDV.Visible = False
             CargarBackups()
             Traducir(Me)
         End If
@@ -18,7 +20,7 @@
 
     Protected Sub lnkRestore_Click(sender As Object, e As EventArgs) Handles lnkRestore.Click
         Dim conexion As New psi_bll.backup
-        conexion.RestaurarBackup("C:\Program Files\Microsoft SQL Server\MSSQL11.SQLSERVER\MSSQL\Backup\", txtBackupName.Text, lstBackups.SelectedRow.Cells(1).Text) ' selectedRow.Cells(1).Text)
+        conexion.RestaurarBackup("C:\Program Files\Microsoft SQL Server\MSSQL11.SQLSERVER\MSSQL\Backup\", txtBackupName.Text, lstBackups.SelectedRow.Cells(1).Text)
     End Sub
 
     Protected Sub lnkDrop_Click(sender As Object, e As EventArgs) Handles lnkDrop.Click
@@ -26,9 +28,9 @@
     End Sub
 
     Protected Sub lnkBackup_Click(sender As Object, e As EventArgs) Handles lnkBackup.Click
-        Dim conexion As New psi_bll.backup
-
-        conexion.CrearBackup("C:\Program Files\Microsoft SQL Server\MSSQL11.SQLSERVER\MSSQL\Backup\", txtBackupName.Text)
+        panelDV.Visible = False
+        CargarBackups
+        panelBackup.Visible = True
     End Sub
 
     Private Sub lstBackups_PageIndexChanging(sender As Object, e As GridViewPageEventArgs) Handles lstBackups.PageIndexChanging
@@ -48,11 +50,60 @@
                 selectedRow = lstBackups.Rows(index)
             End If
         Catch ex As Exception
-            Response.Redirect("error.aspx")
+            Master.MensajeError = Err.Description
         End Try
     End Sub
 
     Private Sub lstBackups_SelectedIndexChanged(sender As Object, e As EventArgs)
         'Dim row As GridViewRow = lstBackups.SelectedRow
+    End Sub
+
+    Private Sub lstBackups_RowDataBound(sender As Object, e As GridViewRowEventArgs) Handles lstBackups.RowDataBound
+        With e.Row
+            If .RowType = DataControlRowType.Header Then
+                .Cells(0).Text = ""
+                .Cells(1).Text = "Id Backup"
+                .Cells(2).Text = "Nombre"
+                .Cells(3).Text = "Usuario"
+                .Cells(4).Text = "Inicio BackUp"
+                .Cells(5).Text = "Fin BackUp"
+            End If
+        End With
+    End Sub
+
+    Protected Sub lnkLogs_Click(sender As Object, e As EventArgs) Handles lnkLogs.Click
+        panelBackup.Visible = False
+        Dim bd As New psi_bll.backup
+        gridDV.DataSource = bd.VerLogs
+        gridDV.DataBind()
+        panelDV.Visible = True
+    End Sub
+
+    Private Sub gridDV_PageIndexChanging(sender As Object, e As GridViewPageEventArgs) Handles gridDV.PageIndexChanging
+        Dim bd As New psi_bll.backup
+        gridDV.DataSource = bd.VerLogs
+        gridDV.PageIndex = e.NewPageIndex
+        gridDV.DataBind()
+    End Sub
+
+    Private Sub btnCrearBackup_Click(sender As Object, e As EventArgs) Handles btnCrearBackup.Click
+        Dim conexion As New psi_bll.backup
+        conexion.CrearBackup("C:\Program Files\Microsoft SQL Server\MSSQL11.SQLSERVER\MSSQL\Backup\", txtBackupName.Text)
+    End Sub
+
+    Protected Sub lnkDVH_Click(sender As Object, e As EventArgs)
+        panelBackup.Visible = False
+        Dim bd As New psi_bll.backup
+        gridDV.DataSource = bd.VerDVH
+        gridDV.DataBind()
+        panelDV.Visible = True
+    End Sub
+
+    Protected Sub lnkDVV_Click(sender As Object, e As EventArgs)
+        panelBackup.Visible = False
+        Dim bd As New psi_bll.backup
+        gridDV.DataSource = bd.VerDVV
+        gridDV.DataBind()
+        panelDV.Visible = True
     End Sub
 End Class

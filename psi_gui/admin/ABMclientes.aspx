@@ -1,7 +1,7 @@
 ﻿
 <%@ Page Language="vb" AutoEventWireup="false" CodeBehind="ABMclientes.aspx.vb" Inherits="psi.ABMclientes" 
     MasterPageFile="~/admin/Admin.Master" %>
-
+<%@ MasterType VirtualPath="~/admin/Admin.Master" %>
 <asp:Content runat="server" ContentPlaceHolderID="pagina">
     <div class="col-md-12" id="MenuOpciones">
         <ul class="nav nav-tabs" id="abm">

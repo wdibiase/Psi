@@ -318,4 +318,16 @@ Partial Public Class ABMevaluadores
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents rfvNroDoc As Global.System.Web.UI.WebControls.RequiredFieldValidator
+
+    '''<summary>
+    '''Propiedad Master.
+    '''</summary>
+    '''<remarks>
+    '''Propiedad generada automáticamente.
+    '''</remarks>
+    Public Shadows ReadOnly Property Master() As psi.CoordMaster
+        Get
+            Return CType(MyBase.Master, psi.CoordMaster)
+        End Get
+    End Property
 End Class

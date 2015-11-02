@@ -41,13 +41,31 @@ Partial Public Class EvalMaster
     Protected WithEvents lnkProyecto As Global.System.Web.UI.WebControls.LinkButton
 
     '''<summary>
-    '''Control lnkEvaluadores.
+    '''Control lnkInicio.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lnkEvaluadores As Global.System.Web.UI.WebControls.LinkButton
+    Protected WithEvents lnkInicio As Global.System.Web.UI.WebControls.LinkButton
+
+    '''<summary>
+    '''Control lnkHC.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lnkHC As Global.System.Web.UI.WebControls.LinkButton
+
+    '''<summary>
+    '''Control lnkGestion.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lnkGestion As Global.System.Web.UI.WebControls.LinkButton
 
     '''<summary>
     '''Control lnkPacientes.
@@ -57,6 +75,15 @@ Partial Public Class EvalMaster
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents lnkPacientes As Global.System.Web.UI.WebControls.LinkButton
+
+    '''<summary>
+    '''Control lnkEvaluadores.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lnkEvaluadores As Global.System.Web.UI.WebControls.LinkButton
 
     '''<summary>
     '''Control lnkLogged.
@@ -338,6 +365,24 @@ Partial Public Class EvalMaster
     Protected WithEvents barraHerramientas As Global.System.Web.UI.WebControls.ContentPlaceHolder
 
     '''<summary>
+    '''Control informacion.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents informacion As Global.System.Web.UI.WebControls.ContentPlaceHolder
+
+    '''<summary>
+    '''Control lblError.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lblError As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''Control pagina.
     '''</summary>
     '''<remarks>
@@ -345,13 +390,4 @@ Partial Public Class EvalMaster
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents pagina As Global.System.Web.UI.WebControls.ContentPlaceHolder
-
-    '''<summary>
-    '''Control footer.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents footer As Global.System.Web.UI.WebControls.ContentPlaceHolder
 End Class

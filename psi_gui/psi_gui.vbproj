@@ -70,8 +70,6 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml" />
@@ -102,7 +100,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\ajaxTab.css" />
-    <Content Include="css\Tabs.css" />
+    <Content Include="css\Calendar.css" />
+    <Content Include="eval\coord\ABMdiagnosticos.aspx" />
     <Content Include="eval\pacientes.aspx" />
     <Content Include="eval\coord\ABMevaluadores.aspx" />
     <Content Include="admin\ABMusuarios.aspx" />
@@ -115,13 +114,8 @@
     <Content Include="css\bootstrap-theme.min.css" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\bootstrap.min.css" />
-    <Content Include="css\carousel.css" />
     <Content Include="css\dashboard.css" />
-    <Content Include="css\jumbotron.css" />
-    <Content Include="css\select2.css" />
     <Content Include="css\signin.css" />
-    <Content Include="css\Site.css" />
-    <Content Include="css\slate.css" />
     <Content Include="css\socialwidgets.css" />
     <Content Include="css\wdb.css" />
     <Content Include="Default.aspx" />
@@ -134,26 +128,9 @@
     <Content Include="Images\1.jpg" />
     <Content Include="Images\2.jpg" />
     <Content Include="Images\3.jpg" />
-    <Content Include="Images\accent.png" />
     <Content Include="Images\bullet.png" />
-    <Content Include="Images\heroAccent.png" />
-    <Content Include="Images\login.png" />
-    <Content Include="Images\orderedList0.png" />
-    <Content Include="Images\orderedList1.png" />
-    <Content Include="Images\orderedList2.png" />
-    <Content Include="Images\orderedList3.png" />
-    <Content Include="Images\orderedList4.png" />
-    <Content Include="Images\orderedList5.png" />
-    <Content Include="Images\orderedList6.png" />
-    <Content Include="Images\orderedList7.png" />
-    <Content Include="Images\orderedList8.png" />
-    <Content Include="Images\orderedList9.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Images\profile.png" />
-    <Content Include="js\select2.min.js" />
-    <Content Include="js\tablesHeader.js" />
-    <Content Include="js\wdb.js" />
     <Content Include="login.aspx" />
     <Content Include="nosotros.aspx" />
     <Content Include="noticias.aspx" />
@@ -175,20 +152,6 @@
     <Content Include="ejemploACORDEON.aspx" />
     <Content Include="Unauthorized.aspx" />
     <Content Include="web.config" />
-    <Content Include="psiDataSet.xsc">
-      <DependentUpon>psiDataSet.xsd</DependentUpon>
-    </Content>
-    <None Include="psiDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>psiDataSet.Designer.vb</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <Content Include="psiDataSet.xss">
-      <DependentUpon>psiDataSet.xsd</DependentUpon>
-    </Content>
-    <None Include="Web.config.bak">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
@@ -199,15 +162,16 @@
   <ItemGroup>
     <Content Include="js\jquery-2.1.4.min.map" />
     <None Include="js\_references.js" />
-    <None Include="Web.config.Debug.bak">
-      <DependentUpon>Web.config.bak</DependentUpon>
-    </None>
-    <None Include="Web.config.Release.bak">
-      <DependentUpon>Web.config.bak</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="comunes.vb" />
+    <Compile Include="eval\coord\ABMdiagnosticos.aspx.designer.vb">
+      <DependentUpon>ABMdiagnosticos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="eval\coord\ABMdiagnosticos.aspx.vb">
+      <DependentUpon>ABMdiagnosticos.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="eval\pacientes.aspx.designer.vb">
       <DependentUpon>pacientes.aspx</DependentUpon>
     </Compile>
@@ -408,11 +372,6 @@
       <DependentUpon>ejemploACORDEON.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="psiDataSet.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>psiDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Unauthorized.aspx.designer.vb">
       <DependentUpon>Unauthorized.aspx</DependentUpon>
     </Compile>
@@ -442,7 +401,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Account\" />
+    <Folder Include="anl\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
@@ -456,9 +415,6 @@
       <Project>{555a34bc-3db7-42a5-a3a5-d53012be76fd}</Project>
       <Name>psi_el</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

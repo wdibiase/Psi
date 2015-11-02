@@ -15,6 +15,7 @@
     <title>Proyecto Psi</title>
     <link href="../../css/bootstrap.css" rel="stylesheet" />
     <link href="../../css/dashboard.css" rel="stylesheet" />
+    <link href="../../css/Calendar.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="../../css/socialwidgets.css" />
     <style type="text/css"></style>
 </head>
@@ -34,14 +35,14 @@
                         </div>
                         <div id="navbar" class="navbar-collapse collapse">
                             <ul class="nav navbar-nav navbar-right">
-                                <li><asp:LinkButton runat="server" PostBackUrl="ABMevaluadores.aspx" Text="Evaluadores" ID="lnkEvaluadores" /></li>
-                                <li><asp:LinkButton runat="server" PostBackUrl="ABMpacientes.aspx" Text="Pacientes" ID="lnkPacientes" /></li>
+                                <li><asp:LinkButton runat="server" Text="Inicio" ID="lnkInicio" OnClick="lnkInicio_Click" /></li>
+                                <li><asp:LinkButton runat="server" ID="lnkHC" Text="Mis pacientes" PostBackUrl="~/eval/pacientes.aspx" /></li>
                                 <li class="dropdown"><asp:LinkButton runat="server" PostBackUrl="#" class="dropdown-toggle" data-toggle="dropdown" role="button" 
                                         aria-haspopup="true" aria-expanded="false" ID="lnkGestion" Text="Gestión" />
                                     <ul class="dropdown-menu">
-                                        <li><asp:LinkButton runat="server" ID="lnkHC" Text="Mis pacientes" PostBackUrl="~/eval/pacientes.aspx" /></li>
-                                        <li><a href="#">...</a></li>
-                                        <li><a href="#">...</a></li>
+                                        <li><asp:LinkButton runat="server" PostBackUrl="~/eval/coord/ABMpacientes.aspx" Text="ABM Pacientes" ID="lnkPacientes" /></li>
+                                        <li><asp:LinkButton runat="server" PostBackUrl="~/eval/coord/ABMevaluadores.aspx" Text="Evaluadores" ID="lnkEvaluadores" /></li>
+                                        <li><asp:LinkButton runat="server" PostBackUrl="~/eval/coord/ABMdiagnosticos.aspx" Text="Diagnósticos" ID="lnkDiags" /></li>
                                     </ul>
                                 </li>
                                 <li class="dropdown">
@@ -62,8 +63,7 @@
                 </nav>
             <!-- Paneles popup -->
             <div>
-                <asp:scriptmanager id="ScriptManager1" runat="server">
-                </asp:scriptmanager>
+                <asp:scriptmanager id="ScriptManager1" runat="server" EnableScriptGlobalization="true" EnableScriptLocalization="true" />
                 <atk:ModalPopupExtender ID="popupPerfil" runat="server" TargetControlID="lnkPerfil" PopupControlID="pnlPerfil" 
                     EnableViewState="true" DropShadow="true" BackgroundCssClass="modalBackground" />
                 <asp:Panel ID="pnlPerfil" runat="server" Width="400px" Height="250px" CssClass="modalPopup" Style="display: none" >
@@ -113,6 +113,11 @@
             </div>
             </asp:ContentPlaceHolder>
             <asp:ContentPlaceHolder runat="server" ID="barraHerramientas"></asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder runat="server" ID="informacion">
+                <div style="position: absolute; width:400px; left: 50%; margin-left: -200px;">
+                    <asp:Label runat="server" ID="lblError" Visible="true" />
+                </div>
+            </asp:ContentPlaceHolder>
             <asp:ContentPlaceHolder runat="server" ID="pagina"></asp:ContentPlaceHolder>
             <script src="../../js/jquery-2.1.4.js"></script>
             <script src="../../js/bootstrap.js"></script>

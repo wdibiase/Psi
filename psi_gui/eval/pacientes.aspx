@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="pacientes.aspx.vb" Inherits="psi.pacientes" 
     MasterPageFile="~/eval/Eval.Master" %>
-
+<%@ MasterType VirtualPath="~/eval/Eval.Master" %>
 <%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="atk" %>
 
 <asp:Content runat="server" ContentPlaceHolderID="pagina">
@@ -133,7 +133,7 @@
     </div>
 
     <asp:Label ID="lblNota" runat="server" Text="Nota: " Visible="false" />
-    <asp:TextBox ID="txtNota" runat="server" Visible="false" TextMode="MultiLine" />
+    <asp:TextBox ID="txtNota" runat="server" Visible="false" TextMode="MultiLine" Height="120px" Width="560px" />
     <asp:Button ID="btnGuardarNota" runat="server" Visible="false" Text="Guardar" OnClick="btnGuardarNota_Click" />
     <asp:Button ID="btnCancelarNota" runat="server" Visible="false" Text="Cancelar" OnClick="btnCancelarNota_Click" />
 </asp:Content>

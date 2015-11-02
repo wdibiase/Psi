@@ -1,15 +1,33 @@
 ﻿Public Class wisc3
     Inherits System.Web.UI.Page
+    Dim c As New psi_el.consigna
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Dim idHC As Long, idTest As Integer, idSubtest As Integer
+        Dim HC As New psi_bll.historial
         If Not Page.IsPostBack Then
             idHC = Request.QueryString("idHC")
             idTest = Request.QueryString("idTest")
             idSubtest = Request.QueryString("idSubtest")
-            'PrimeraCarga(idHC, idTest)
             CargarTest(idHC, idTest)
+            HabilitarEdicion(HC.Editable(idHC))
         End If
+    End Sub
+
+    Private Sub HabilitarEdicion(valor As Boolean)
+        lst01.Columns(5).Visible = valor
+        lst02.Columns(5).Visible = valor
+        lst03.Columns(5).Visible = valor
+        lst04.Columns(5).Visible = valor
+        lst05.Columns(5).Visible = valor
+        lst06.Columns(5).Visible = valor
+        lst07.Columns(5).Visible = valor
+        lst08.Columns(5).Visible = valor
+        lst09.Columns(5).Visible = valor
+        lst10.Columns(5).Visible = valor
+        lst11.Columns(5).Visible = valor
+        lst12.Columns(5).Visible = valor
+        lst13.Columns(5).Visible = valor
     End Sub
 
     Protected Sub okCompFig_Click(sender As Object, e As EventArgs) Handles okCompFig.Click
@@ -77,110 +95,46 @@
     End Sub
 
     Private Sub GrabarHC(sender As Object, e As GridViewUpdateEventArgs)
-        Dim c As New psi_el.consigna
         Dim bd As New psi_bll.consigna
         Dim tabActivo As Integer
+        Dim valid As Boolean = True
         tabActivo = tabWisc.ActiveTabIndex + 1
         Select Case tabActivo  'Contiene el nro. de tab activo.
             Case 1
-                Dim r As System.Web.UI.WebControls.TextBox = _
-                    DirectCast(lst01.Rows(e.RowIndex).FindControl("txtResp"), System.Web.UI.WebControls.TextBox)
-                Dim p As System.Web.UI.WebControls.TextBox = _
-                    DirectCast(lst01.Rows(e.RowIndex).FindControl("txtPuntaje"), System.Web.UI.WebControls.TextBox)
-                c.respuestaDada = r.Text
-                c.puntajeObtenido = p.Text
+                valid = ValidarEntrada(lst01, sender, e)
             Case 2
-                Dim r As System.Web.UI.WebControls.TextBox = _
-                    DirectCast(lst02.Rows(e.RowIndex).FindControl("txtResp"), System.Web.UI.WebControls.TextBox)
-                Dim p As System.Web.UI.WebControls.TextBox = _
-                    DirectCast(lst02.Rows(e.RowIndex).FindControl("txtPuntaje"), System.Web.UI.WebControls.TextBox)
-                c.respuestaDada = r.Text
-                c.puntajeObtenido = p.Text
+                valid = ValidarEntrada(lst02, sender, e)
             Case 3
-                Dim r As System.Web.UI.WebControls.TextBox = _
-                    DirectCast(lst03.Rows(e.RowIndex).FindControl("txtResp"), System.Web.UI.WebControls.TextBox)
-                Dim p As System.Web.UI.WebControls.TextBox = _
-                    DirectCast(lst03.Rows(e.RowIndex).FindControl("txtPuntaje"), System.Web.UI.WebControls.TextBox)
-                c.respuestaDada = r.Text
-                c.puntajeObtenido = p.Text
+                valid = ValidarEntrada(lst03, sender, e)
             Case 4
-                Dim r As System.Web.UI.WebControls.TextBox = _
-                    DirectCast(lst04.Rows(e.RowIndex).FindControl("txtResp"), System.Web.UI.WebControls.TextBox)
-                Dim p As System.Web.UI.WebControls.TextBox = _
-                    DirectCast(lst04.Rows(e.RowIndex).FindControl("txtPuntaje"), System.Web.UI.WebControls.TextBox)
-                c.respuestaDada = r.Text
-                c.puntajeObtenido = p.Text
+                valid = ValidarEntrada(lst04, sender, e)
             Case 5
-                Dim r As System.Web.UI.WebControls.TextBox = _
-                    DirectCast(lst05.Rows(e.RowIndex).FindControl("txtResp"), System.Web.UI.WebControls.TextBox)
-                Dim p As System.Web.UI.WebControls.TextBox = _
-                    DirectCast(lst05.Rows(e.RowIndex).FindControl("txtPuntaje"), System.Web.UI.WebControls.TextBox)
-                c.respuestaDada = r.Text
-                c.puntajeObtenido = p.Text
+                valid = ValidarEntrada(lst05, sender, e)
             Case 6
-                Dim r As System.Web.UI.WebControls.TextBox = _
-                    DirectCast(lst06.Rows(e.RowIndex).FindControl("txtResp"), System.Web.UI.WebControls.TextBox)
-                Dim p As System.Web.UI.WebControls.TextBox = _
-                    DirectCast(lst06.Rows(e.RowIndex).FindControl("txtPuntaje"), System.Web.UI.WebControls.TextBox)
-                c.respuestaDada = r.Text
-                c.puntajeObtenido = p.Text
+                valid = ValidarEntrada(lst06, sender, e)
             Case 7
-                Dim r As System.Web.UI.WebControls.TextBox = _
-                    DirectCast(lst07.Rows(e.RowIndex).FindControl("txtResp"), System.Web.UI.WebControls.TextBox)
-                Dim p As System.Web.UI.WebControls.TextBox = _
-                    DirectCast(lst07.Rows(e.RowIndex).FindControl("txtPuntaje"), System.Web.UI.WebControls.TextBox)
-                c.respuestaDada = r.Text
-                c.puntajeObtenido = p.Text
+                valid = ValidarEntrada(lst07, sender, e)
             Case 8
-                Dim r As System.Web.UI.WebControls.TextBox = _
-                    DirectCast(lst08.Rows(e.RowIndex).FindControl("txtResp"), System.Web.UI.WebControls.TextBox)
-                Dim p As System.Web.UI.WebControls.TextBox = _
-                    DirectCast(lst08.Rows(e.RowIndex).FindControl("txtPuntaje"), System.Web.UI.WebControls.TextBox)
-                c.respuestaDada = r.Text
-                c.puntajeObtenido = p.Text
+                valid = ValidarEntrada(lst08, sender, e)
             Case 9
-                Dim r As System.Web.UI.WebControls.TextBox = _
-                    DirectCast(lst09.Rows(e.RowIndex).FindControl("txtResp"), System.Web.UI.WebControls.TextBox)
-                Dim p As System.Web.UI.WebControls.TextBox = _
-                    DirectCast(lst09.Rows(e.RowIndex).FindControl("txtPuntaje"), System.Web.UI.WebControls.TextBox)
-                c.respuestaDada = r.Text
-                c.puntajeObtenido = p.Text
+                valid = ValidarEntrada(lst09, sender, e)
             Case 10
-                Dim r As System.Web.UI.WebControls.TextBox = _
-                    DirectCast(lst10.Rows(e.RowIndex).FindControl("txtResp"), System.Web.UI.WebControls.TextBox)
-                Dim p As System.Web.UI.WebControls.TextBox = _
-                    DirectCast(lst10.Rows(e.RowIndex).FindControl("txtPuntaje"), System.Web.UI.WebControls.TextBox)
-                c.respuestaDada = r.Text
-                c.puntajeObtenido = p.Text
+                valid = ValidarEntrada(lst10, sender, e)
             Case 11
-                Dim r As System.Web.UI.WebControls.TextBox = _
-                    DirectCast(lst11.Rows(e.RowIndex).FindControl("txtResp"), System.Web.UI.WebControls.TextBox)
-                Dim p As System.Web.UI.WebControls.TextBox = _
-                    DirectCast(lst11.Rows(e.RowIndex).FindControl("txtPuntaje"), System.Web.UI.WebControls.TextBox)
-                c.respuestaDada = r.Text
-                c.puntajeObtenido = p.Text
+                valid = ValidarEntrada(lst11, sender, e)
             Case 12
-                Dim r As System.Web.UI.WebControls.TextBox = _
-                    DirectCast(lst12.Rows(e.RowIndex).FindControl("txtResp"), System.Web.UI.WebControls.TextBox)
-                Dim p As System.Web.UI.WebControls.TextBox = _
-                    DirectCast(lst12.Rows(e.RowIndex).FindControl("txtPuntaje"), System.Web.UI.WebControls.TextBox)
-                c.respuestaDada = r.Text
-                c.puntajeObtenido = p.Text
+                valid = ValidarEntrada(lst12, sender, e)
             Case 13
-                Dim r As System.Web.UI.WebControls.TextBox = _
-                    DirectCast(lst13.Rows(e.RowIndex).FindControl("txtResp"), System.Web.UI.WebControls.TextBox)
-                Dim p As System.Web.UI.WebControls.TextBox = _
-                    DirectCast(lst13.Rows(e.RowIndex).FindControl("txtPuntaje"), System.Web.UI.WebControls.TextBox)
-                c.respuestaDada = r.Text
-                c.puntajeObtenido = p.Text
+                valid = ValidarEntrada(lst13, sender, e)
         End Select
 
         c.idHito = Request.QueryString("idHC")
         c.pregunta.idTest = Request.QueryString("idTest")
         c.pregunta.idSubtest = tabActivo
-        c.pregunta.idPregunta = e.RowIndex + 1
-        bd.Grabar(c)
-
+        If valid Then
+            c.pregunta.idPregunta = e.RowIndex + 1
+            bd.Grabar(c)
+        End If
         Select Case tabActivo
             Case 1
                 lst01.EditIndex = -1
@@ -211,6 +165,38 @@
         End Select
         CargarTest(c.idHito, c.pregunta.idTest)
     End Sub
+
+    Private Function ValidarEntrada(listado As GridView, sender As Object, e As GridViewUpdateEventArgs) As Boolean
+        Dim rango As String
+        Dim valid As Boolean = True
+        Dim r As System.Web.UI.WebControls.TextBox = _
+            DirectCast(listado.Rows(e.RowIndex).FindControl("txtResp"), System.Web.UI.WebControls.TextBox)
+        Dim p As System.Web.UI.WebControls.TextBox = _
+            DirectCast(listado.Rows(e.RowIndex).FindControl("txtPuntaje"), System.Web.UI.WebControls.TextBox)
+        Dim v As System.Web.UI.WebControls.Label = _
+            DirectCast(listado.Rows(e.RowIndex).FindControl("lblRango"), System.Web.UI.WebControls.Label)
+        rango = v.Text
+        c.respuestaDada = r.Text
+        If IsNumeric(p.Text) Or p.Text = String.Empty Then
+            c.puntajeObtenido = p.Text
+        Else
+            Master.MensajeError = "Valor inválido"
+            valid = False
+        End If
+
+        If InStr(rango, c.puntajeObtenido.ToString) = 0 Then
+            If InStr(rango, "Máx") = 0 Then
+                Master.MensajeError = "Los valores posibles son: " & rango
+                valid = False
+            Else
+                If c.puntajeObtenido > rango.Substring(InStr(rango, "=")) Then
+                    Master.MensajeError = "Los valores posibles son: " & rango
+                    valid = False
+                End If
+            End If
+        End If
+        Return valid
+    End Function
 
     Protected Sub RowEditing(sender As Object, e As GridViewEditEventArgs)
         Dim tabActivo As Integer
@@ -288,7 +274,7 @@
         CargarTest(Request.QueryString("idHC"), Request.QueryString("idTest"))
     End Sub
 
-    Protected Sub btnCalcular_Click(sender As Object, e As EventArgs)
+    Protected Sub btnCalcular_Click(sender As Object, e As EventArgs) Handles btnCalcular.Click
         Dim bd As New psi_bll.subTestWISC3
         Dim idHC As Long = Request.QueryString("idHC").ToString
         Dim miPaciente As New psi_el.Paciente

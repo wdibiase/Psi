@@ -110,4 +110,10 @@ Public MustInherit Class Usuario
             _perfil = value
         End Set
     End Property
+
+    Public ReadOnly Property DisplayName As String
+        Get
+            Return apellido & ", " & nombre
+        End Get
+    End Property
 End Class
