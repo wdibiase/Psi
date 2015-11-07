@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Unauthorized.aspx.vb" Inherits="psi.Unauthorized" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Unauthorized.aspx.vb" Inherits="psi_gui.Unauthorized" %>
 
 <!DOCTYPE html>
 

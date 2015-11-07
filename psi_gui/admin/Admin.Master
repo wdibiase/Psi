@@ -1,4 +1,4 @@
-<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Admin.Master.vb" Inherits="psi.AdminMaster" %>
+<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Admin.Master.vb" Inherits="psi_gui.AdminMaster" %>
 <%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="atk" %>
 
 <!DOCTYPE html>
@@ -101,16 +101,15 @@
                     <asp:Button runat="server" ID="btnCancel" Text="Cancelar" />
                 </asp:Panel>
                 <atk:ModalPopupExtender ID="popupPassword" runat="server" TargetControlID="lnkPassword" PopupControlID="pnlPassword"
-                    EnableViewState="true" DropShadow="true" BackgroundCssClass="modalBackground" />
+                    EnableViewState="true" DropShadow="true" BackgroundCssClass="modalBackground" CancelControlID="btnClaveCancel" />
                 <asp:Panel runat="server" ID="pnlPassword" Width="400px" Height="100px" CssClass="modalPopup" Style="display:none" >
-                    <div class="col-lg-8">
+                    <div>
                         <asp:Label runat="server" ID="lblPass1" Text="Contraseña " />
-                        <asp:TextBox runat="server" ID="txtPass1" TextMode="Password" />
+                        <asp:TextBox runat="server" ID="txtPass1" TextMode="Password" /><br />
                         <asp:Label runat="server" ID="lblPass2" Text="Repetir " />
-                        <asp:TextBox runat="server" ID="txtPass2" TextMode="Password" />
-                        <br />
+                        <asp:TextBox runat="server" ID="txtPass2" TextMode="Password" /><br />
                         <asp:Button runat="server" ID="btnClaveOk" Text="Ok" OnClick="btnClaveOk_Click"/>
-                        <asp:Button runat="server" ID="btnClaveCancel" Text="Cancelar" OnClick="btnClaveCancel_Click" />
+                        <asp:Button runat="server" ID="btnClaveCancel" Text="Cancelar" />
                     </div>
                 </asp:Panel>
             </div>
@@ -118,7 +117,7 @@
         </asp:ContentPlaceHolder>
         <asp:ContentPlaceHolder runat="server" ID="barraHerramientas"></asp:ContentPlaceHolder>
         <asp:ContentPlaceHolder runat="server" ID="informacion">
-            <div style="position: absolute; width:400px; left: 50%; margin-left: -200px;">
+            <div style="position: absolute; width:800px; left: 50%; margin-left: -400px; text-align:center">
                 <asp:Label runat="server" ID="lblError" Visible="true" />
             </div>
         </asp:ContentPlaceHolder>

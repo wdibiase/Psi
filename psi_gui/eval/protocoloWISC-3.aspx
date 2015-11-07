@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="protocoloWISC-3.aspx.vb" Inherits="psi.protocoloWISC_3" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="protocoloWISC-3.aspx.vb" Inherits="psi_gui.protocoloWISC_3" %>
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -21,16 +21,20 @@
         <asp:Label runat="server" Text="WISC-III" Font-Bold="true" Font-Size="Larger" /><br />
         <asp:Label runat="server" Text="Test de inteligencia para niños" Font-Bold="true" Font-Size="Medium" /><br />
         <asp:Label runat="server" Text="Wechsler - Tercera edición" Font-Bold="true" Font-Size="Medium" /><br /><br />
-        <asp:Label ID="lblNombreCompleto" runat="server" Text="Nombre: " /><asp:Label ID="txtNombreCompleto" runat="server" />
-        <asp:Label ID="lblSexo" runat="server" Text="Sexo: " /><asp:Label ID="txtSexo" runat="server" /><br />
-        <asp:Label ID="lblEscuela" runat="server" Text="Escuela o Centro: " /><asp:Label ID="txtEscuela" runat="server" />
-        <asp:Label ID="lblGrado" runat="server" Text="Grado/Año: " /><asp:Label ID="txtGrado" runat="server" /><br />
-        <asp:Label ID="lblExaminador" runat="server" Text="Examinador: " /><asp:Label ID="txtExaminador" runat="server" />
-        <asp:Label ID="lblLateralidad" runat="server" Text="Lateralidad: " /><asp:Label ID="txtLateralidad" runat="server" /><br /><br />
-        <asp:Label ID="lblFechaTest" runat="server" Text="Fecha del test: " /><asp:Label ID="txtFechaTest" runat="server" /><br />
-        <asp:Label ID="lblFechaNac" runat="server" Text="Fecha de nac.: " /><asp:Label ID="txtFechaNac" runat="server" /><br />
-        <asp:Label ID="lblEdad" runat="server" Text="Edad: " /><asp:Label ID="txtEdad" runat="server" /><br /><br />
-        <div style="display:table"> 
+        <div style="float:left">
+            <asp:Label ID="lblNombreCompleto" runat="server" Text="Nombre: " /><asp:Label ID="txtNombreCompleto" runat="server" />
+            <asp:Label ID="lblSexo" runat="server" Text="Sexo: " /><asp:Label ID="txtSexo" runat="server" /><br />
+            <asp:Label ID="lblEscuela" runat="server" Text="Escuela o Centro: " /><asp:Label ID="txtEscuela" runat="server" />
+            <asp:Label ID="lblGrado" runat="server" Text="Grado/Año: " /><asp:Label ID="txtGrado" runat="server" /><br />
+            <asp:Label ID="lblExaminador" runat="server" Text="Examinador: " /><asp:Label ID="txtExaminador" runat="server" />
+            <asp:Label ID="lblLateralidad" runat="server" Text="Lateralidad: " /><asp:Label ID="txtLateralidad" runat="server" /><br /><br />
+        </div>
+        <div style="float:left">
+            <asp:Label ID="lblFechaTest" runat="server" Text="Fecha del test: " /><asp:Label ID="txtFechaTest" runat="server" /><br />
+            <asp:Label ID="lblFechaNac" runat="server" Text="Fecha de nac.: " /><asp:Label ID="txtFechaNac" runat="server" /><br />
+            <asp:Label ID="lblEdad" runat="server" Text="Edad: " /><asp:Label ID="txtEdad" runat="server" /><br /><br />
+        </div>
+        <div style="display:table; clear:both;"> 
             <div style="display:table-row">
                 <div style="display:table-cell; position:center; width:400px;">
                     <asp:Table ID="tblResultado" runat="server" BorderStyle="Solid" BorderColor="Black" CellPadding="9"

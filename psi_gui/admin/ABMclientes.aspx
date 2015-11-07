@@ -1,5 +1,5 @@
 ﻿
-<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="ABMclientes.aspx.vb" Inherits="psi.ABMclientes" 
+<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="ABMclientes.aspx.vb" Inherits="psi_gui.ABMclientes" 
     MasterPageFile="~/admin/Admin.Master" %>
 <%@ MasterType VirtualPath="~/admin/Admin.Master" %>
 <asp:Content runat="server" ContentPlaceHolderID="pagina">

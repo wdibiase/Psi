@@ -5,12 +5,21 @@
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Dim idHC As Long, idTest As Integer, idSubtest As Integer
         Dim HC As New psi_bll.historial
-        If Not Page.IsPostBack Then
+        Dim miPaciente As psi_el.Paciente
+        lblErrorLocal.Text = String.Empty
+        If Not Page.IsPostBack And Not UsuarioLogueado Is Nothing Then
             idHC = Request.QueryString("idHC")
             idTest = Request.QueryString("idTest")
             idSubtest = Request.QueryString("idSubtest")
+            Session("prevPage") = Request.UrlReferrer.ToString()
             CargarTest(idHC, idTest)
-            HabilitarEdicion(HC.Editable(idHC))
+            miPaciente = HC.ObtenerPaciente(idHC)
+            DatosPersonales(miPaciente)
+            If UsuarioLogueado.numDoc = miPaciente.evaluador Then   'Si el examinador es el usuario logueado verifica si puede editar
+                HabilitarEdicion(HC.Editable(idHC))
+            Else
+                HabilitarEdicion(False)     'Si el que ve el test es el coordinador, este no puede editar el contenido de su supervisado
+            End If
         End If
     End Sub
 
@@ -31,6 +40,7 @@
     End Sub
 
     Protected Sub okCompFig_Click(sender As Object, e As EventArgs) Handles okCompFig.Click
+        lblErrorLocal.Text = String.Empty
         'Verificar datos válidos
 
         'Grabar y aprobar (para que no levante de forma automática)
@@ -91,47 +101,48 @@
     End Sub
 
     Protected Sub RowUpdating(sender As Object, e As GridViewUpdateEventArgs)
-        GrabarHC(sender, e)
+        lblErrorLocal.Text = GrabarHC(sender, e)
     End Sub
 
-    Private Sub GrabarHC(sender As Object, e As GridViewUpdateEventArgs)
+    Private Function GrabarHC(sender As Object, e As GridViewUpdateEventArgs) As String
+        lblErrorLocal.Text = String.Empty
         Dim bd As New psi_bll.consigna
         Dim tabActivo As Integer
-        Dim valid As Boolean = True
+        Dim MensajeError As String = String.Empty
         tabActivo = tabWisc.ActiveTabIndex + 1
         Select Case tabActivo  'Contiene el nro. de tab activo.
             Case 1
-                valid = ValidarEntrada(lst01, sender, e)
+                MensajeError = ValidarEntrada(lst01, e)
             Case 2
-                valid = ValidarEntrada(lst02, sender, e)
+                MensajeError = ValidarEntrada(lst02, e)
             Case 3
-                valid = ValidarEntrada(lst03, sender, e)
+                MensajeError = ValidarEntrada(lst03, e)
             Case 4
-                valid = ValidarEntrada(lst04, sender, e)
+                MensajeError = ValidarEntrada(lst04, e)
             Case 5
-                valid = ValidarEntrada(lst05, sender, e)
+                MensajeError = ValidarEntrada(lst05, e)
             Case 6
-                valid = ValidarEntrada(lst06, sender, e)
+                MensajeError = ValidarEntrada(lst06, e)
             Case 7
-                valid = ValidarEntrada(lst07, sender, e)
+                MensajeError = ValidarEntrada(lst07, e)
             Case 8
-                valid = ValidarEntrada(lst08, sender, e)
+                MensajeError = ValidarEntrada(lst08, e)
             Case 9
-                valid = ValidarEntrada(lst09, sender, e)
+                MensajeError = ValidarEntrada(lst09, e)
             Case 10
-                valid = ValidarEntrada(lst10, sender, e)
+                MensajeError = ValidarEntrada(lst10, e)
             Case 11
-                valid = ValidarEntrada(lst11, sender, e)
+                MensajeError = ValidarEntrada(lst11, e)
             Case 12
-                valid = ValidarEntrada(lst12, sender, e)
+                MensajeError = ValidarEntrada(lst12, e)
             Case 13
-                valid = ValidarEntrada(lst13, sender, e)
+                MensajeError = ValidarEntrada(lst13, e)
         End Select
 
         c.idHito = Request.QueryString("idHC")
         c.pregunta.idTest = Request.QueryString("idTest")
         c.pregunta.idSubtest = tabActivo
-        If valid Then
+        If MensajeError = String.Empty Then
             c.pregunta.idPregunta = e.RowIndex + 1
             bd.Grabar(c)
         End If
@@ -164,11 +175,12 @@
                 lst13.EditIndex = -1
         End Select
         CargarTest(c.idHito, c.pregunta.idTest)
-    End Sub
+        Return MensajeError
+    End Function
 
-    Private Function ValidarEntrada(listado As GridView, sender As Object, e As GridViewUpdateEventArgs) As Boolean
+    Private Function ValidarEntrada(listado As GridView, e As GridViewUpdateEventArgs) As String
         Dim rango As String
-        Dim valid As Boolean = True
+        Dim MensajeError As String = String.Empty
         Dim r As System.Web.UI.WebControls.TextBox = _
             DirectCast(listado.Rows(e.RowIndex).FindControl("txtResp"), System.Web.UI.WebControls.TextBox)
         Dim p As System.Web.UI.WebControls.TextBox = _
@@ -180,22 +192,19 @@
         If IsNumeric(p.Text) Or p.Text = String.Empty Then
             c.puntajeObtenido = p.Text
         Else
-            Master.MensajeError = "Valor inválido"
-            valid = False
+            MensajeError = "Valor inválido"
         End If
 
         If InStr(rango, c.puntajeObtenido.ToString) = 0 Then
             If InStr(rango, "Máx") = 0 Then
-                Master.MensajeError = "Los valores posibles son: " & rango
-                valid = False
+                MensajeError = "Los valores posibles son: " & rango
             Else
                 If c.puntajeObtenido > rango.Substring(InStr(rango, "=")) Then
-                    Master.MensajeError = "Los valores posibles son: " & rango
-                    valid = False
+                    MensajeError = "Los valores posibles son: " & rango
                 End If
             End If
         End If
-        Return valid
+        Return MensajeError
     End Function
 
     Protected Sub RowEditing(sender As Object, e As GridViewEditEventArgs)
@@ -267,18 +276,12 @@
     End Sub
 
     Protected Sub btnVolver_Click(sender As Object, e As EventArgs)
-        Response.Redirect("pacientes.aspx")
+        Response.Redirect(Session("prevPage").ToString)
     End Sub
 
     Protected Sub tabWisc_ActiveTabChanged(sender As Object, e As EventArgs) Handles tabWisc.ActiveTabChanged
+        lblErrorLocal.Text = String.Empty
         CargarTest(Request.QueryString("idHC"), Request.QueryString("idTest"))
-    End Sub
-
-    Protected Sub btnCalcular_Click(sender As Object, e As EventArgs) Handles btnCalcular.Click
-        Dim bd As New psi_bll.subTestWISC3
-        Dim idHC As Long = Request.QueryString("idHC").ToString
-        Dim miPaciente As New psi_el.Paciente
-        txtCI.Text = bd.CalcularCI(idHC)
     End Sub
 
     Private Function obtenerPaciente(idHC As Long) As psi_el.Paciente
@@ -294,5 +297,48 @@
 
     Protected Sub btnImprimir_Click(sender As Object, e As EventArgs)
         mostrarProtocolo()
+    End Sub
+
+    Protected Sub btnVerificar_Click(sender As Object, e As EventArgs)
+        VerificarWisc()
+    End Sub
+
+    Private Sub VerificarWisc()
+        Dim ok As Integer
+        Dim bd As New psi_bll.subTestWISC3
+        Dim miPaciente As psi_el.Paciente
+        Dim hc As New psi_bll.historial
+        Dim hito As String = Request.QueryString("idHC").ToString
+        miPaciente = hc.ObtenerPaciente(hito)
+
+        Dim verPaciente As New psi_bll.paciente
+        Dim edad As Integer
+        edad = verPaciente.edadEnDias(miPaciente.fechaNacimiento)
+
+        Dim puntBruto As Integer
+        Dim i As Integer = 1
+        While ok <> -1 And i < 14
+            puntBruto = bd.MostrarPB(hito, i)
+            ok = bd.CalcularPE(i, edad, puntBruto)
+            If puntBruto = 0 And i < 11 Then ok = -1
+            i = i + 1
+        End While
+        If puntBruto = 0 Then
+            Master.MensajeError = "No se completaron los tests obligatorios"
+        ElseIf i < 14 Then
+            Master.MensajeError = "No existe tabla de equivalencia para la edad del paciente, en el subtest: " & (i - 1)
+        Else
+            Master.MensajeError = "Test verificado"
+        End If
+    End Sub
+
+    Private Sub DatosPersonales(miPaciente As psi_el.Paciente)
+        Dim paciente As New psi_bll.paciente
+        Dim edad As Integer
+        edad = paciente.edadEnDias(miPaciente.fechaNacimiento)
+        txtNombreCompleto.Text = miPaciente.DisplayName
+        txtSexo.Text = miPaciente.sexo
+        txtEscuela.Text = miPaciente.escuela
+        txtGrado.Text = miPaciente.año
     End Sub
 End Class

@@ -14,22 +14,76 @@ Option Explicit On
 Partial Public Class wisc3
 
     '''<summary>
-    '''Control lblP.
+    '''Control lblNombreCompleto.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lblP As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lblNombreCompleto As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Control lblPaciente.
+    '''Control txtNombreCompleto.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lblPaciente As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents txtNombreCompleto As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control lblSexo.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lblSexo As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control txtSexo.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents txtSexo As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control lblEscuela.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lblEscuela As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control txtEscuela.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents txtEscuela As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control lblGrado.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lblGrado As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control txtGrado.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents txtGrado As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''Control lblObservaciones.
@@ -68,13 +122,13 @@ Partial Public Class wisc3
     Protected WithEvents btnVolver As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''Control btnCalcular.
+    '''Control btnVerificar.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btnCalcular As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btnVerificar As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''Control btnImprimir.
@@ -86,22 +140,22 @@ Partial Public Class wisc3
     Protected WithEvents btnImprimir As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''Control lblCI.
+    '''Control updPanelWisc.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents lblCI As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents updPanelWisc As Global.System.Web.UI.UpdatePanel
 
     '''<summary>
-    '''Control txtCI.
+    '''Control lblErrorLocal.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txtCI As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lblErrorLocal As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''Control tabWisc.
@@ -352,9 +406,9 @@ Partial Public Class wisc3
     '''<remarks>
     '''Propiedad generada automáticamente.
     '''</remarks>
-    Public Shadows ReadOnly Property Master() As psi.EvalMaster
+    Public Shadows ReadOnly Property Master() As psi_gui.EvalMaster
         Get
-            Return CType(MyBase.Master, psi.EvalMaster)
+            Return CType(MyBase.Master, psi_gui.EvalMaster)
         End Get
     End Property
 End Class

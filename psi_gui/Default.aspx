@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Default.aspx.vb" Inherits="psi.default" MasterPageFile="~/Main.Master" Title="Proyecto Psi" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Default.aspx.vb" Inherits="psi_gui.default" MasterPageFile="~/Main.Master" Title="Proyecto Psi" %>
 <asp:Content ID="C2" ContentPlaceHolderID="cuerpo" runat="server">
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />

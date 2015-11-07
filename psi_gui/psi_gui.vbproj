@@ -11,8 +11,8 @@
     <ProjectGuid>{FB7448C1-98A4-4AA1-996D-FAC1A9F9302A}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
-    <RootNamespace>psi</RootNamespace>
-    <AssemblyName>psi</AssemblyName>
+    <RootNamespace>psi_gui</RootNamespace>
+    <AssemblyName>psi_gui</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <MyType>Custom</MyType>
     <UseIISExpress>true</UseIISExpress>
@@ -30,7 +30,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\</OutputPath>
-    <DocumentationFile>psi.xml</DocumentationFile>
+    <DocumentationFile>psi_gui.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
     <PublishDatabaseSettings>
       <Objects>
@@ -51,7 +51,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\</OutputPath>
-    <DocumentationFile>psi.xml</DocumentationFile>
+    <DocumentationFile>psi_gui.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
@@ -152,6 +152,7 @@
     <Content Include="ejemploACORDEON.aspx" />
     <Content Include="Unauthorized.aspx" />
     <Content Include="web.config" />
+    <None Include="My Project\PublishProfiles\uai.pubxml" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
@@ -407,8 +408,8 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\psi_bll\psi_bll.vbproj">
-      <Project>{075cec27-024e-49fa-8ee8-8c5c08f6f5dd}</Project>
+    <ProjectReference Include="..\psi-bll\psi_bll.vbproj">
+      <Project>{9d1ad867-bd44-4413-a4d6-411fb6933a43}</Project>
       <Name>psi_bll</Name>
     </ProjectReference>
     <ProjectReference Include="..\psi_el\psi_el.vbproj">

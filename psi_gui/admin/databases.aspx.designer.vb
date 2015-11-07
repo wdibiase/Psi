@@ -154,9 +154,9 @@ Partial Public Class databases
     '''<remarks>
     '''Propiedad generada automáticamente.
     '''</remarks>
-    Public Shadows ReadOnly Property Master() As psi.AdminMaster
+    Public Shadows ReadOnly Property Master() As psi_gui.AdminMaster
         Get
-            Return CType(MyBase.Master, psi.AdminMaster)
+            Return CType(MyBase.Master, psi_gui.AdminMaster)
         End Get
     End Property
 End Class

@@ -451,9 +451,9 @@ Partial Public Class pacientes
     '''<remarks>
     '''Propiedad generada automáticamente.
     '''</remarks>
-    Public Shadows ReadOnly Property Master() As psi.EvalMaster
+    Public Shadows ReadOnly Property Master() As psi_gui.EvalMaster
         Get
-            Return CType(MyBase.Master, psi.EvalMaster)
+            Return CType(MyBase.Master, psi_gui.EvalMaster)
         End Get
     End Property
 End Class

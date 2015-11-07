@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="homeCoord.aspx.vb" Inherits="psi.homeCoord" MasterPageFile="~/eval/coord/Coord.Master" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="homeCoord.aspx.vb" Inherits="psi_gui.homeCoord" MasterPageFile="~/eval/coord/Coord.Master" %>
 
 <asp:Content runat="server" ID="homePage" ContentPlaceHolderID="pagina">
     <!DOCTYPE html>

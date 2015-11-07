@@ -1,7 +1,7 @@
-D:\OneDrive\UAI\2015\Psi\psi_el\bin\Release\psi_el.dll.config
-D:\OneDrive\UAI\2015\Psi\psi_el\bin\Release\psi_el.dll
-D:\OneDrive\UAI\2015\Psi\psi_el\bin\Release\psi_el.pdb
-D:\OneDrive\UAI\2015\Psi\psi_el\bin\Release\psi_el.xml
+D:\OneDrive\UAI\2015\Psi\psi_el\bin\psi_el.dll.config
+D:\OneDrive\UAI\2015\Psi\psi_el\bin\psi_el.dll
+D:\OneDrive\UAI\2015\Psi\psi_el\bin\psi_el.pdb
+D:\OneDrive\UAI\2015\Psi\psi_el\bin\psi_el.xml
 D:\OneDrive\UAI\2015\Psi\psi_el\obj\Release\psi_el.Resources.resources
 D:\OneDrive\UAI\2015\Psi\psi_el\obj\Release\psi_el.vbproj.GenerateResource.Cache
 D:\OneDrive\UAI\2015\Psi\psi_el\obj\Release\psi_el.dll

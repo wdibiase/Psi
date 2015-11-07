@@ -3,15 +3,13 @@
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Dim idHC As Long
-        If Not Page.IsPostBack Then
-            If Not Request.QueryString("idHC") Is Nothing Then
-                idHC = Request.QueryString("idHC").ToString
-                MostrarPE(idHC)
-                DatosTest(idHC)
-                CompletarCI()
-                Graficar1()
-                Graficar2()
-            End If
+        If Not Page.IsPostBack And Not Request.QueryString("idHC") Is Nothing Then
+            idHC = Request.QueryString("idHC").ToString
+            MostrarPE(idHC)
+            DatosTest(idHC)
+            CompletarCI()
+            Graficar1()
+            Graficar2()
         End If
     End Sub
 
@@ -114,7 +112,7 @@
 
         End Try
         graph1.BorderWidth = 0
-        graph1.Series.Add(New AjaxControlToolkit.LineChartSeries() With {.Data = y})
+        graph1.Series.Add(New AjaxControlToolkit.LineChartSeries() With {.Data = y, .LineColor = "#6C1E83"})
         graph1.CategoriesAxis = "Inf, Ana, Ari, Voc, Com, RD"
         graph1.Visible = True
     End Sub
@@ -137,7 +135,7 @@
 
         End Try
         graph2.BorderWidth = 0
-        graph2.Series.Add(New AjaxControlToolkit.LineChartSeries() With {.Data = y})
+        graph2.Series.Add(New AjaxControlToolkit.LineChartSeries() With {.Data = y, .LineColor = "#6C1E83"})
         graph2.CategoriesAxis = "CF, Cla, OH, CC, CO, BS, Lab"
         graph2.Visible = True
     End Sub
@@ -150,5 +148,14 @@
         ciOP.Text = pOP.Text
         ciAD.Text = pAD.Text
         ciVP.Text = pVP.Text
+
+        Dim wisc As New psi_bll.subTestWISC3
+        indVerbal.Text = wisc.ObtenerCIIndice("Verbal", CInt(ciVerbal.Text)).ToString
+        indEjec.Text = wisc.ObtenerCIIndice("Ejecución", CInt(ciEjec.Text)).ToString
+        indEC.Text = wisc.ObtenerCIIndice("EC", CInt(ciEC.Text)).ToString
+        indCV.Text = wisc.ObtenerCIIndice("CV", CInt(ciCV.Text)).ToString
+        indOP.Text = wisc.ObtenerCIIndice("OP", CInt(ciOP.Text)).ToString
+        indAD.Text = wisc.ObtenerCIIndice("AD", CInt(ciAD.Text)).ToString
+        indVP.Text = wisc.ObtenerCIIndice("VP", CInt(ciVP.Text)).ToString
     End Sub
 End Class

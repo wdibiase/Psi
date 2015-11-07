@@ -54,11 +54,8 @@
     End Sub
 
     Protected Sub btnClaveOk_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Protected Sub btnClaveCancel_Click(sender As Object, e As EventArgs)
-
+        Dim db As New psi_bll.Usuario
+        db.CambiarContraseña(UsuarioLogueado.nombreUsuario, txtPass1.Text)
     End Sub
 
     Public Property MensajeError() As String

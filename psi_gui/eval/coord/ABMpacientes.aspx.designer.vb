@@ -325,9 +325,9 @@ Partial Public Class ABMpacientes
     '''<remarks>
     '''Propiedad generada automáticamente.
     '''</remarks>
-    Public Shadows ReadOnly Property Master() As psi.CoordMaster
+    Public Shadows ReadOnly Property Master() As psi_gui.CoordMaster
         Get
-            Return CType(MyBase.Master, psi.CoordMaster)
+            Return CType(MyBase.Master, psi_gui.CoordMaster)
         End Get
     End Property
 End Class

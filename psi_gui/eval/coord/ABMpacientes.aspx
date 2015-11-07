@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="ABMpacientes.aspx.vb" Inherits="psi.ABMpacientes"
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="ABMpacientes.aspx.vb" Inherits="psi_gui.ABMpacientes"
     MasterPageFile="~/eval/coord/Coord.Master" Culture="auto" UICulture="auto" %>
 <%@ MasterType VirtualPath="~/eval/coord/Coord.Master" %>
 <asp:Content runat="server" ContentPlaceHolderID="pagina">

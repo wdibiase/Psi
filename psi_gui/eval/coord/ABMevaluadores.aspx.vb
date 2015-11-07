@@ -41,13 +41,12 @@ Public Class ABMevaluadores
     End Sub
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        If Not Page.IsPostBack Then
+        If Not Page.IsPostBack And Not UsuarioLogueado Is Nothing Then
             CargarDocs()
             CargarIdiomas()
             CargarPerfiles()
             CargarEstados()
-            'CargarClientes()
-            If Not IsNothing(UsuarioLogueado) Then CargarUsuarios(UsuarioLogueado.cliente, UsuarioLogueado.nombreUsuario)
+            CargarUsuarios(UsuarioLogueado.cliente, UsuarioLogueado.nombreUsuario)
             estadoInicial()
             verLista()
             Traducir(Me)

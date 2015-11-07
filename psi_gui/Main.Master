@@ -1,4 +1,4 @@
-﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Main.master.vb" Inherits="psi.Main" %>
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Main.master.vb" Inherits="psi_gui.Main" %>
 
 <!DOCTYPE html>
 

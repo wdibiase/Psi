@@ -38,9 +38,13 @@ Public Class subTestWISC3
         params(0) = a.BuildParam("@edad", edadEnDias)
         params(1) = a.BuildParam("@puntBruto", puntajeBruto)
         Dim dt As DataTable = a.Leer(sp, params)
-        Dim resultado As DataRow = dt.Rows(0)
-        If Not resultado Is Nothing Then
-            PE = resultado(0).ToString
+        If dt.Rows.Count > 0 Then
+            Dim resultado As DataRow = dt.Rows(0)
+            If Not resultado Is Nothing Then
+                PE = resultado(0).ToString
+            Else
+                PE = -1
+            End If
         Else
             PE = -1
         End If
@@ -112,12 +116,12 @@ Public Class subTestWISC3
         Return lista
     End Function
 
-    Public Function VerPuntajeBruto(idHC As Long, idSubtest As Integer) As String
+    Public Function VerPuntajeBruto(idHC As Long, idSubtest As Integer) As Integer
         Dim bd As New Acceso
         Dim sql As String
         sql = "select sum(puntajeObtenido) from consignas where idHito = " + idHC.ToString + " and idSubtest = " + idSubtest.ToString
         Dim dt As DataTable = bd.Ejecutar(sql)
-        Dim r As String = Nothing
+        Dim r As Integer
         If dt.Rows(0).Item(0).ToString <> "" Then
             r = dt.Rows(0).Item(0).ToString
         End If
@@ -139,5 +143,37 @@ Public Class subTestWISC3
         Return rd
     End Function
 
+    Public Function ObtenerCIIndice(escala As String, puntajeEscala As Integer) As Integer
+        Dim resultado As Integer
+        Dim tabla As String = String.Empty
+        Select Case escala
+            Case "Verbal"
+                tabla = "piW3EV"
+            Case "Ejecución"
+                tabla = "piW3EE"
+            Case "EC"
+                tabla = "piW3EC"
+            Case "CV"
+                tabla = "piW3CV"
+            Case "OP"
+                tabla = "piW3OP"
+            Case "AD"
+                tabla = "piW3AD"
+            Case "VP"
+                tabla = "piW3VP"
+        End Select
 
+        Dim bd As New Acceso
+        Dim sql As String
+        sql = "select ci from " + tabla + " where pe = " + puntajeEscala.ToString
+        Dim dt As DataTable = bd.Ejecutar(sql)
+        If dt.Rows.Count > 0 Then
+            If dt.Rows(0).Item(0).ToString <> "" Then
+                resultado = dt.Rows(0).Item(0).ToString
+            End If
+        Else
+            resultado = -1
+        End If
+        Return resultado
+    End Function
 End Class

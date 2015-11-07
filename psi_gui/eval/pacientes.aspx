@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="pacientes.aspx.vb" Inherits="psi.pacientes" 
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="pacientes.aspx.vb" Inherits="psi_gui.pacientes" 
     MasterPageFile="~/eval/Eval.Master" %>
 <%@ MasterType VirtualPath="~/eval/Eval.Master" %>
 <%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="atk" %>

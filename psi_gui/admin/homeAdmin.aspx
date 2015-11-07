@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="homeAdmin.aspx.vb" Inherits="psi.homeAdmin" MasterPageFile="~/admin/Admin.Master" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="homeAdmin.aspx.vb" Inherits="psi_gui.homeAdmin" MasterPageFile="~/admin/Admin.Master" %>
 
 <asp:Content runat="server" ID="homePage" ContentPlaceHolderID="pagina">
     <!DOCTYPE html>

@@ -1,4 +1,4 @@
-﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="errores.master.vb" Inherits="psi.errores" %>
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="errores.master.vb" Inherits="psi_gui.errores" %>
 
 <!DOCTYPE html>
 

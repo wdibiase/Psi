@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="databases.aspx.vb" Inherits="psi.databases" 
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="databases.aspx.vb" Inherits="psi_gui.databases" 
     MasterPageFile="~/admin/Admin.Master" %>
 <%@ MasterType VirtualPath="~/admin/Admin.Master" %>
 <asp:Content runat="server" ContentPlaceHolderID="barraHerramientas">
