@@ -1,4 +1,6 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="ABMusuarios.aspx.vb" Inherits="psi.ABMusuarios" MasterPageFile="~/admin/Admin.Master" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="ABMusuarios.aspx.vb" Inherits="psi_gui.ABMusuarios" MasterPageFile="~/admin/Admin.Master" %>
+<%@ MasterType VirtualPath="~/admin/Admin.Master" %>
+<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="atk" %>
 <asp:Content runat="server" ContentPlaceHolderID="pagina">
     <div class="col-md-12" id="MenuOpciones" role="tabpanel">
             <ul class="nav nav-tabs" id="abm" role="tablist">
@@ -33,7 +35,7 @@
             </asp:Panel>
             <asp:Panel runat="server" id="panelDetalle" Visible="true">
                 <asp:Button ID="btnEditar" runat="server" CssClass="btn-toolbar" Text="Editar" Enabled="false" OnClick="btnEditar_Click" CausesValidation="false" />
-                <asp:Button ID="btnEstado" runat="server" CssClass="btn-toolbar" Text="Cambiar Estado" Enabled="false" />
+                <asp:Button ID="btnPwd" runat="server" CssClass="btn-toolbar" Text="Cambiar Contraseña" Enabled="false" />
                 <asp:Button ID="btnGuardar" runat="server" CssClass="btn-toolbar" Text="Guardar" Visible="false" OnClick="btnGuardar_Click" />
                 <asp:Button ID="btnGuardarNuevo" runat="server" cssclass="btn-toolbar" Text="Guardar" Visible="false" OnClick="btnGuardarNuevo_Click" />
                 <asp:Button ID="btnCancelar" runat="server" CssClass="btn-toolbar" Text="Cancelar" Visible="false" CausesValidation="false" />
@@ -65,13 +67,6 @@
                             <asp:TextBox runat="server" ID="txtApellido" />
                             <br />
                         </div>
-                        <!-- <div class="col-lg-8">
-                            <asp:Label runat="server" ID="lblPass1" Text="Contraseña " />
-                            <asp:TextBox runat="server" ID="txtPass1" TextMode="Password" />
-                            <asp:Label runat="server" ID="lblPass2" Text="Repetir " />
-                            <asp:TextBox runat="server" ID="txtPass2" TextMode="Password" />
-                            <br />
-                        </div> -->
                         <div class="col-lg-8">
                             <asp:Label runat="server" ID="lblIdioma" Text="Idioma " />
                             <asp:DropDownList runat="server" ID="cboIdioma" AutoPostBack="true" />
@@ -83,14 +78,29 @@
                             <asp:RequiredFieldValidator ID="rfvEmail" runat="server" ControlToValidate="txtEmail" ErrorMessage="Falta el e-mail" CssClass="alert-warning" />
                             <asp:RequiredFieldValidator ID="rfvNombre" runat="server" ControlToValidate="txtNombre" ErrorMessage="Falta el nombre" CssClass="alert-warning" />
                             <asp:RequiredFieldValidator ID="rfvNroDoc" runat="server" ControlToValidate="txtDoc" ErrorMessage="Falta el documento" CssClass="alert-warning" />
-                            <asp:RequiredFieldValidator ID="rfvPass" runat="server" ControlToValidate="txtPass1" ErrorMessage="Contraseña obligatoria" CssClass="alert-warning" />
-                            <asp:CompareValidator ID="cvPass" runat="server" ControlToCompare="txtPass1" ControlToValidate="txtPass2" 
-                                ErrorMessage="Las contraseñas no coinciden" CssClass="alert-danger" />
                         </div>
                     </div>
                 </div>
             </asp:Panel>
     </div>
+
+    <!-- Panel popup -->
+    <div>
+        <atk:ModalPopupExtender ID="popupPassword" runat="server" TargetControlID="btnPwd" PopupControlID="pnlPassword" 
+            EnableViewState="true" DropShadow="true" BackgroundCssClass="modalBackground" CancelControlID="btnClaveCancel" />
+        <asp:Panel runat="server" ID="pnlPassword" Width="400px" Height="100px" CssClass="modalPopup" Style="display:none" >
+            <div>
+                <asp:Label runat="server" ID="lblPass1" Text="Contraseña " /><asp:TextBox runat="server" ID="txtPass1" TextMode="Password" /><br />
+                <asp:Label runat="server" ID="lblPass2" Text="Repetir " /><asp:TextBox runat="server" ID="txtPass2" TextMode="Password" /><br />
+                <asp:Button runat="server" ID="btnClaveOk" Text="Ok" OnClick="btnClaveOk_Click" />
+                <asp:Button runat="server" ID="btnClaveCancel" Text="Cancelar" />
+                <asp:RequiredFieldValidator ID="rfvPass" runat="server" ControlToValidate="txtPass1" ErrorMessage="Contraseña obligatoria" CssClass="alert-warning" />
+                <asp:CompareValidator ID="cvPass" runat="server" ControlToCompare="txtPass1" ControlToValidate="txtPass2" 
+                    ErrorMessage="Las contraseñas no coinciden" CssClass="alert-danger" />
+            </div>
+        </asp:Panel>
+    </div>
+
 </asp:Content>
 
 

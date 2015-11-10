@@ -28,14 +28,12 @@
         txtEmail.Enabled = False
         txtNombre.Enabled = False
         txtApellido.Enabled = False
-        'txtPass1.Enabled = False
-        'txtPass2.Enabled = False
         cboIdioma.Enabled = False
         lstPerfiles.Enabled = False
 
         lnkNuevo.Enabled = True
         btnEditar.Enabled = True
-        btnEstado.Enabled = True
+        btnPwd.Enabled = True
         btnGuardar.Visible = False
         btnGuardarNuevo.Visible = False
         btnCancelar.Visible = False
@@ -167,25 +165,18 @@
         txtEmail.Text = String.Empty
         txtNombre.Text = String.Empty
         txtApellido.Text = String.Empty
-        'txtPass1.Text = String.Empty
-        'txtPass2.Text = String.Empty
         cboIdioma.SelectedIndex = 0
         lstPerfiles.SelectedIndex = 0
     End Sub
 
     Private Sub lstUsuarios_RowCommand(sender As Object, e As GridViewCommandEventArgs) Handles lstUsuarios.RowCommand
-        'Dim pwd As String
         Try
             If e.CommandName = "Select" Then
-                'Dim grid As GridView
-                'grid = DirectCast(sender, GridView)
-
                 Dim index As Integer = Convert.ToInt32(e.CommandArgument)
                 btnEditar.Enabled = True
-                btnEstado.Enabled = True
+                btnPwd.Enabled = True
 
                 Dim selectedRow As GridViewRow = lstUsuarios.Rows(index)
-
                 cboCliente.ClearSelection()
                 cboDoc.ClearSelection()
                 cboEstado.ClearSelection()
@@ -200,8 +191,6 @@
                 cboEstado.Items.FindByText(selectedRow.Cells(6).Text).Selected = True
                 cboIdioma.Items.FindByText(selectedRow.Cells(7).Text).Selected = True
                 cboCliente.Items.FindByText(HttpUtility.HtmlDecode(selectedRow.Cells(8).Text)).Selected = True
-                'txtPass1.Text = selectedRow.Cells(9).Text
-                'pwd = txtPass1.Text
                 txtPass2.Text = txtPass1.Text
                 txtEmail.Text = selectedRow.Cells(10).Text
                 If Replace(selectedRow.Cells(11).Text, "&nbsp;", "") <> "" Then
@@ -219,7 +208,7 @@
         btnEditar.Visible = False
         btnGuardar.Visible = True
         lnkNuevo.Enabled = False
-        btnEstado.Visible = False
+        btnPwd.Visible = False
         btnCancelar.Visible = True
 
         cboCliente.Enabled = True
@@ -231,8 +220,6 @@
         txtApellido.Enabled = True
         cboIdioma.Enabled = True
         lstPerfiles.Enabled = True
-        'txtPass1.Enabled = True
-        'txtPass2.Enabled = True
     End Sub
 
     Protected Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
@@ -280,7 +267,7 @@
         estadoInicial()
         lnkNuevo.Visible = True
         btnEditar.Visible = True
-        btnEstado.Visible = True
+        btnPwd.Visible = True
     End Sub
 
 
@@ -295,14 +282,12 @@
         txtEmail.Enabled = True
         txtNombre.Enabled = True
         txtApellido.Enabled = True
-        'txtPass1.Enabled = True
-        'txtPass2.Enabled = True
         cboIdioma.Enabled = True
         lstPerfiles.Enabled = True
 
         lnkNuevo.Visible = False
         btnEditar.Visible = False
-        btnEstado.Visible = False
+        btnPwd.Visible = False
         btnGuardar.Visible = False
         btnGuardarNuevo.Visible = True
         btnCancelar.Visible = True
@@ -310,4 +295,8 @@
         cboCliente.Focus()
     End Sub
 
+    Protected Sub btnClaveOk_Click(sender As Object, e As EventArgs)
+        Dim db As New psi_bll.Usuario
+        db.CambiarContraseña(txtUsuario.Text, txtPass1.Text)
+    End Sub
 End Class

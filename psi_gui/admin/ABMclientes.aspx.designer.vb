@@ -327,4 +327,16 @@ Partial Public Class ABMclientes
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents txtRazonSocial As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Propiedad Master.
+    '''</summary>
+    '''<remarks>
+    '''Propiedad generada automáticamente.
+    '''</remarks>
+    Public Shadows ReadOnly Property Master() As psi_gui.AdminMaster
+        Get
+            Return CType(MyBase.Master, psi_gui.AdminMaster)
+        End Get
+    End Property
 End Class

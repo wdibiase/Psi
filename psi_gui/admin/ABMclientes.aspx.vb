@@ -43,7 +43,7 @@ Public Class ABMclientes
     End Sub
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        If Not Page.IsPostBack Then
+        If Not Page.IsPostBack And Not UsuarioLogueado Is Nothing Then
             CargarDatosClientes()
             CargarSuscripciones()
             CargarProvincias()
@@ -122,7 +122,12 @@ Public Class ABMclientes
     End Sub
 
     Private Sub gridClientes_PageIndexChanging(sender As Object, e As GridViewPageEventArgs) Handles gridClientes.PageIndexChanging
-        'PONER CODIGO ACA
+        Dim clientes As List(Of psi_el.Cliente)
+        Dim unCliente As New psi_bll.Cliente
+        clientes = unCliente.ListarClientes
+        gridClientes.DataSource = clientes
+        gridClientes.PageIndex = e.NewPageIndex
+        gridClientes.DataBind()
     End Sub
 
     Private Sub gridClientes_RowCommand(sender As Object, e As GridViewCommandEventArgs) Handles gridClientes.RowCommand

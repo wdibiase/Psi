@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="noticias.aspx.vb" Inherits="psi.noticias" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="noticias.aspx.vb" Inherits="psi_gui.noticias" %>
 
 <!DOCTYPE html>
 

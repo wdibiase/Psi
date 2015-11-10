@@ -1,6 +1,6 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="wisc3.aspx.vb" Inherits="psi.wisc3"
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="wisc3.aspx.vb" Inherits="psi_gui.wisc3"
      MasterPageFile="~/eval/Eval.Master" %>
-
+<%@ MasterType VirtualPath="~/eval/Eval.Master" %>
 <asp:Content runat="server" ContentPlaceHolderID="pagina">
     <script type = "text/javascript">
         function SetTarget() {
@@ -8,24 +8,26 @@
         }
     </script>
     <div style="position:relative; display:block; float:left; width:100%;">
-        <asp:Label runat="server" ID="lblP" Text="Paciente: " /><asp:Label runat="server" ID="lblPaciente" />
-        <br />
+        <asp:Label ID="lblNombreCompleto" runat="server" Text="Nombre: " /><asp:Label ID="txtNombreCompleto" runat="server" />
+        <asp:Label ID="lblSexo" runat="server" Text="Sexo: " /><asp:Label ID="txtSexo" runat="server" /><br />
+        <asp:Label ID="lblEscuela" runat="server" Text="Escuela o Centro: " /><asp:Label ID="txtEscuela" runat="server" />
+        <asp:Label ID="lblGrado" runat="server" Text="Grado/Año: " /><asp:Label ID="txtGrado" runat="server" /><br />
         <asp:Label runat="server" ID="lblObservaciones" Text="Observaciones: " />
         <asp:TextBox runat="server" ID="txtObservaciones" />
         <asp:Button runat="server" ID="okCompFig" Text="Ok" OnClick="okCompFig_Click" />
         <asp:Button runat="server" ID="btnVolver" Text="Cerrar" OnClick="btnVolver_Click" />
-        <asp:Button ID="btnCalcular" runat="server" CssClass="btn-toolbar" Text="Calcular" OnClick="btnCalcular_Click" />
+        <asp:Button ID="btnVerificar" runat="server" CssClass="btn-toolbar" Text="Verificar" OnClick="btnVerificar_Click" />
         <asp:Button ID="btnImprimir" runat="server" Text="Imprimir" OnClick="btnImprimir_Click" OnClientClick = "SetTarget();" />
-        <div style="position:relative; float:right; text-align:right;">
-            <asp:Label runat="server" ID="lblCI" Text="CI: " /><asp:Label runat="server" ID="txtCI" />
-        </div>
     </div>
     <div style="clear:both; position:relative;">
-        <asp:UpdatePanel runat="server">
+        <asp:UpdatePanel runat="server" ID="updPanelWisc" UpdateMode="Conditional">
             <ContentTemplate>
+                <div style="position:relative; display:block; float:left; width:100%; text-align:center; " id="MensajesError" >
+                    <asp:Label runat="server" ID="lblErrorLocal" />
+                </div>
                 <ajaxToolkit:TabContainer runat="server" AutoPostBack="true" ID="tabWisc" OnActiveTabChanged="tabWisc_ActiveTabChanged"
                     CssClass="ajax__tab_lightblue-theme" Height="400px" ScrollBars="Vertical">
-                    <ajaxToolkit:TabPanel runat="server" HeaderText="1. Completamiento de figuras  " ID="tp01">
+                    <ajaxToolkit:TabPanel runat="server" HeaderText="1. Completamiento de figuras " ID="tp01">
                         <ContentTemplate>
                             <asp:GridView ID="lst01" runat="server" CssClass="table-hover table-responsive" 
                                     AllowPaging="True" PageSize="50" CellPadding="4" 
@@ -73,7 +75,12 @@
                                             <asp:TextBox ID="txtPuntaje" runat="server" Visible="false" />
                                         </FooterTemplate>                                     
                                     </asp:TemplateField>
-                                    <asp:CommandField ShowEditButton="True" ShowDeleteButton="false" ShowInsertButton="false" /> 
+                                    <asp:CommandField ShowEditButton="True" ShowDeleteButton="false" ShowInsertButton="false" />
+                                    <asp:TemplateField HeaderText="Puntaje" Visible="false">
+                                        <ItemTemplate>
+                                            <asp:Label runat="server" ID="lblRango" Text='<%# Eval("puntajePosible")%>' />
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
                                 </Columns>
                             </asp:GridView>
                         </ContentTemplate>
@@ -127,6 +134,11 @@
                                         </FooterTemplate>                                     
                                     </asp:TemplateField>
                                     <asp:CommandField ShowEditButton="True" ShowDeleteButton="false" ShowInsertButton="false" /> 
+                                    <asp:TemplateField HeaderText="Puntaje" Visible="false">
+                                        <ItemTemplate>
+                                            <asp:Label runat="server" ID="lblRango" Text='<%# Eval("puntajePosible")%>' />
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
                                 </Columns>
                             </asp:GridView>
                         </ContentTemplate>
@@ -180,6 +192,11 @@
                                         </FooterTemplate>                                     
                                     </asp:TemplateField>
                                     <asp:CommandField ShowEditButton="True" ShowDeleteButton="false" ShowInsertButton="false" /> 
+                                    <asp:TemplateField HeaderText="Puntaje" Visible="false">
+                                        <ItemTemplate>
+                                            <asp:Label runat="server" ID="lblRango" Text='<%# Eval("puntajePosible")%>' />
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
                                 </Columns>
                             </asp:GridView>
                         </ContentTemplate>
@@ -233,6 +250,11 @@
                                         </FooterTemplate>                                     
                                     </asp:TemplateField>
                                     <asp:CommandField ShowEditButton="True" ShowDeleteButton="false" ShowInsertButton="false" /> 
+                                    <asp:TemplateField HeaderText="Puntaje" Visible="false">
+                                        <ItemTemplate>
+                                            <asp:Label runat="server" ID="lblRango" Text='<%# Eval("puntajePosible")%>' />
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
                                 </Columns>
                             </asp:GridView>
                         </ContentTemplate>
@@ -286,6 +308,11 @@
                                         </FooterTemplate>                                     
                                     </asp:TemplateField>
                                     <asp:CommandField ShowEditButton="True" ShowDeleteButton="false" ShowInsertButton="false" /> 
+                                    <asp:TemplateField HeaderText="Puntaje" Visible="false">
+                                        <ItemTemplate>
+                                            <asp:Label runat="server" ID="lblRango" Text='<%# Eval("puntajePosible")%>' />
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
                                 </Columns>
                             </asp:GridView>
                         </ContentTemplate>
@@ -339,6 +366,11 @@
                                         </FooterTemplate>                                     
                                     </asp:TemplateField>
                                     <asp:CommandField ShowEditButton="True" ShowDeleteButton="false" ShowInsertButton="false" /> 
+                                    <asp:TemplateField HeaderText="Puntaje" Visible="false">
+                                        <ItemTemplate>
+                                            <asp:Label runat="server" ID="lblRango" Text='<%# Eval("puntajePosible")%>' />
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
                                 </Columns>
                             </asp:GridView>
                         </ContentTemplate>
@@ -392,6 +424,11 @@
                                         </FooterTemplate>                                     
                                     </asp:TemplateField>
                                     <asp:CommandField ShowEditButton="True" ShowDeleteButton="false" ShowInsertButton="false" /> 
+                                    <asp:TemplateField HeaderText="Puntaje" Visible="false">
+                                        <ItemTemplate>
+                                            <asp:Label runat="server" ID="lblRango" Text='<%# Eval("puntajePosible")%>' />
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
                                 </Columns>
                             </asp:GridView>
                         </ContentTemplate>
@@ -445,6 +482,11 @@
                                         </FooterTemplate>                                     
                                     </asp:TemplateField>
                                     <asp:CommandField ShowEditButton="True" ShowDeleteButton="false" ShowInsertButton="false" /> 
+                                    <asp:TemplateField HeaderText="Puntaje" Visible="false">
+                                        <ItemTemplate>
+                                            <asp:Label runat="server" ID="lblRango" Text='<%# Eval("puntajePosible")%>' />
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
                                 </Columns>
                             </asp:GridView>
                         </ContentTemplate>
@@ -498,6 +540,11 @@
                                         </FooterTemplate>                                     
                                     </asp:TemplateField>
                                     <asp:CommandField ShowEditButton="True" ShowDeleteButton="false" ShowInsertButton="false" /> 
+                                    <asp:TemplateField HeaderText="Puntaje" Visible="false">
+                                        <ItemTemplate>
+                                            <asp:Label runat="server" ID="lblRango" Text='<%# Eval("puntajePosible")%>' />
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
                                 </Columns>
                             </asp:GridView>
                         </ContentTemplate>
@@ -551,6 +598,11 @@
                                         </FooterTemplate>                                     
                                     </asp:TemplateField>
                                     <asp:CommandField ShowEditButton="True" ShowDeleteButton="false" ShowInsertButton="false" /> 
+                                    <asp:TemplateField HeaderText="Puntaje" Visible="false">
+                                        <ItemTemplate>
+                                            <asp:Label runat="server" ID="lblRango" Text='<%# Eval("puntajePosible")%>' />
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
                                 </Columns>
                             </asp:GridView>
                         </ContentTemplate>
@@ -604,6 +656,11 @@
                                         </FooterTemplate>                                     
                                     </asp:TemplateField>
                                     <asp:CommandField ShowEditButton="True" ShowDeleteButton="false" ShowInsertButton="false" /> 
+                                    <asp:TemplateField HeaderText="Puntaje" Visible="false">
+                                        <ItemTemplate>
+                                            <asp:Label runat="server" ID="lblRango" Text='<%# Eval("puntajePosible")%>' />
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
                                 </Columns>
                             </asp:GridView>
                         </ContentTemplate>
@@ -657,6 +714,11 @@
                                         </FooterTemplate>                                     
                                     </asp:TemplateField>
                                     <asp:CommandField ShowEditButton="True" ShowDeleteButton="false" ShowInsertButton="false" /> 
+                                    <asp:TemplateField HeaderText="Puntaje" Visible="false">
+                                        <ItemTemplate>
+                                            <asp:Label runat="server" ID="lblRango" Text='<%# Eval("puntajePosible")%>' />
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
                                 </Columns>
                             </asp:GridView>
                         </ContentTemplate>
@@ -710,6 +772,11 @@
                                         </FooterTemplate>                                     
                                     </asp:TemplateField>
                                     <asp:CommandField ShowEditButton="True" ShowDeleteButton="false" ShowInsertButton="false" /> 
+                                    <asp:TemplateField HeaderText="Puntaje" Visible="false">
+                                        <ItemTemplate>
+                                            <asp:Label runat="server" ID="lblRango" Text='<%# Eval("puntajePosible")%>' />
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
                                 </Columns>
                             </asp:GridView>
                         </ContentTemplate>

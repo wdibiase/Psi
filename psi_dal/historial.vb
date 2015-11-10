@@ -44,6 +44,22 @@
         Return hitos
     End Function
 
+    Public Function Listar(idHC As Long) As psi_el.Historial
+        Dim hito As New psi_el.Historial
+        Dim a As New Acceso
+        Dim params(0) As SqlClient.SqlParameter
+        params(0) = a.BuildParam("@idHC", idHC)
+        Dim dt As DataTable = a.Leer("dbo.usp_historiasClinicasSelect", params)
+        hito.idHito = dt.Rows(0).Item("idHito").ToString
+        hito.fecha = dt.Rows(0).Item("fecha").ToString
+        hito.paciente = dt.Rows(0).Item("paciente").ToString
+        hito.tipoNota = dt.Rows(0).Item("tipoNota").ToString
+        hito.observaciones = dt.Rows(0).Item("observaciones").ToString
+        hito.aprobado = dt.Rows(0).Item("aprobado").ToString
+        hito.test = dt.Rows(0).Item("idTest").ToString
+        Return hito
+    End Function
+
     Public Function TestSinCompletar(paciente As Integer) As Long
         Dim bd As New Acceso
         Dim dt As DataTable
@@ -72,5 +88,31 @@
         paciente.lateralidad = dt.Rows(0).Item("lateralidad").ToString
         paciente.evaluador = dt.Rows(0).Item("evaluador").ToString
         Return paciente
+    End Function
+
+    Public Function Editable(idHC As Long) As Boolean
+        Dim salida As Boolean
+        Dim sql As String = "select aprobado from historiasClinicas where idHito="
+        Dim bd As New Acceso
+        Dim dt As DataTable
+        dt = bd.Ejecutar(sql + idHC.ToString)
+        If dt.Rows.Count > 0 Then
+            If dt.Rows(0).Item(0).ToString = "2" Then
+                salida = False
+            Else
+                salida = True
+            End If
+        End If
+        Return salida
+    End Function
+
+    Public Function EvaluarDiag(idHC As Long, estado As Short, comentarios As String, usuario As String) As Integer
+        Dim acc As New Acceso
+        Dim params(3) As SqlClient.SqlParameter
+        params(0) = acc.BuildParam("@id", idHC)
+        params(1) = acc.BuildParam("@status", estado)
+        params(2) = acc.BuildParam("@comentarios", comentarios)
+        params(3) = acc.BuildParam("@loggedUser", usuario)
+        Return acc.Grabar("usp_historiasClinicasLock", params)
     End Function
 End Class

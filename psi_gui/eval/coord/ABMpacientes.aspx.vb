@@ -31,8 +31,14 @@
         paciente.año = txtAño.Text
         paciente.lateralidad = cboLateralidad.SelectedValue.ToString
         paciente.evaluador = cboPsp.SelectedValue.ToString
-        dato.Nuevo(paciente)
-        Response.Redirect("ABMpacientes.aspx")
+        Try
+            dato.Nuevo(paciente)
+            Response.Redirect("ABMpacientes.aspx")
+        Catch ex As Exception
+            If Err.Number = 5 Then  '"Infracción de la restricción PRIMARY KEY
+                Master.MensajeError = "Número de DNI existente"
+            End If
+        End Try
     End Sub
 
     Protected Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
@@ -70,12 +76,6 @@
         dato = Nothing
         p = Nothing
         Response.Redirect("ABMpacientes.aspx")
-    End Sub
-
-    Protected Sub btnCancelar_Click(sender As Object, e As EventArgs)
-        estadoInicial()
-        lnkNuevo.Visible = True
-        btnEditar.Visible = True
     End Sub
 
     Private Sub CargarDocs()
@@ -129,6 +129,7 @@
         cboLateralidad.SelectedIndex = 0
         cboSexo.SelectedIndex = 0
         cboPsp.SelectedIndex = 0
+        Master.MensajeError = String.Empty
     End Sub
 
     Private Sub CargarPsps()
@@ -142,6 +143,15 @@
             cboPsp.DataBind()
             cboPsp.Items.Add(" ")
         End If
+    End Sub
+
+    Private Sub gridPacientes_PageIndexChanging(sender As Object, e As GridViewPageEventArgs) Handles gridPacientes.PageIndexChanging
+        Dim p As List(Of psi_el.Paciente)
+        Dim unP As New psi_bll.paciente
+        p = unP.Listar
+        gridPacientes.DataSource = p
+        gridPacientes.PageIndex = e.NewPageIndex
+        gridPacientes.DataBind()
     End Sub
 
     Private Sub gridPacientes_RowCommand(sender As Object, e As GridViewCommandEventArgs) Handles gridPacientes.RowCommand
@@ -181,8 +191,7 @@
                 verDetalle()
             End If
         Catch ex As Exception
-            MsgBox(Err.Description)
-            Response.Redirect("error.aspx")
+            Master.MensajeError = Err.Description
         End Try
     End Sub
 
@@ -221,11 +230,13 @@
     Private Sub verLista()
         panelLista.Visible = True
         panelDetalle.Visible = False
+        Master.MensajeError = String.Empty
     End Sub
 
     Private Sub verDetalle()
         panelLista.Visible = False
         panelDetalle.Visible = True
+        Master.MensajeError = String.Empty
     End Sub
 
     Private Sub estadoInicial()
@@ -242,24 +253,15 @@
 
         lnkNuevo.Enabled = True
         btnEditar.Enabled = True
-        btnAsignar.Enabled = True
         btnGuardar.Visible = False
         btnGuardarNuevo.Visible = False
         btnCancelar.Visible = False
-    End Sub
-
-    Protected Sub btnAsignar_Click(sender As Object, e As EventArgs) Handles btnAsignar.Click
-        Dim p As New psi_el.Paciente
-        Dim dato As New psi_bll.paciente
-        p.evaluador = cboPsp.SelectedValue.ToString
-        dato.Guardar(p)
-        dato = Nothing
-        p = Nothing
-        Response.Redirect("ABMpacientes.aspx")
+        Master.MensajeError = String.Empty
     End Sub
 
     Private Sub gridPacientes_RowDataBound(sender As Object, e As GridViewRowEventArgs) Handles gridPacientes.RowDataBound
         Dim aux As String = String.Empty
+        Dim fecha As Date = Nothing
         With e.Row
             If .RowType = DataControlRowType.Header Then
                 .Cells(0).Text = ""
@@ -277,7 +279,20 @@
                 aux = .Cells(1).Text
                 .Cells(1).Text = .Cells(2).Text
                 .Cells(2).Text = aux
+                fecha = .Cells(3).Text
+                .Cells(3).Text = Format(fecha, "dd/MM/yyyy")
             End If
         End With
+    End Sub
+
+    Protected Sub btnCancelar_Click(sender As Object, e As EventArgs)
+        estadoInicial()
+        lnkNuevo.Visible = True
+        btnEditar.Visible = True
+        Master.MensajeError = String.Empty
+    End Sub
+
+    Private Sub txtNroDoc_TextChanged(sender As Object, e As EventArgs) Handles txtNroDoc.TextChanged
+        Master.MensajeError = String.Empty
     End Sub
 End Class

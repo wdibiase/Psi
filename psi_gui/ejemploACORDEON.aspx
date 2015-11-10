@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="ejemploACORDEON.aspx.vb" Inherits="psi.usuarios"
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="ejemploACORDEON.aspx.vb" Inherits="psi_gui.usuarios"
     MasterPageFile="~/Admin.Master" %>
 <!--
 <asp:Content runat="server" ContentPlaceHolderID="barraNavegacion">

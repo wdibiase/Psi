@@ -2,7 +2,7 @@
     Private _idHito As Long
     Private _pregunta As Pregunta
     Private _respuestaDada As String
-    Private _puntajeObtenido As Integer?
+    Private _puntajeObtenido As String
 
     Public Property idHito As Long
         Get
@@ -43,13 +43,19 @@
         End Set
     End Property
 
-    Public Property puntajeObtenido As Integer?
+    Public Property puntajeObtenido As String
         Get
             Return _puntajeObtenido
         End Get
-        Set(value As Integer?)
+        Set(value As String)
             _puntajeObtenido = value
         End Set
+    End Property
+
+    Public ReadOnly Property puntajePosible As String
+        Get
+            Return pregunta.puntaje
+        End Get
     End Property
 
     Public Sub New()

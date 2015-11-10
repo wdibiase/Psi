@@ -174,8 +174,7 @@
                 verDetalle()
             End If
         Catch ex As Exception
-            MsgBox(Err.Description)
-            Response.Redirect("error.aspx")
+            Master.MensajeError = Err.Description
         End Try
     End Sub
 
@@ -219,6 +218,12 @@
     Private Sub verDetalle()
         panelLista.Visible = False
         panelDetalle.Visible = True
+        MostrarHistorial(txtNroDoc.Text)
+        If UsuarioLogueado.idioma = "es-AR" Then
+            If lstHC.Visible Then btnVerHC.Text = "Ocultar Historial" Else btnVerHC.Text = "Ver Historial"
+        Else
+            If lstHC.Visible Then btnVerHC.Text = "Hide History" Else btnVerHC.Text = "Show History"
+        End If
     End Sub
 
     Private Sub estadoInicial()
@@ -242,6 +247,7 @@
 
     Private Sub gridPacientes_RowDataBound(sender As Object, e As GridViewRowEventArgs) Handles gridPacientes.RowDataBound
         Dim aux As String = String.Empty
+        Dim fecha As Date = Nothing
         With e.Row
             If .RowType = DataControlRowType.Header Then
                 .Cells(0).Text = ""
@@ -261,18 +267,19 @@
                 aux = .Cells(1).Text
                 .Cells(1).Text = .Cells(2).Text
                 .Cells(2).Text = aux
+                fecha = .Cells(3).Text
+                .Cells(3).Text = Format(fecha, "dd/MM/yyyy")
             End If
         End With
     End Sub
 
     Protected Sub btnVerHC_Click(sender As Object, e As EventArgs)
-        'Session.Add("paciente", txtNroDoc.Text)
-        'Response.Redirect("abmHC.aspx", False)
-        lstHC.Visible = True
-        MostrarHistorial(txtNroDoc.Text)
+        lstHC.Visible = Not lstHC.Visible
         If lstHC.Rows.Count = 0 Then
             'Sin HC
-            MsgBox("No tiene HC")
+            Master.MensajeError = "No tiene Historia Clínica"
+        Else
+            verDetalle()
         End If
     End Sub
 
@@ -353,6 +360,12 @@
     End Sub
 
     Protected Sub btnEditarHC_Click(sender As Object, e As EventArgs) Handles btnEditarHC.Click
+        If lstHC.Rows(Session("regHC").ToString).Cells(4).Text = "2" Then
+            Edit()
+        End If
+    End Sub
+
+    Private Sub Edit()
         Dim regHC As New psi_el.Historial
         regHC.idHito = lstHC.Rows(Session("regHC").ToString).Cells(1).Text
         regHC.fecha = lstHC.Rows(Session("regHC").ToString).Cells(2).Text
@@ -382,10 +395,12 @@
                 btnEditarHC.Enabled = True
                 'btnEstado.Enabled = True
                 Session("regHC") = index
+                If lstHC.Rows(index).Cells(4).Text = "2" Then
+                    Edit()
+                End If
             End If
         Catch ex As Exception
-            MsgBox(Err.Description)
-            Response.Redirect("error.aspx")
+            Master.MensajeError = Err.Description
         End Try
     End Sub
 End Class

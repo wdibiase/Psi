@@ -109,4 +109,10 @@
             _eval = value
         End Set
     End Property
+
+    Public ReadOnly Property DisplayName As String
+        Get
+            Return nombre & " " & apellido
+        End Get
+    End Property
 End Class

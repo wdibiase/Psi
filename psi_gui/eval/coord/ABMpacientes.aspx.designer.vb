@@ -77,15 +77,6 @@ Partial Public Class ABMpacientes
     Protected WithEvents btnEditar As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''Control btnAsignar.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents btnAsignar As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
     '''Control btnGuardar.
     '''</summary>
     '''<remarks>
@@ -221,6 +212,15 @@ Partial Public Class ABMpacientes
     Protected WithEvents txtFechaNac As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''Control calFechaNac.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents calFechaNac As Global.AjaxControlToolkit.CalendarExtender
+
+    '''<summary>
     '''Control lblEdad.
     '''</summary>
     '''<remarks>
@@ -318,4 +318,16 @@ Partial Public Class ABMpacientes
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents rfvEval As Global.System.Web.UI.WebControls.RequiredFieldValidator
+
+    '''<summary>
+    '''Propiedad Master.
+    '''</summary>
+    '''<remarks>
+    '''Propiedad generada automáticamente.
+    '''</remarks>
+    Public Shadows ReadOnly Property Master() As psi_gui.CoordMaster
+        Get
+            Return CType(MyBase.Master, psi_gui.CoordMaster)
+        End Get
+    End Property
 End Class

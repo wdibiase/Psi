@@ -1,10 +1,10 @@
-D:\OneDrive\UAI\2015\Psi\psi_dal\bin\Debug\psi_dal.dll.config
-D:\OneDrive\UAI\2015\Psi\psi_dal\bin\Debug\psi_dal.dll
-D:\OneDrive\UAI\2015\Psi\psi_dal\bin\Debug\psi_dal.pdb
-D:\OneDrive\UAI\2015\Psi\psi_dal\bin\Debug\psi_dal.xml
-D:\OneDrive\UAI\2015\Psi\psi_dal\bin\Debug\psi_el.dll
-D:\OneDrive\UAI\2015\Psi\psi_dal\bin\Debug\psi_el.pdb
-D:\OneDrive\UAI\2015\Psi\psi_dal\bin\Debug\psi_el.xml
+D:\OneDrive\UAI\2015\Psi\psi_dal\bin\psi_dal.dll.config
+D:\OneDrive\UAI\2015\Psi\psi_dal\bin\psi_dal.dll
+D:\OneDrive\UAI\2015\Psi\psi_dal\bin\psi_dal.pdb
+D:\OneDrive\UAI\2015\Psi\psi_dal\bin\psi_dal.xml
+D:\OneDrive\UAI\2015\Psi\psi_dal\bin\psi_el.dll
+D:\OneDrive\UAI\2015\Psi\psi_dal\bin\psi_el.pdb
+D:\OneDrive\UAI\2015\Psi\psi_dal\bin\psi_el.xml
 D:\OneDrive\UAI\2015\Psi\psi_dal\obj\Debug\psi_dal.vbprojResolveAssemblyReference.cache
 D:\OneDrive\UAI\2015\Psi\psi_dal\obj\Debug\psi_dal.Resources.resources
 D:\OneDrive\UAI\2015\Psi\psi_dal\obj\Debug\psi_dal.vbproj.GenerateResource.Cache

@@ -86,13 +86,13 @@ Partial Public Class databases
     Protected WithEvents lnkDVV As Global.System.Web.UI.WebControls.LinkButton
 
     '''<summary>
-    '''Control panelLista.
+    '''Control panelBackup.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents panelLista As Global.System.Web.UI.WebControls.Panel
+    Protected WithEvents panelBackup As Global.System.Web.UI.WebControls.Panel
 
     '''<summary>
     '''Control lstBackups.
@@ -102,15 +102,6 @@ Partial Public Class databases
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents lstBackups As Global.System.Web.UI.WebControls.GridView
-
-    '''<summary>
-    '''Control panelDetalle.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents panelDetalle As Global.System.Web.UI.WebControls.Panel
 
     '''<summary>
     '''Control lblBackupName.
@@ -129,4 +120,43 @@ Partial Public Class databases
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents txtBackupName As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control btnCrearBackup.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btnCrearBackup As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''Control panelDV.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents panelDV As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
+    '''Control gridDV.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents gridDV As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''Propiedad Master.
+    '''</summary>
+    '''<remarks>
+    '''Propiedad generada automáticamente.
+    '''</remarks>
+    Public Shadows ReadOnly Property Master() As psi_gui.AdminMaster
+        Get
+            Return CType(MyBase.Master, psi_gui.AdminMaster)
+        End Get
+    End Property
 End Class

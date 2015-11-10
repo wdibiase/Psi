@@ -64,9 +64,9 @@ Partial Public Class login
     '''<remarks>
     '''Propiedad generada automáticamente.
     '''</remarks>
-    Public Shadows ReadOnly Property Master() As psi.Main
+    Public Shadows ReadOnly Property Master() As psi_gui.Main
         Get
-            Return CType(MyBase.Master, psi.Main)
+            Return CType(MyBase.Master, psi_gui.Main)
         End Get
     End Property
 End Class

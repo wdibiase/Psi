@@ -9,6 +9,11 @@
             If Not (UsuarioLogueado.perfil = "Evaluador" Or UsuarioLogueado.perfil = "Coordinador") Then
                 Response.Redirect("../unauthorized.aspx")
             End If
+            If UsuarioLogueado.perfil = "Coordinador" Then
+                lnkGestion.Visible = True
+            Else
+                lnkGestion.Visible = False
+            End If
             If Not Page.IsPostBack Then
                 CargarIdiomas()
                 CargarDatosUsuario()
@@ -29,11 +34,8 @@
     End Sub
 
     Protected Sub btnClaveOk_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Protected Sub btnClaveCancel_Click(sender As Object, e As EventArgs)
-
+        Dim db As New psi_bll.Usuario
+        db.CambiarContraseña(UsuarioLogueado.nombreUsuario, txtPass1.Text)
     End Sub
 
     Private Sub CargarDatosUsuario()
@@ -62,4 +64,21 @@
         usuario = Nothing
         idioma = Nothing
     End Sub
+
+    Protected Sub lnkInicio_Click(sender As Object, e As EventArgs)
+        If UsuarioLogueado.perfil = "Coordinador" Then
+            lnkInicio.PostBackUrl = "~/eval/coord/homeCoord.aspx"
+        Else
+            lnkInicio.PostBackUrl = "~/eval/homeEval.aspx"
+        End If
+    End Sub
+
+    Public Property MensajeError() As String
+        Get
+            Return lblError.Text
+        End Get
+        Set(value As String)
+            lblError.Text = value
+        End Set
+    End Property
 End Class

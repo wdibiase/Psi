@@ -86,13 +86,13 @@ Partial Public Class ABMusuarios
     Protected WithEvents btnEditar As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''Control btnEstado.
+    '''Control btnPwd.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btnEstado As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btnPwd As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''Control btnGuardar.
@@ -266,42 +266,6 @@ Partial Public Class ABMusuarios
     Protected WithEvents txtApellido As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control lblPass1.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents lblPass1 As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''Control txtPass1.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents txtPass1 As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''Control lblPass2.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents lblPass2 As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''Control txtPass2.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents txtPass2 As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
     '''Control lblIdioma.
     '''</summary>
     '''<remarks>
@@ -374,6 +338,78 @@ Partial Public Class ABMusuarios
     Protected WithEvents rfvNroDoc As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
+    '''Control popupPassword.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents popupPassword As Global.AjaxControlToolkit.ModalPopupExtender
+
+    '''<summary>
+    '''Control pnlPassword.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents pnlPassword As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
+    '''Control lblPass1.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lblPass1 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control txtPass1.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents txtPass1 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control lblPass2.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lblPass2 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control txtPass2.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents txtPass2 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control btnClaveOk.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btnClaveOk As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''Control btnClaveCancel.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents btnClaveCancel As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''Control rfvPass.
     '''</summary>
     '''<remarks>
@@ -390,4 +426,16 @@ Partial Public Class ABMusuarios
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents cvPass As Global.System.Web.UI.WebControls.CompareValidator
+
+    '''<summary>
+    '''Propiedad Master.
+    '''</summary>
+    '''<remarks>
+    '''Propiedad generada automáticamente.
+    '''</remarks>
+    Public Shadows ReadOnly Property Master() As psi_gui.AdminMaster
+        Get
+            Return CType(MyBase.Master, psi_gui.AdminMaster)
+        End Get
+    End Property
 End Class

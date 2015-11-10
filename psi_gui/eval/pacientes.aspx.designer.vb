@@ -444,4 +444,16 @@ Partial Public Class pacientes
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents btnCancelarNota As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''Propiedad Master.
+    '''</summary>
+    '''<remarks>
+    '''Propiedad generada automáticamente.
+    '''</remarks>
+    Public Shadows ReadOnly Property Master() As psi_gui.EvalMaster
+        Get
+            Return CType(MyBase.Master, psi_gui.EvalMaster)
+        End Get
+    End Property
 End Class

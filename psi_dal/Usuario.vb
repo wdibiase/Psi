@@ -177,5 +177,13 @@
         params(10) = conexion.BuildParam("@perfil", usuario.perfil)
         Return conexion.Grabar("usp_usuariosUpdate", params)
     End Function
+
+    Public Function ChangePassword(user As String, password As String) As Boolean
+        Dim cn As New Acceso
+        Dim pars(1) As SqlClient.SqlParameter
+        pars(0) = cn.BuildParam("@usuario", user)
+        pars(1) = cn.BuildParam("@password", password)
+        Return cn.Grabar("usp_passwordUpdate", pars)
+    End Function
 End Class
 

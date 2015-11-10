@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="error.aspx.vb" Inherits="psi._error" MasterPageFile="~/errores.Master" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="error.aspx.vb" Inherits="psi_gui._error" MasterPageFile="~/errores.Master" %>
 
 <asp:Content runat="server" ContentPlaceHolderID="errorPersonalizado">
     <div >
